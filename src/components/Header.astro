@@ -12,16 +12,13 @@ import MenuItem from '../components/MenuItem';
 			<a href="/"><img src="/PV-JACL-logo.svg" alt="logo" width="40" height="40" /><span id="site-title">{SITE_TITLE}</span></a>
 		</h2>
 		<div class="internal-links">
-			<ul class="menubar">
+			<ul class="menubar" role="menubar">
 			{menubar.map(menuItem => {
 				return (
 					<MenuItem item={menuItem} client:load />
 				)
 			})}
 			</ul>
-		<!-- <HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink> -->
 		</div>
 		<div class="social-links">
 			<a href="https://www.facebook.com/puyallupvalleyjacl" target="_blank">

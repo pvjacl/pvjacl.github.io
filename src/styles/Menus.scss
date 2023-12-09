@@ -6,7 +6,8 @@
     color: rgb(var(--gray));
 
   }
-  a:hover {
+  a:hover,
+  a:active {
     text-decoration: underline;
   }
 

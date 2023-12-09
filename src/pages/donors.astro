@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+
+const donors = [
+	"The Yotsuuye Family",
+	"Tsuyoshi and Yayai Inouye Family",
+	"Lyla Tsuji Anderson",
+	"Liz and Mike Dunbar",
+	"Sheldon Arakaki"
+];
+type OrgInfo  = {
+	name: string;
+	icon: string;
+}
+
+const iconDir = '/donor-icons/';
+const organizations:OrgInfo[] = [
+	{
+		name: "The National Park Service",
+		icon: "nps-logo.png"
+	},
+	{
+		name: "Japanese American Confinement Sites Consortium",
+		icon: "JACSC-logo.jpg"
+	},
+	{
+		name: "The State of Washington",
+		icon: "Seal_of_Washington.png"
+	},
+	{
+		name: "Bill and Melinda Gates Foundation",
+		icon: "Gates-Foundation.png"
+	},
+	{
+		name: "Japanese American Citizens League (Seattle Chapter)",
+		icon: "seattle-JACL-logo.jpg"
+	},
+	{
+		name: "Japanese American Citizens League (National Chapter)",
+		icon: "Natl-LOGO.jpg"
+	},
+	{
+		name: "Robert Chinn Foundation",
+		icon: "Robert-Chinn-LOGO.png"
+	},
+	{
+		name: "Community Health Care",
+		icon: "CommHealth-logo.png"
+	},
+	{
+		name: "The Bamford Foundation",
+		icon: "Bamford-Foundation.png"
+	}
+];
+
+const endorsements = [
+	"Japanese American Citizens League (Alaska Chapter)",
+	"Japanese American Citizens League (Olympia Chapter)",
+	"Japanese American Citizens League (Portland Chapter)",
+	"Spokand Chapter Japanese American Citizens League",
+	"Twin Cities Chapter Japanese American Citizens League"
+]
+---
+
+<Layout
+	title="Donors and Endorsements"
+	description="Leadership donors, organizations and endorsements"
+	pubDate={new Date('August 08 2021')}
+>
+<h2>
+	Leadership Donors
+</h2>
+<ul>
+	{
+		donors.map(donor => {
+			return (
+				<li>{donor}</li>
+			)
+		})
+	}
+</ul>
+<p>Our honorary co-chairs for the Remembrance Gallery project are <strong>Bill Weyerhaeser</strong> and <strong>Frank and Penny Fukui</strong>.</p>
+
+<h2>Contributing Organizations</h2>
+
+<ul class="flexy-icons">
+	{
+		organizations.map(org => {
+			return (
+				<li title={org.name}>
+					<img src={`${iconDir}${org.icon}`} alt={org.name} />
+				</li>
+			)
+		})
+	}
+</ul>
+
+<h2>Endorsements</h2>
+
+<ul>
+	{
+		endorsements.map(donor => {
+			return (
+				<li>{donor}</li>
+			)
+		})
+	}
+</ul>
+
+</Layout>
+
+<style type="scss">
+	.flexy-icons {
+		display:flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		list-style: none;
+		gap: 0.5rem;
+	}
+	.flexy-icons li {
+		text-align: center;
+	}
+	.flexy-icons img {
+		width: 50%;
+		max-width:400px;
+		max-height:300px;
+	}
+	img {
+		max-width: 400px;
+	}
+</style>

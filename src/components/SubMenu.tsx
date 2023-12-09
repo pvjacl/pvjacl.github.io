@@ -19,7 +19,7 @@ const SubMenu = ({items, visible}: props) => {
   const classes = visible ? 'submenu visible' : 'submenu';
 
   return (
-    <ul className={classes}>
+    <ul className={classes} role="menu" aria-hidden={!visible}>
       {listItems}
     </ul>
   )

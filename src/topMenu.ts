@@ -15,12 +15,18 @@ export const menubar: MenuItemData[] = [
   {
     isDropdown: true,
     src: '/remembrance-gallery',
-    label: 'The Remembrance Gallery',
+    label: 'Remembrance Gallery',
     children: [
       {
         isDropdown: false,
-        src: '/the-silent-fair',
-        label: 'The Silent Fair',
+        src: '/remembrance-gallery',
+        label: 'The Remembrance Gallery',
+        children: []
+      },    
+      {
+        isDropdown: false,
+        src: '/donors',
+        label: 'Donors and Endorsements',
         children: []
       },    
     ]
@@ -33,13 +39,19 @@ export const menubar: MenuItemData[] = [
   },
   {
     isDropdown: true,
-    src: '/about',
+    src: '',
     label: 'About',
     children: [
       {
         isDropdown: false,
         src: '/about',
         label: 'About Us',
+        children: []
+      },
+      {
+        isDropdown: false,
+        src: '/about#mission',
+        label: 'Our Mission',
         children: []
       },
       {

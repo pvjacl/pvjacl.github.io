@@ -1,13 +1,32 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 const today = new Date();
+type Link = {
+	name: string;
+	src: string;
+};
+const bottomLinks:Link[] = [
+	{
+		name: "Land Acknowledgement",
+		src: "/land"
+	},
+	{
+		name: "The Silent Fair",
+		src: '/the-silent-fair'
+	},
+	{
+		name: "Scholarships",
+		src: '/scholarships'
+	}
+]
 ---
 
 <footer>
-	<div class="flexy bottom-nav">
-		<a href="/land">Land Acknowledgement</a>
-		<a href="/mission">Mission</a>
-	</div>
+	<div>
+		<ul class="flexy bottom-nav">
+		{bottomLinks.map(link =>(<li><a href={link.src}>{link.name}</a></li>))}
+		</ul>
+	<div>
 	<div>&copy; {today.getFullYear()} Puyallup Valley Japanese American Citizens League. All rights reserved.</div>
 	<div class="social-links">
 		<a href="https://www.facebook.com/puyallupvalleyjacl" target="_blank">
@@ -26,6 +45,10 @@ const today = new Date();
 	.flexy {
 		display:flex;
 		justify-content: center;
+		flex-wrap: wrap;
+	}
+	.bottom-nav {
+		list-style: none;
 	}
 	.bottom-nav a {
 		text-decoration: none;
