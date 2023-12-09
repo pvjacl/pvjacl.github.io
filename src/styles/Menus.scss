@@ -1,0 +1,33 @@
+
+.menuItem {
+  a {
+    text-decoration: none;
+    font-weight: 700;
+    color: rgb(var(--gray));
+
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+}
+ul.submenu {
+  display:none;
+  &.visible{
+    display:block;
+  }
+  position:absolute;
+  border: 1px solid white;
+  background-color: black;
+  padding: 0;
+  z-index: 100;
+  li {
+    list-style: none;
+    padding: 0.5rem;
+    a {
+      text-decoration: none;
+      font-weight: 700;
+      color: white;
+    }
+  }
+}

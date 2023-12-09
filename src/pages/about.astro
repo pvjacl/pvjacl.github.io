@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+	title="About Us"
+	description="Lorem ipsum dolor sit amet"
+	pubDate={new Date('August 08 2021')}
+>
+<div class="flex-center">
+	<img src="/PV-JACL-logo-large.png" alt="Puyallup Valley JACL logo" />
+</div>
+<p>
+	The Puyallup Valley Chapter of the <a href="https://jacl.org">Japanese American Citizens League</a> is strongly 
+	involved with educational programs and voter registration. We are currently raising funds for 
+	the "Puyallup Assembly Center" Remembrance Gallery to encourage an inclusive understanding of 
+	the wrongful incarceration of 125,000 Japanese and Japanese Americans in the United States during 
+	WWII. 
+</p>
+<p>
+		The <a href="https://jacl.org">Japanese American Citizens League</a> is a national organization whose ongoing mission is to 
+		secure and maintain the civil rights of Japanese Americans and all others who are victimized 
+		by injustice and bigotry. The leaders and members of the JACL also work to promote cultural, 
+		educational, and social values and preserve the heritage and legacy of the Japanese American 
+		community. 
+</p>
+<h2 id="contact">Contact Us</h2>
+<div>
+	<p>Contact Form goes here</p>
+</div>
+
+</Layout>
+
+<style>
+	.flex-center {
+		display:flex;
+		justify-content: center;
+	}
+	img {
+		max-width: 400px;
+	}
+</style>
