@@ -56,8 +56,20 @@ export const menubar: MenuItemData[] = [
       },
       {
         isDropdown: false,
-        src: '/about#contact',
-        label: 'Contact Us',
+        src: '/join',
+        label: 'Join Us',
+        children: []
+      },
+      {
+        isDropdown: false,
+        src: '/officers',
+        label: 'Officers',
+        children: []
+      },
+      {
+        isDropdown: false,
+        src: '/past-leaders',
+        label: 'Past Leaders',
         children: []
       },
     ]
