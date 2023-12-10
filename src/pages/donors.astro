@@ -11,6 +11,7 @@ const donors = [
 type OrgInfo  = {
 	name: string;
 	icon: string;
+	width?: string;
 }
 
 const iconDir = '/donor-icons/';
@@ -21,7 +22,8 @@ const organizations:OrgInfo[] = [
 	},
 	{
 		name: "Japanese American Confinement Sites Consortium",
-		icon: "JACSC-logo.jpg"
+		icon: "JACSC-logo.jpg",
+		width: "170px"
 	},
 	{
 		name: "The State of Washington",
@@ -33,7 +35,8 @@ const organizations:OrgInfo[] = [
 	},
 	{
 		name: "Japanese American Citizens League (Seattle Chapter)",
-		icon: "seattle-JACL-logo.jpg"
+		icon: "seattle-JACL-logo.jpg",
+		width: "160px"
 	},
 	{
 		name: "Japanese American Citizens League (National Chapter)",
@@ -45,7 +48,8 @@ const organizations:OrgInfo[] = [
 	},
 	{
 		name: "Community Health Care",
-		icon: "CommHealth-logo.png"
+		icon: "CommHealth-logo.png",
+		width: "160px"
 	},
 	{
 		name: "The Bamford Foundation",
@@ -54,9 +58,9 @@ const organizations:OrgInfo[] = [
 ];
 
 const endorsements = [
-	"Japanese American Citizens League (Alaska Chapter)",
-	"Japanese American Citizens League (Olympia Chapter)",
-	"Japanese American Citizens League (Portland Chapter)",
+	"Alaska Chapter Japanese American Citizens League",
+	"Olympia Chapter Japanese American Citizens League",
+	"Portland Chapter Japanese American Citizens League",
 	"Spokand Chapter Japanese American Citizens League",
 	"Twin Cities Chapter Japanese American Citizens League"
 ]
@@ -86,6 +90,13 @@ const endorsements = [
 <ul class="flexy-icons">
 	{
 		organizations.map(org => {
+			if (org.width) {
+				return (
+				<li title={org.name}>
+					<img src={`${iconDir}${org.icon}`} alt={org.name} width={org.width}/>
+				</li>
+				)
+			}
 			return (
 				<li title={org.name}>
 					<img src={`${iconDir}${org.icon}`} alt={org.name} />
@@ -115,17 +126,16 @@ const endorsements = [
 		justify-content: center;
 		flex-wrap: wrap;
 		list-style: none;
-		gap: 0.5rem;
+		gap: 1rem;
 	}
 	.flexy-icons li {
-		text-align: center;
+		display:flex;
+		justify-content: center;
+		align-content: center;
+		max-width: 200px;
+		max-height: 200px;
 	}
 	.flexy-icons img {
-		width: 50%;
-		max-width:400px;
-		max-height:300px;
-	}
-	img {
-		max-width: 400px;
+		object-fit: scale-down;
 	}
 </style>
