@@ -1,7 +1,8 @@
-import React, { useState} from 'react';
+import React from 'react';
 
 import type { MenuItemData } from '../topMenu';
 import SubMenu from './SubMenu';
+import MenuIcon from '../icons/MenuIcon';
 import '../styles/Menus.scss';
 
 type props = {
@@ -9,27 +10,30 @@ type props = {
 }
 
 const MenuItem = ({item}: props) => {
-  const [isMenuVisible, setMenuVisible] = useState(false);
-  const toggleVisible = () => setMenuVisible(!isMenuVisible);
-  if (!item.isDropdown) {
-    return (
-      <li className="menuItem">
-        <a href={item.src}>{item.label}</a>
-      </li>
-    );
-  }
 
+  const getAnchor = () => {
+    if (item.isDropdown) {
+      return (
+        <a tabIndex={0}>
+          {item.label}
+          {item.isDropdown ? <MenuIcon width={15}/> : null}
+          <SubMenu items={item.children} visible={true} />
+        </a>
+      );
+    }
+    return (
+      <a tabIndex={0} href={item.src}>
+      {item.label}
+      </a>
+      );
+  }
   return (
     <li className="menuItem" 
-      onMouseEnter={toggleVisible} 
-      onMouseLeave={toggleVisible} 
-      onTouchStart={toggleVisible}
-      onTouchEnd={(e) => e.preventDefault()}
+      id={item.id}
       role="menuitem" 
       aria-haspopup={item.isDropdown}
     >
-      <a href={item.src}>{item.label}</a>
-      <SubMenu items={item.children} visible={isMenuVisible} />
+      {getAnchor()}
     </li>
   );
 }

@@ -9,7 +9,7 @@ import MenuItem from '../components/MenuItem';
 <header>
 	<nav>
 		<h2>
-			<a href="/"><img src="/PV-JACL-logo.svg" alt="logo" width="40" height="40" /><span id="site-title">{SITE_TITLE}</span></a>
+			<a href="/"><img id="brand-image" src="/PV-JACL-logo.svg" alt="logo" width="40" height="40" /><span id="site-title">{SITE_TITLE}</span></a>
 		</h2>
 		<div class="internal-links">
 			<ul class="menubar" role="menubar">
@@ -44,9 +44,12 @@ import MenuItem from '../components/MenuItem';
 	h2 a.active {
 		text-decoration: none;
 	}
+	#brand-image {
+		display:inline-block;
+	}
 	#site-title {
 		display: inline-block;
-		padding: 10px 0 0 5px;
+		padding: 10px 0 0 8px;
 		vertical-align: top;
 	}
 	nav {

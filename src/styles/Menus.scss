@@ -4,19 +4,21 @@
     text-decoration: none;
     font-weight: 700;
     color: rgb(var(--gray));
-
   }
-  a:hover,
-  a:active {
+  a:hover {
     text-decoration: underline;
   }
+  a:focus-within {
+    ul.submenu {
+      display: block;
+    }
+  }
+  padding-right: 1em;
 
 }
+
 ul.submenu {
-  display:none;
-  &.visible{
-    display:block;
-  }
+  display:none; 
   position:absolute;
   border: 1px solid white;
   background-color: black;
