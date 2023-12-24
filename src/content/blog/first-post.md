@@ -1,7 +1,7 @@
 ---
 title: 'The Remembrance Gallery Team'
 description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Dec 5 2023'
+pubDate: 'Oct 5 2023'
 heroImage: '/blogAssets/2023_12_05_team.jpg'
 ---
 
