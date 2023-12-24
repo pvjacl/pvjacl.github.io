@@ -1,5 +1,4 @@
 ---
-import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 import { menubar } from '../topMenu';
 import MenuItem from '../components/MenuItem';
@@ -79,9 +78,15 @@ import MenuItem from '../components/MenuItem';
 	.social-links a {
 		display: flex;
 	}
-	@media (max-width: 720px) {
+	@media (max-width: 840px) {
 		.social-links {
 			display: none;
+		}
+		#site-title {
+			display:none
+		}
+		nav a {
+			font-size: 1em;
 		}
 	}
 </style>

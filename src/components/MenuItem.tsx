@@ -1,4 +1,3 @@
-import React from 'react';
 
 import type { MenuItemData } from '../topMenu';
 import SubMenu from './SubMenu';
