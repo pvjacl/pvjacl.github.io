@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Modal from '../components/Modal';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
@@ -26,6 +27,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				I wish I knew what I want to put here
 			</p>
 		</main>
+		<Modal client:idle isOpen={false}>
+			<div>
+				<h3>Title goes here</h3>
+				<p>
+					This is where we can put any HTML to display in an interstitial, or a text box that shows up over the webpage.
+					turn isOpen={true} if you want this to show up immediately when the page displays.
+				</p>
+				<ul>
+					<li>Any Valid HTML can be inserted here</li>
+					<li>This item can be as long as you like</li>
+					<li>You can include a photo, as below</li>
+				</ul>
+				<img src="/Remembrance-Gallery-Render-1.jpg" />
+			</div>
+		</Modal>
 		<Footer />
 	</body>
 </html>
