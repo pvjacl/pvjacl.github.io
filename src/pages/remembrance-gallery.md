@@ -17,7 +17,7 @@ The Gallery will serve as a visual reminder of what happened in our past and wil
 
 ## Join us Create the Remembrance Gallery
 
-The fundraising goal is $2 million  with a completion date of May 2024.
+The fundraising goal is $2 million  with a completion date of May 2024. 
 
 ### Donate online via our Square Site
 

@@ -1,0 +1,33 @@
+---
+const { amount, width, height } = Astro.props;
+
+const goal = 2000000;
+const percent = amount / goal * 100;
+---
+
+<div id="bamboo-background">
+  <div id="bamboo-color" style={{ height: `${percent}%`}}/>
+  <img id="hollow-bamboo" src="/hollow-bamboo.png" />
+</div>
+
+<style define:vars={{ width, height }}>
+  #bamboo-background {
+    display:inline-block;
+    background-color: white;
+    display:grid;
+    width: var(--width);
+    height: var(--height);
+  }
+  #bamboo-color {
+    background-color: green;
+    grid-area: 1 / -1 / 1 / -1;
+    align-self: end;
+  }
+  #hollow-bamboo {
+    display:block;
+    grid-area: 1 / -1 / 1 / -1;
+    border-radius: 0;
+    border-bottom: 4px solid black;
+  }
+
+</style>
