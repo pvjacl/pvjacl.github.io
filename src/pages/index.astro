@@ -6,6 +6,7 @@ import Modal from '../components/Modal';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
+// import { ViewTransitions } from 'astro:transitions';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -22,6 +23,7 @@ const posts = (await getCollection('blog')).sort(
 				font-size: 2.5rem;
 			}
 		</style>
+		<!-- <ViewTransitions /> -->
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
@@ -29,6 +31,12 @@ const posts = (await getCollection('blog')).sort(
 			<h1 id="long-title">We are the Puyallup Valley JACL</h1>
 			<p>
 				Welcome to the official website for the Puyallup Valley Chapter of the Japanese American Citizens League. 
+			</p>
+			<p>	
+				The <a href="https://jacl.org">Japanese American Citizens League</a> is a national organization whose mission 
+				is to advocate and safeguard the civil and human rights of Asian and Pacific Islander Americans and all 
+				communities who are affected by injustice and bigotry. The leaders and members of the JACL also work to 
+				promote and preserve the heritage and legacy of the Japanese American Community. 
 			</p>
 			<section class="recent-events">
 				<h3>Chapter Updates</h3>

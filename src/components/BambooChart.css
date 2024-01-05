@@ -1,0 +1,18 @@
+#bamboo-background {
+  display:inline-block;
+  background-color: white;
+  display:grid;
+}
+#bamboo-color {
+  background-color: green;
+  grid-area: 1 / -1 / 1 / -1;
+  align-self: end;
+  height: 0;
+  transition: 1s;
+}
+#hollow-bamboo {
+  display:block;
+  grid-area: 1 / -1 / 1 / -1;
+  border-radius: 0;
+  border-bottom: 4px solid black;
+}
