@@ -6,6 +6,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://pvjacl.github.io',
+  base: '/pvjacl',
   integrations: [mdx(), sitemap(), react()],
   outDir: 'docs'
 });
