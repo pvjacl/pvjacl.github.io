@@ -101,10 +101,11 @@ import { menubar } from "../topMenu";
     justify-content: space-between;
   }
   .top-link {
-    padding: 1em 0.5em;
+    padding: 1em 0 0.5rem 0;
     color: rgb(var(--gray));
     border-bottom: 4px solid transparent;
     text-decoration: none;
+    font-size: clamp(15px, 2.4vw, 20px);
   }
   nav a.active {
     text-decoration: none;
@@ -114,8 +115,9 @@ import { menubar } from "../topMenu";
     display: flex;
     justify-content: center;
     list-style: none;
-    gap: 0.8rem;
+    gap: 0.5rem;
     flex-wrap: wrap;
+    padding: 0 !important;
   }
 
   .menuItem a {
@@ -127,8 +129,8 @@ import { menubar } from "../topMenu";
     text-decoration: underline;
   }
   .menu-icon {
-    padding-left:3px;
-    width: 1rem;
+    padding-left:2px;
+    width: 0.7rem;
   }
   ul.submenu:hover,
   .menuItem a:focus-within + ul.submenu {
@@ -158,6 +160,7 @@ import { menubar } from "../topMenu";
   .social-links a {
     display: flex;
   }
+
   @media (max-width: 840px) {
     .social-links {
       display: none;
@@ -165,8 +168,16 @@ import { menubar } from "../topMenu";
     #site-title {
       display: none;
     }
-    nav a {
-      font-size: 1em;
+    ul.menubar {
+      margin-right: 2rem;
+    }
+  }
+  @media (max-width:550px) {
+    #brand-image {
+      display:none;
+    }
+    ul.menubar {
+      margin-right: 0;
     }
   }
 </style>
