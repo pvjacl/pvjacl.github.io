@@ -1,105 +1,120 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Modal from '../components/Modal';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Modal from "../components/Modal";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
 // import { ViewTransitions } from 'astro:transitions';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-).slice(0, 3);
-
+const posts = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			h1 {
-				font-size: 2.5rem;
-			}
-		</style>
-		<!-- <ViewTransitions /> -->
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1 id="long-title">We are the Puyallup Valley JACL</h1>
-			<p>
-				Welcome to the official website for the Puyallup Valley Chapter of the Japanese American Citizens League. 
-			</p>
-			<p>	
-				The <a href="https://jacl.org">Japanese American Citizens League</a> is a national organization whose mission 
-				is to advocate and safeguard the civil and human rights of Asian and Pacific Islander Americans and all 
-				communities who are affected by injustice and bigotry. The leaders and members of the JACL also work to 
-				promote and preserve the heritage and legacy of the Japanese American Community. 
-			</p>
-			<section class="recent-events">
-				<h3>Chapter Updates</h3>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.slug}/`}>
-									<h4 class="title">{post.data.title} <span class="date"><FormattedDate date={post.data.pubDate} /></span></h4>
-								</a>
-								<p>{post.data.description}</p>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Modal client:idle isOpen={false}>
-			<div>
-				<h3>Title goes here</h3>
-				<p>
-					This is where we can put any HTML to display in an interstitial, or a text box that shows up over the webpage.
-					turn isOpen={true} if you want this to show up immediately when the page displays.
-				</p>
-				<ul>
-					<li>Any Valid HTML can be inserted here</li>
-					<li>This item can be as long as you like</li>
-					<li>You can include a photo, as below</li>
-				</ul>
-				<img src="/Remembrance-Gallery-Render-1.jpg" />
-			</div>
-		</Modal>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      h1 {
+        font-size: 2.5rem;
+      }
+    </style>
+    <!-- <ViewTransitions /> -->
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <h1 id="long-title">We are the Puyallup Valley JACL</h1>
+      <p>
+        Welcome to the official website for the Puyallup Valley Chapter of the
+        Japanese American Citizens League. The <a href="https://jacl.org"
+          >Japanese American Citizens League</a
+        > is a national organization whose mission is to advocate and safeguard the
+        civil and human rights of Asian and Pacific Islander Americans and all communities
+        who are affected by injustice and bigotry. The leaders and members of the
+        JACL also work to promote and preserve the heritage and legacy of the Japanese
+        American Community.
+      </p>
+      <p><a href="/remembrance-gallery">
+        Our current project is the creation of the Remembrance Gallery.</a> The
+        Washington State Fair is providing us with this opportunity to build a
+        permanent historic exhibit inside the grandstand, which is part of the
+        original confinement site of Japanese Americans during World War II. The
+        purpose is to encourage an inclusive understanding of the wrongful
+        incarceration of 125,000 Japanese and Japanese Americans in the United
+        States during WWII.
+      </p>
+      <section class="recent-events">
+        <h3>Chapter Updates</h3>
+        <ul>
+          {
+            posts.map((post) => (
+              <li>
+                <h4 class="title">
+                  <a href={`/blog/${post.slug}/`}>{post.data.title}</a>{" "}
+                  <span class="date">
+                    <FormattedDate date={post.data.pubDate} />
+                  </span>
+                </h4>
+                <p>{post.data.description}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+    <Modal client:idle isOpen={false}>
+      <div>
+        <h3>Title goes here</h3>
+        <p>
+          This is where we can put any HTML to display in an interstitial, or a
+          text box that shows up over the webpage. turn isOpen={true} if you want
+          this to show up immediately when the page displays.
+        </p>
+        <ul>
+          <li>Any Valid HTML can be inserted here</li>
+          <li>This item can be as long as you like</li>
+          <li>You can include a photo, as below</li>
+        </ul>
+        <img src="/Remembrance-Gallery-Render-1.jpg" />
+      </div>
+    </Modal>
+    <Footer />
+    <style lang="scss">
+      .recent-events {
+        border: 3px solid rgb(var(--gray));
+        h3 {
+          font-size: 1.4rem;
+          background-color: rgb(var(--gray));
+          color: white;
+          padding: 0.7rem;
+          text-align: center;
+        }
+        ul {
+          padding: 1rem;
+          list-style: none;
+        }
+        h4 {
+          font-size: 1.2rem;
+          font-weight: 700;
+          .date {
+            padding: 0 0 0 0.5rem;
+            color: var(--accent);
+            font-size: 1rem;
+          }
+          a {
+            color: black;
+          }
+        }
+        p {
+          margin: 0.5rem 0 0.5 0.5rem;
+          line-height: 1.4rem;
+          color: black;
+        }
+      }
+    </style>
+  </body>
 </html>
-
-<style lang="scss">
-	.recent-events {
-		border: 3px solid darkred;
-		h3 {
-			font-size:1.4rem;
-			background-color: darkred;
-			color: white;
-			padding: 0.7rem;
-			text-align: center;
-		}
-		ul {
-			padding: 1rem;
-			list-style: none;
-		}
-		h4 {
-			font-size: 1.2rem;
-			font-weight: 700;
-			.date {
-				padding: 0 0 0 0.5rem;
-				color: darkred;
-				font-size: 1rem;
-			}
-		}
-		p {
-			margin: 0.5rem 0 0.5 0.5rem;
-			line-height: 1.4rem;
-			color: black;
-		}
-	}
-</style>

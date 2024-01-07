@@ -1,0 +1,21 @@
+---
+title: "2024 National JACL Scholarships are Now Open"
+description: "The Japanese American Citizens League (JACL) announced that the 2024 National Scholarship and Awards Program is now underway"
+pubDate: "Dec 6 2023"
+---
+
+![Image of Scholarship announcement](/blogAssets/jacl-scholarships-2024.jpg)
+
+The [Japanese American Citizens League (JACL)](https://jacl.org) announced that the 2024 National Scholarship and Awards Program is now underway. The JACL annually offers approximately 30 college scholarships for students who are incoming college freshmen, undergraduates and graduates, and those specializing in law and the creative/performing arts. There are also financial aid scholarships for those demonstrating a need for financial assistance.
+
+Scholarship Program guidelines, instructions, and applications have been posted on [the JACL website, www.jacl.org](https://jacl.org), and can be accessed by clicking the “Youth” tab on the menu bar. You may also click the button below "To Learn More or Apply Click Here."
+
+Following previous years, the application forms for the scholarship program will be completely online. Freshman applications must be submitted directly by the applicant to National JACL through the online form no later than Friday, March 1, 2024, 11:59 p.m. Hawaiian Standard Time (HST).
+
+These freshman applications will then be disseminated to their respective chapters for review. Chapters will have one month to evaluate their applications and forward the names of the most outstanding applicants to National JACL. It is these applications that shall be forwarded to the National Freshman Scholarship Committee for final selection.
+
+Applications for the non-freshman scholarship categories (undergraduate, graduate, law, creative/performing arts, and financial aid) are also to be sent directly by the applicant to National JACL through the online form no later than Monday, April 1, 2024, 11:59 p.m. Hawaiian Standard Time (HST).
+
+All those applying to the National JACL Scholarship Program must be a youth/student or individual member of the JACL; a couple/family membership held by a parent does NOT meet this requirement. Applicants must be enrolled in school in Fall 2024 in order to be eligible for a scholarship. If a student has received two National scholarship awards previously, they are no longer eligible to apply as the limit is two national awards per person.
+
+For more information on the National JACL Scholarship Program, contact Scholarship Program Manager, Matthew Weisbly at scholarships@jacl.org
