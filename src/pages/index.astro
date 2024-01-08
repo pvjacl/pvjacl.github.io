@@ -2,11 +2,11 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Modal from "../components/Modal";
+import ButtonTriggerModal from "../components/ButtonTriggerModal";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
-// import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from 'astro:transitions';
 
 const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -23,7 +23,7 @@ const posts = (await getCollection("blog"))
         font-size: 2.5rem;
       }
     </style>
-    <!-- <ViewTransitions /> -->
+    <ViewTransitions />
   </head>
   <body>
     <Header title={SITE_TITLE} />
@@ -66,23 +66,23 @@ const posts = (await getCollection("blog"))
           }
         </ul>
       </section>
-    </main>
-    <Modal client:idle isOpen={false}>
-      <div>
-        <h3>Title goes here</h3>
-        <p>
-          This is where we can put any HTML to display in an interstitial, or a
-          text box that shows up over the webpage. turn isOpen={true} if you want
-          this to show up immediately when the page displays.
-        </p>
-        <ul>
-          <li>Any Valid HTML can be inserted here</li>
-          <li>This item can be as long as you like</li>
-          <li>You can include a photo, as below</li>
-        </ul>
-        <img src="/Remembrance-Gallery-Render-1.jpg" />
-      </div>
-    </Modal>
+      <ButtonTriggerModal client:idle btnText="Click to see an interstitial">
+        <div>
+          <h3>Interstitial dialog box</h3>
+          <p>
+            This is where we can put any HTML to display in an interstitial, or a
+            text box that shows up over the webpage. turn isOpen={true} if you want
+            this to show up immediately when the page displays.
+          </p>
+          <ul>
+            <li>Any Valid HTML can be inserted here</li>
+            <li>This item can be as long as you like</li>
+            <li>You can include a photo, as below</li>
+          </ul>
+          <img src="/Remembrance-Gallery-Render-1.jpg" />
+        </div>
+      </ButtonTriggerModal>
+      </main>
     <Footer />
     <style lang="scss">
       .recent-events {
