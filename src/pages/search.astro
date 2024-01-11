@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/SinglePage.astro";
+import { getCollection } from "astro:content";
+import SearchForm from '../components/SearchKeywordsForm';
+import type { PostDetail } from "../components/SearchKeywordsForm";
+
+const postDetails:PostDetail[] = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .filter((a) => (!a.data.offline))
+  .map(post => {
+    const { id, slug } = post;
+    const { title, description, keywords } = post.data;
+    return {
+      id,
+      slug,
+      title,
+      description,
+      keywords
+    }
+  })
+---
+
+<Layout
+  title="Search Keywords"
+  description="This page allows searching for various keywords for articles and updates"
+  keywords="search"
+  pubDate={new Date("January 10 2024")}
+>
+  <h5>Currently this only searches Chapter Updates</h5>
+	<SearchForm postDetails={postDetails} client:load />
+</Layout>

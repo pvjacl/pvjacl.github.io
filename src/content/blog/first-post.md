@@ -1,6 +1,7 @@
 ---
 title: 'The Remembrance Gallery Team'
 description: 'Work continues on the Remembrance Gallery'
+keywords: 'Remembrance Gallery Internment Camp Never Again'
 pubDate: 'Dec 20 2023'
 heroImage: '/blogAssets/2023_12_05_team.jpg'
 ---

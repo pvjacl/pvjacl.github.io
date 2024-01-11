@@ -13,8 +13,10 @@ type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
+const keywords = post.data.keywords.split(' ');
 ---
 
 <BlogPost {...post.data}>
 	<Content />
+	<p><strong>Keywords:</strong> {keywords.join(', ')}</p>
 </BlogPost>

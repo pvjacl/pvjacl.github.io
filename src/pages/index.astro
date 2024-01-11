@@ -2,7 +2,6 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import ButtonTriggerModal from "../components/ButtonTriggerModal";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
@@ -68,7 +67,7 @@ const posts = (await getCollection("blog"))
           }
         </ul>
       </section>
-      <ButtonTriggerModal client:idle btnText="Click to see an interstitial">
+      <!-- <ButtonTriggerModal client:idle btnText="Click to see an interstitial">
         <div>
           <h3>Interstitial dialog box</h3>
           <p>
@@ -83,7 +82,7 @@ const posts = (await getCollection("blog"))
           </ul>
           <img src="/Remembrance-Gallery-Render-1.jpg" />
         </div>
-      </ButtonTriggerModal>
+      </ButtonTriggerModal> -->
       </main>
     <Footer />
     <style lang="scss">

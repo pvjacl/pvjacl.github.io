@@ -1,0 +1,16 @@
+.search-keywords {
+  ul {
+    padding: 0;
+    margin-bottom: 0.5rem;
+  }
+  ul.posts > li:nth-child(2n) {
+    background-color: #dddddd;
+  }
+  li {
+    list-style-type: none;
+    margin-bottom: 0.4rem;
+    a {
+      color: black;
+    }
+  }
+}
