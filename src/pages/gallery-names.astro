@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/BlogPost.astro";
+import NamesTable from '../components/NamesTable'
+---
+<Layout
+  title="Puyallup Assembly Center Names"
+  description="These are the names of those incarcerated at the Puyallup Assembly Center in 1942"
+	keywords="Remembrance Gallery Incarceration Puyallup Fair family names"
+  pubDate={new Date("January 12")}
+>
+  <NamesTable client:load />
+</Layout>

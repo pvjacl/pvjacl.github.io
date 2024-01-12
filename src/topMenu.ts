@@ -26,14 +26,21 @@ export const menubar: MenuItemData[] = [
         src: '/remembrance-gallery',
         label: 'The Remembrance Gallery',
         children: []
-      },    
+      },
+      {
+        id: 'remGalleryNames',
+        isDropdown: false,
+        src: '/gallery-names',
+        label: 'Names in the Gallery',
+        children: []
+      },
       {
         id: 'remGalleryDonors',
         isDropdown: false,
         src: '/donors',
         label: 'Donors and Endorsements',
         children: []
-      },    
+      },
     ]
   },
   {
