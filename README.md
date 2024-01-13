@@ -1,12 +1,15 @@
-# Astro Starter Kit: Blog
+# Puyallup Valley JACL website
 
-```sh
-npm create astro@latest -- --template blog
-```
+This is the source code for the Puyallup Valley JACL main website. This site was bootstrapped from [the Astro JS](https://astro.build) website framework and compiles down to static HTML/CSS/Javascript and requires development tools to modify the website
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+## Required Development tools
+
+Modifying this website requires the following tools on any PC/Mac/Linux computer:
+
+* Complete installation of [Node JS](https://nodejs.org) including the NPM dependency library. Test by typing ```node --version``` into a terminal or command line.
+* A fairly modern version of [Git](https://git-scm.org), which might be installed by default on systems. Test by typing ```git --version``` into any terminal or command line.
+* A good code editor to change the code. [Microsoft's Visual Studio Code](https://code.visualstudio.com/Download) is free and available for Windows/Mac/Linux and many other OSes.
+
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
@@ -65,4 +68,4 @@ Check out [our documentation](https://docs.astro.build) or jump into our [Discor
 
 ## Credit
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+This website started with the theme based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).

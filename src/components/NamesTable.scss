@@ -1,0 +1,19 @@
+.names-table {
+  table {
+    margin:1rem 0;
+    border: 2px solid rgb(var(--gray));
+    padding-left:4px;
+  }
+  thead {
+    color: rgb(var(--gray));
+    text-decoration: underline;
+  }
+  input[type=radio] {
+    margin-right: 0.5rem;
+  }
+  .nameFilter {
+    margin-left:0.5rem;
+    border: 2px solid black;
+    padding: 0.3rem;
+  }
+}
