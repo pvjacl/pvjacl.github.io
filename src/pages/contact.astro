@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+	title="Contact the Puyallup Valley JACL"
+	description="Ways to contact the Puyalup Valley chapter of the Japanese American Citizens League"
+	keywords="Contact JACL National Japanese American Citizens League Injustice Heritage"
+	pubDate={new Date('January 14 2024')}
+>
+
+  <section>
+    <div>
+      <h4>Contact via Email</h4>
+      <p>Send us an email by clicking on the link below OR copy the address below and paste into your email client of choice.</p>
+      <address>
+        <a href="mailto:PuyallupValleyJACL@gmail.com?subject=Contact from the website">PuyallupValleyJACL@gmail.com</a>
+      </address>
+  
+    </div>
+    <div>
+      <h4>Contact via US Postal Service</h4>
+      <p>
+        Our Mailing address is:
+      </p>
+      <address>
+        P.O. Box 5323 <br/>
+        Kent, WA 98064
+      </address>
+    </div>
+  </section>
+</Layout>
+
+<style lang="scss">
+  section {
+    display:flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    div {
+      flex: 1;
+      text-align: center;
+      margin-bottom: 1rem;
+      p {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  @media (max-width: 840px) {
+    section {
+      display:block;
+      div {
+        text-align: left;
+
+      }
+    }
+  }
+</style>

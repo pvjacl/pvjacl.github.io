@@ -71,6 +71,13 @@ export const menubar: MenuItemData[] = [
         children: []
       },
       {
+        id: 'contactItem',
+        isDropdown: false,
+        src: '/contact',
+        label: 'Contact Us',
+        children: []
+      },
+      {
         id: 'joinUs',
         isDropdown: false,
         src: '/join',
