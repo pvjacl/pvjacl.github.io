@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import namesJson from "../names.json";
-import Modal from './Modal';
+import Modal from "./Modal";
 
-import './NamesTable.scss';
+import "./NamesTable.scss";
 
-const randomGroupSize = 20;
+const randomGroupSize = 10;
 
 // describes the structure of names.json
 type Name = {
@@ -16,29 +16,29 @@ type Name = {
   family_digits: string;
 };
 
-const sortByLast = (nameA:Name, nameB:Name) => {
+const sortByLast = (nameA: Name, nameB: Name) => {
   if (nameA.last_name < nameB.last_name) {
     return -1;
   } else if (nameA.last_name > nameB.last_name) {
     return 1;
   } else {
-    if (nameA.first_name < nameB.first_name) {
+    if (nameA.family_id < nameB.family_id) {
       return -1;
-    } else if (nameA.first_name > nameB.first_name) {
+    } else if (nameA.family_id > nameB.family_id) {
       return 1;
     }
     return 0;
   }
-}
+};
 
-const sortByFamilyId = (nameA:Name, nameB:Name) => {
+const sortByFamilyId = (nameA: Name, nameB: Name) => {
   if (nameA.family_id < nameB.family_id) {
     return -1;
   } else if (nameA.family_id > nameB.family_id) {
     return 1;
-  } 
+  }
   return 0;
-}
+};
 
 const namesSorted = namesJson.sort(sortByLast);
 
@@ -74,13 +74,12 @@ const radioGroup: RadData[] = [
   },
 ];
 
-
 // determines whether search string is in the name
 const searchName = (name: Name, searchString: string) => {
   const nameLower = `${name.last_name.toLowerCase()} ${name.first_name.toLowerCase()}`;
   const searchLower = searchString.toLowerCase();
   return nameLower.indexOf(searchLower) >= 0;
-}
+};
 
 const NamesTable = () => {
   const [show, SetShow] = useState(Show.random);
@@ -88,7 +87,7 @@ const NamesTable = () => {
   const [searchText, setSearchText] = useState("");
   const [familyCode, setFamilyCode] = useState("");
 
-  useEffect(() => {  
+  useEffect(() => {
     // this function runs every time that show or searchText values change
     switch (show) {
       case Show.random:
@@ -100,7 +99,9 @@ const NamesTable = () => {
           setNameList([]);
           break;
         }
-        const names = namesSorted.filter((name:Name) => searchName(name, searchText));
+        const names = namesSorted.filter((name: Name) =>
+          searchName(name, searchText)
+        );
         setNameList(names);
         break;
       case Show.allNames:
@@ -108,26 +109,43 @@ const NamesTable = () => {
         setNameList(namesSorted);
         break;
     }
-  }, [show, searchText])
-  
+  }, [show, searchText]);
+
   const familyModal = () => {
     if (familyCode) {
-      const familyNames = nameList.filter((name:Name) => (familyCode === name.family_digits)).sort(sortByFamilyId);
-      window.scrollTo(0,0);
+      const familyNames = nameList
+        .filter((name: Name) => familyCode === name.family_digits)
+        .sort(sortByFamilyId);
+      window.scrollTo(0, 0);
       return (
-        <Modal isOpen={true} hasCloseBtn={true} onClose={() => {setFamilyCode('')}}>
+        <Modal
+          isOpen={true}
+          hasCloseBtn={true}
+          onClose={() => {
+            setFamilyCode("");
+          }}
+        >
           <div className="modal-data">
             {familyNames.map((name, i) => {
               if (i === 0) {
                 return (
                   <div key={i}>
-                    <span className="modal-last-name">{name.mixed_case_last_name}, </span><span className="modal-first-name">{name.mixed_case_first_name}&nbsp;</span><span className="modal-family-id">{name.family_id}</span>
+                    <span className="modal-last-name">
+                      {name.mixed_case_last_name},{" "}
+                    </span>
+                    <span className="modal-first-name">
+                      {name.mixed_case_first_name}&nbsp;
+                    </span>
+                    <span className="modal-family-id">{name.family_id}</span>
                   </div>
                 );
               } else {
                 return (
-                  <div key={i} className="modal-first-name-only">{name.mixed_case_first_name}&nbsp;<span>{name.family_id}</span></div>
-                )
+                  <div key={i} className="modal-first-name-only">
+                    {name.mixed_case_first_name}&nbsp;
+                    <span>{name.family_id}</span>
+                  </div>
+                );
               }
             })}
           </div>
@@ -135,8 +153,8 @@ const NamesTable = () => {
       );
     }
     return null;
-  }
-  
+  };
+
   // Convert each name to HTML
   const nameToHtml = (name: Name) => (
     <tr key={`${name.last_name}_${name.first_name}_${name.family_id}`}>
@@ -144,7 +162,13 @@ const NamesTable = () => {
       <td>{name.mixed_case_first_name}</td>
       <td className="column-family-id">
         {name.family_id}
-        <img className="show-family-button" src="/family.svg" alt="family icon" title="Click to view entire family" onClick={() => setFamilyCode(name.family_digits)}/>
+        <img
+          className="show-family-button"
+          src="/family.svg"
+          alt="family icon"
+          title="Click to view entire family"
+          onClick={() => setFamilyCode(name.family_digits)}
+        />
       </td>
     </tr>
   );
@@ -171,7 +195,7 @@ const NamesTable = () => {
     };
 
     return (
-      <div  key={label}>
+      <div key={label}>
         <input
           type="radio"
           id={label}
@@ -207,7 +231,7 @@ const NamesTable = () => {
         <tbody>{renderTableBody()}</tbody>
       </table>
       {familyModal()}
-      <button onClick={() => window.scrollTo(0,0)}>Back to Top</button>
+      <button onClick={() => window.scrollTo(0, 0)}>Back to Top</button>
     </div>
   );
 };
