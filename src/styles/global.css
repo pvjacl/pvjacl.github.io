@@ -59,10 +59,10 @@ h6 {
 	line-height: 1.2;
 }
 h1 {
-	font-size: clamp(2.5em, 6vw, 3.052em);
+	font-size: clamp(2.5em, 6vw, 2.5em);
 }
 h2 {
-	font-size: clamp(2em, 5.2vw, 2.441em);
+	font-size: clamp(2em, 5.2vw, 2em);
 }
 h3 {
 	font-size: 1.953em;

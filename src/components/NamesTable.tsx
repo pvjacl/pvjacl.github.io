@@ -16,6 +16,7 @@ type Name = {
   family_digits: string;
 };
 
+// sorts list by last name first, then within the last name by family id
 const sortByLast = (nameA: Name, nameB: Name) => {
   if (nameA.last_name < nameB.last_name) {
     return -1;
@@ -42,6 +43,10 @@ const sortByFamilyId = (nameA: Name, nameB: Name) => {
 
 const namesSorted = namesJson.sort(sortByLast);
 
+const randomStartIndex = () => {
+  return Math.trunc(Math.random() * (namesSorted.length - randomGroupSize));
+}
+
 // The different ways we show our names table
 enum Show {
   allNames,
@@ -61,12 +66,12 @@ const radioGroup: RadData[] = [
   {
     label: "Random Group",
     value: Show.random,
-    comment: `- We show ${randomGroupSize} names from the list`,
+    comment: `- Show ${randomGroupSize} consecutive names from the list`,
   },
   {
     label: "Show All",
     value: Show.allNames,
-    comment: `- Show all ${namesSorted.length} names (this can take a while)`,
+    comment: `- Show all ${namesSorted.length} names from the start`,
   },
   {
     label: "Search for Name",
@@ -86,34 +91,31 @@ const NamesTable = () => {
   const [nameList, setNameList] = useState([] as Name[]);
   const [searchText, setSearchText] = useState("");
   const [familyCode, setFamilyCode] = useState("");
+  const [startIndex, setStartIndex] = useState(0);
+  const [ tableRows, setTableRows] = useState(0);
 
+  // runs once, only on the client
   useEffect(() => {
-    // this function runs every time that show or searchText values change
-    switch (show) {
-      case Show.random:
-        const start = Math.random() * (namesSorted.length - randomGroupSize);
-        setNameList(namesSorted.slice(start, start + randomGroupSize));
-        break;
-      case Show.search:
-        if (searchText.length === 0) {
-          setNameList([]);
-          break;
-        }
+    setTableRows(randomGroupSize);
+    setStartIndex(randomStartIndex());
+  },[]);
+  
+  useEffect(() => {
+    if (show === Show.search) {
+      if (searchText.length === 0) {
+        setNameList([]);
+      } else {
         const names = namesSorted.filter((name: Name) =>
-          searchName(name, searchText)
-        );
-        setNameList(names);
-        break;
-      case Show.allNames:
-      default:
-        setNameList(namesSorted);
-        break;
+        searchName(name, searchText)
+      );
+      setNameList(names);
+      }
     }
-  }, [show, searchText]);
+  }, [searchText, show])
 
   const familyModal = () => {
     if (familyCode) {
-      const familyNames = nameList
+      const familyNames = namesSorted
         .filter((name: Name) => familyCode === name.family_digits)
         .sort(sortByFamilyId);
       window.scrollTo(0, 0);
@@ -156,8 +158,9 @@ const NamesTable = () => {
   };
 
   // Convert each name to HTML
-  const nameToHtml = (name: Name) => (
+  const nameToHtml = (name: Name, i:number) => (
     <tr key={`${name.last_name}_${name.first_name}_${name.family_id}`}>
+      <td className="table-name-index">{i + startIndex + 1}</td>
       <td>{name.mixed_case_last_name}</td>
       <td>{name.mixed_case_first_name}</td>
       <td className="column-family-id">
@@ -187,6 +190,7 @@ const NamesTable = () => {
             onChange={(e) => {
               if (show !== Show.search) SetShow(Show.search);
               setSearchText(e.currentTarget.value);
+              setStartIndex(0);
             }}
             placeholder="Enter name to search for"
           />
@@ -204,17 +208,20 @@ const NamesTable = () => {
           checked={show === value}
           onChange={() => {
             SetShow(value);
+            setStartIndex(value === Show.random ? randomStartIndex() : 0);
           }}
         />
-        <label htmlFor={label}>{label}</label>
-        <span> {comment} </span>
+        <label htmlFor={label}>{label}<span> {comment} </span></label>
+        
         {renderFilter()}
       </div>
     );
   };
 
   const renderTableBody = () => {
-    return nameList.map(nameToHtml);
+    const theNames = show === Show.search ? nameList : namesSorted;
+    const namesToRender = theNames.slice(startIndex, startIndex + tableRows);
+    return namesToRender.map(nameToHtml);
   };
 
   return (
@@ -223,6 +230,7 @@ const NamesTable = () => {
       <table>
         <thead>
           <tr>
+            <th></th>
             <th>Family Name</th>
             <th>First Name</th>
             <th className="column-family-id">Family ID</th>
@@ -231,7 +239,20 @@ const NamesTable = () => {
         <tbody>{renderTableBody()}</tbody>
       </table>
       {familyModal()}
-      <button onClick={() => window.scrollTo(0, 0)}>Back to Top</button>
+      <div className="flexy">
+        <button 
+          onClick={() => setStartIndex(Math.max(startIndex - tableRows, 0))}
+          disabled={startIndex === 0 ? true: false}
+        >
+          Previous {tableRows} names
+        </button>
+        <button 
+          onClick={() => setStartIndex(Math.min(startIndex + tableRows, show === Show.search ? nameList.length - tableRows : namesSorted.length-tableRows))}
+          disabled={show === Show.search ? startIndex + tableRows >= nameList.length : startIndex + tableRows >= namesSorted.length }
+        >
+          Next {tableRows} names
+        </button>
+      </div>
     </div>
   );
 };

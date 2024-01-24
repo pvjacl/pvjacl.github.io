@@ -7,6 +7,9 @@
   thead {
     color: rgb(var(--gray));
     text-decoration: underline;
+    th {
+      font-size: 1rem;
+    }
   }
   .column-family-id {
     width: 8rem;
@@ -40,5 +43,18 @@
     &:hover {
       background-color: rgb(var(--black));
     }
+  }
+  .table-name-index {
+    margin-right: 0.5em;
+    color: rgb(var(--gray));
+    font-size: 1rem;
+  }
+  button:disabled {
+    cursor: not-allowed;
+    color: rgb(var(--black));
+  }
+  .flexy {
+    display: flex;
+    justify-content: space-between;
   }
 }
