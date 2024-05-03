@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
 import BambooChart from "../components/BambooChart";
+import DonateLinks from "../components/DonateLinks.astro";
 ---
 
 <Layout
@@ -56,37 +57,7 @@ import BambooChart from "../components/BambooChart";
 			<BambooChart width={300} height={540} amount={1700000} client:visible />
 		</div>
 	</div>
-	<div class="side-by-side">
-		<div>
-			<h5>Donate via Credit Card</h3>
-			<p>
-				Square is a secure credit card processor often used by online vendors.
-				<a href="https://puyallup-valley-jacl.square.site/">Donate using a credit card with Square</a>
-			</p>
-			<img class="QR-code" src="/Square-donation.jpg" alt="QR code for Square website"/>
-	
-		</div>
-		<div>
-			<h5>Donate via Venmo </h3>
-			<p>
-				We accept donations through <a href="https://venmo.com/">Venmo</a>. Find us at @PuyallupValleyJACL
-				<img class="QR-code" src="/Venmo-URL.jpg" alt="QR code for Venmo" />
-			</p>
-		</div>
-	</div>
-	<h5>Donate by check</h5>
-	<ul>
-		<li>Make checks payable to <strong>Puyallup Valley JACL</strong> with the memo "Remembrance"</li>
-		<li>You may add <strong>"In memory of ...."</strong> and/or <strong>"In honor of ..."</strong></li>
-	</ul>
-	
-	<h5>Send your check to</h5>
-	<p>
-		Puyallup Valley JACL<br />
-		P.O. Box 5323<br />
-		Kent, WA 98064
-	</p>
-	
+	<DonateLinks />
 	
 </Layout>
 

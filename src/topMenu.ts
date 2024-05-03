@@ -85,6 +85,13 @@ export const menubar: MenuItemData[] = [
         children: []
       },
       {
+        id: 'donateItem',
+        isDropdown: false,
+        src: '/donate-to-jacl',
+        label: 'Donate To Us',
+        children: []
+      },
+      {
         id: 'officers',
         isDropdown: false,
         src: '/officers',

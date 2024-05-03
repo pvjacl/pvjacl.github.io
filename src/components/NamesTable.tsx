@@ -113,6 +113,20 @@ const NamesTable = () => {
     }
   }, [searchText, show])
 
+  const tableEnd = ():number => {
+    if (show === Show.search) {
+      return Math.min(nameList.length, startIndex + tableRows);
+    }
+    return Math.min(namesSorted.length, startIndex + tableRows);
+  }
+
+  const listEnd = (): number => {
+    if (show === Show.search) {
+      return nameList.length;
+    }
+    return namesSorted.length;
+  }
+
   const familyModal = () => {
     if (familyCode) {
       const familyNames = namesSorted
@@ -246,9 +260,12 @@ const NamesTable = () => {
         >
           Previous {tableRows} names
         </button>
+        <span>
+          {startIndex + 1} to {tableEnd()} of {listEnd()}
+        </span>
         <button 
-          onClick={() => setStartIndex(Math.min(startIndex + tableRows, show === Show.search ? nameList.length - tableRows : namesSorted.length-tableRows))}
-          disabled={show === Show.search ? startIndex + tableRows >= nameList.length : startIndex + tableRows >= namesSorted.length }
+          onClick={() => setStartIndex(Math.min(startIndex + tableRows, listEnd() - tableRows))}
+          disabled={startIndex + tableRows >= listEnd() }
         >
           Next {tableRows} names
         </button>
