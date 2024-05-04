@@ -25,7 +25,7 @@ import DonateLinks from "../components/DonateLinks.astro";
     original confinement site. The Gallery will provide comprehensive education
     using the latest techniques in immersive and interactive media design that
     will bring to life personal stories and in-depth content. The names of over
-    7,600 who were wrongfully imprisoned on these fairgrounds will be
+    7,500 who were wrongfully imprisoned on these fairgrounds will be
     permanently displayed​
   </p>
 
@@ -51,13 +51,13 @@ import DonateLinks from "../components/DonateLinks.astro";
 	<h3>Help us create the Remembrance Gallery</h3>
 	<div class="side-by-side">
 		<div>
-			The fundraising goal is $2 million with a completion date of May 2024.
+			The fundraising goal is $2 million with a completion date of August 30, 2024.
 		</div>
 		<div class="contain-bamboo-chart">
-			<BambooChart width={300} height={540} amount={1700000} client:visible />
+			<BambooChart width={300} height={540} amount={1800000} client:visible />
 		</div>
 	</div>
-	<DonateLinks />
+	<DonateLinks allowInMemory={false} />
 	
 </Layout>
 

@@ -1,3 +1,9 @@
+---
+const { allowInMemory } = Astro.props;
+
+const inMemoryInnerHtml = 'You may add <strong>"In memory of ...."</strong> and/or <strong>"In honor of ..."</strong>';
+---
+
 <div class="side-by-side">
   <div>
     <h5>Donate via Credit Card</h3>
@@ -19,7 +25,7 @@
 <h5>Donate by check</h5>
 <ul>
   <li>Make checks payable to <strong>Puyallup Valley JACL</strong> with the memo "Remembrance"</li>
-  <li>You may add <strong>"In memory of ...."</strong> and/or <strong>"In honor of ..."</strong></li>
+  {allowInMemory ? <li>You may add <strong>"In memory of ...."</strong> and/or <strong>"In honor of ..."</strong></li> : null}
 </ul>
 
 <h5>Send your check to</h5>
