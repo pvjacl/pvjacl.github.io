@@ -1,12 +1,22 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
 
+
 const donors = [
 	"The Yotsuuye Family",
 	"Tsuyoshi and Yayoi Inouye Family",
 	"Lyla Tsuji Anderson",
 	"Liz and Mike Dunbar",
-	"Sheldon Arakaki"
+	"Bill Driscoll and Lisa Hoffman",
+	"Sheldon Arakaki",
+	"Melvin Inouye",
+	"John B Meister",
+	"The Okamoto Family",
+	"Edwin Shigihara",
+	"Barbara and David Asahara",
+	"Jan and Glenn Gokami",
+	"Eileen Yamada Lamphere",
+	"Sharon and David Seymour"
 ];
 type OrgInfo  = {
 	name: string;
@@ -26,12 +36,20 @@ const organizations:OrgInfo[] = [
 		width: "170px"
 	},
 	{
+		name: "Pierce County",
+		icon: "Pierce_County_Logo.png"
+	},
+	{
 		name: "The State of Washington",
 		icon: "Seal_of_Washington.png"
 	},
 	{
 		name: "Bill and Melinda Gates Foundation",
 		icon: "Gates-Foundation.png"
+	},
+	{
+		name: "The Masto Foundation",
+		icon: "mastofoundation+logo.jpg"
 	},
 	{
 		name: "Japanese American Citizens League (Seattle Chapter)",
@@ -70,7 +88,7 @@ const endorsements = [
 	title="Donors and Endorsements"
 	description="Leadership donors, organizations and endorsements"
 	keywords='Donors Supporting Organizations Endorsements'
-	pubDate={new Date('December 2023')}
+	pubDate={new Date('May 11, 2024')}
 >
 <h2>
 	Leadership Donors

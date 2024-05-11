@@ -52,7 +52,11 @@ import { menubar } from "../topMenu";
       </ul>
     </div>
     <div class="social-links">
-      <a href="https://www.facebook.com/puyallupvalleyjacl" target="_blank">
+      <a href="https://www.instagram.com/puyallup_valley_jacl/" target="_blank" title="Go to Puyallup Valley JACL's Instagram page">
+        <span class="sr-only">Go to Puyallup Valley JACL's Instagram page</span>
+        <img src="Instagram-logo.png" alt="Instagram logo" height="40" width="40"/>
+      </a>
+      <a href="https://www.facebook.com/puyallupvalleyjacl" target="_blank" title="Go to Puyallup Valley JACL's Facebook page">
         <span class="sr-only">Go to Puyallup Valley JACL's Facebook page</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -159,6 +163,7 @@ import { menubar } from "../topMenu";
   .social-links,
   .social-links a {
     display: flex;
+    gap: 0.5em;
   }
 
   @media (max-width: 840px) {

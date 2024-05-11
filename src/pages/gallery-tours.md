@@ -1,0 +1,15 @@
+---
+title: 'Gallery Tours and Presentations'
+description: 'Private Tours and presentations '
+pubDate: May 11, 2024
+layout: ../layouts/SinglePage.astro
+---
+
+Please contact us if you are interested in:
+
+* A private group tour
+* A school or classroom tour
+* A classroom presentation on the U. S ConcentrationCamps during WWII
+*  Attending a future Teacher Workshop.
+
+Email us at PuyallupValleyJACL@gmail.com
