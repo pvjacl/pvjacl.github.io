@@ -2,25 +2,30 @@
 import Layout from '../layouts/BlogPost.astro';
 import Slider from '../components/Slider'
 import type { CarouselItem } from '../components/Slider'
+
+const assetFolder =  (name: string) => {
+  return `galleryAssets/${name}`;
+} 
+
 const carouselItems: CarouselItem[] = [
   {
-    imageUrl: "gallery/Before-Pic-1.jpg",
+    imageUrl: assetFolder("Before1.jpg"),
     caption: "The allotted space under the Puyallup Fair Grandstands in 2021"
   },
   {
-    imageUrl: "gallery/Before-Pic-2.jpg",
+    imageUrl: assetFolder("Before2.jpg"),
     caption: "Another look at the space in 2021"
   },
   {
-    imageUrl: "gallery/Site-May-2024.jpg",
+    imageUrl: assetFolder("May2024.jpg"),
     caption: "Beginning of construction - May 2024"
   },
   {
-    imageUrl: "gallery/Co-Chairs-Leadership-Team.jpg",
+    imageUrl: assetFolder("Co-Chairs-Leadership-Team.jpg"),
     caption: "Gallery Honorary Co-Chairs & Leadership Team standing in front of the Tsutakawa Sculpture at the Fair: Left to Right – Bill Weyerhaeuser (Co-Chair), Liz Dunbar (Fundraising Lead), Eileen Yamada Lamphere (Pres PV JACL), Frank & Penny Fukui (Co-Chairs), Sharon Sobie Seymour (Project Manager)"
   },
   {
-    imageUrl: "gallery/Gallery-Team.jpg",
+    imageUrl: assetFolder("Gallery-Team.jpg"),
     caption: "Barb Mizoguchi Asahara, Jim Yamaguchi, Sharon Sobie Seymour, Penny Fukui, Frank Fukui, Eileen Yamada Lamphere, Liz Dunbar."
   },
 ];
