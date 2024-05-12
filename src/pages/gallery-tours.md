@@ -12,4 +12,4 @@ Please contact us if you are interested in:
 * A classroom presentation on the U. S ConcentrationCamps during WWII
 *  Attending a future Teacher Workshop.
 
-Email us at PuyallupValleyJACL@gmail.com
+Email us at [PuyallupValleyJACL@gmail.com](mailto:PuyallupValleyJACL@gmail.com?subject=Tours)
