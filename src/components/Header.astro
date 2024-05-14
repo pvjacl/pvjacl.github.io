@@ -79,8 +79,9 @@ import { menubar } from "../topMenu";
   header {
     margin: 0;
     padding: 0 1em;
-    background: white;
-    box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		background: rgb(var(--navigation-background), 10%);
+    box-shadow: 0 2px 8px rgba(var(--navigation), 5%);
+    border-bottom: 2px solid rgb(var(--navigation-background), 100%);
   }
   h2 {
     margin: 0;
@@ -106,7 +107,7 @@ import { menubar } from "../topMenu";
   }
   .top-link {
     padding: 1em 0 0.5rem 0;
-    color: rgb(var(--gray));
+    color: var(--navigation);
     border-bottom: 4px solid transparent;
     text-decoration: none;
     font-size: clamp(15px, 2.4vw, 20px);
@@ -127,7 +128,7 @@ import { menubar } from "../topMenu";
   .menuItem a {
     text-decoration: none;
     font-weight: 700;
-    color: rgb(var(--gray));
+    color: var(--navigation);
    }
   .menuItem a:hover {
     text-decoration: underline;
@@ -145,7 +146,7 @@ import { menubar } from "../topMenu";
     left: -1000px;
     position: absolute;
     border: 1px solid white;
-    background-color: rgb(var(--gray));
+    background-color: var(--navigation);
     padding: 0;
     z-index: 100;
     li {
