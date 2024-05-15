@@ -28,6 +28,13 @@ export const menubar: MenuItemData[] = [
         children: []
       },
       {
+        id: 'remGalleryEvents',
+        isDropdown: false,
+        src: '/gallery-events',
+        label: 'Gallery Events',
+        children: []
+      },
+      {
         id: 'remGalleryTours',
         isDropdown: false,
         src: '/gallery-tours',
