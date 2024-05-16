@@ -27,6 +27,8 @@ const galleryEvents = defineCollection({
 		keywords: z.string(),
 		// Transform string to Date object
 		pubDate: z.coerce.date(),
+		// Transform string to Date object
+		eventDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
 		offline: z.boolean().optional(),
