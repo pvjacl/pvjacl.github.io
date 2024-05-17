@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 import SearchForm from '../components/SearchKeywordsForm';
 import type { PostDetail } from "../components/SearchKeywordsForm";
 
-const postDetails:PostDetail[] = (await getCollection("blog"))
+const postDetails:PostDetail[] = (await getCollection("galleryEvents"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .filter((a) => (!a.data.offline))
   .map(post => {

@@ -19,21 +19,20 @@ const PastAndUpcomingEvents = ({eventInfos}: Props) => {
   const [ pastEvents, setPastEvents] = useState([] as EventInfo[]);
 
   useEffect(() => {
-    const today = new Date().getTime();
-    console.log('today time is', today);
+    // today's date set at midnight
+    const today = new Date().setHours(0, 0, 0, 0);
     eventInfos.forEach(info => {
       console.log(info.date);
     })
-    const upcoming = eventInfos.filter((info) => info.date > today);
+    const upcoming = eventInfos.filter((info) => info.date >= today).reverse();
     setUpcomingEvents(upcoming);
-    setPastEvents(eventInfos.filter((info) => info.date <= today));
+    setPastEvents(eventInfos.filter((info) => info.date < today));
   }, []);
 
   const renderEvents = (listTitle: string, eventList: EventInfo[], fUpcoming: boolean ) => {
 
     if (eventList.length === 0) return;
     const classList = fUpcoming ? "eventList emphasize-first" : "eventList";
-    console.log(eventList.length, fUpcoming);
 
     return (
       <div className={classList}>

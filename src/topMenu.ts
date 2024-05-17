@@ -28,6 +28,20 @@ export const menubar: MenuItemData[] = [
         children: []
       },
       {
+        id: 'remGalleryNames',
+        isDropdown: false,
+        src: '/gallery-names',
+        label: 'Names in the Gallery',
+        children: []
+      },
+      {
+        id: 'remGalleryDonors',
+        isDropdown: false,
+        src: '/donors',
+        label: 'Donors and Endorsements',
+        children: []
+      },
+      {
         id: 'remGalleryEvents',
         isDropdown: false,
         src: '/gallery-events',
@@ -42,17 +56,10 @@ export const menubar: MenuItemData[] = [
         children: []
       },
       {
-        id: 'remGalleryNames',
+        id: 'remGalleryTeam',
         isDropdown: false,
-        src: '/gallery-names',
-        label: 'Names in the Gallery',
-        children: []
-      },
-      {
-        id: 'remGalleryDonors',
-        isDropdown: false,
-        src: '/donors',
-        label: 'Donors and Endorsements',
+        src: '/gallery-team',
+        label: 'Gallery Team',
         children: []
       },
     ]
