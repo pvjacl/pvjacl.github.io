@@ -1,0 +1,31 @@
+---
+import Layout from '@layouts/SinglePage.astro';
+import { getCollection } from 'astro:content';
+import PastAndUpcomingEvents from '@components/PastAndUpcomingEvents';
+import type { EventInfo } from '@components/PastAndUpcomingEvents';
+
+const posts = (await getCollection('galleryEvents'))
+  .sort(	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+	)
+	.filter((a) => (!a.data.offline));
+
+const eventInfos = posts.map(post => (
+  {
+    date: post.data.eventDate.getTime(),
+    slug: post.slug,
+    imgSrc: post.data.heroImage ? post.data.heroImage.src : null,
+    title: post.data.title
+  } as EventInfo
+));
+
+---
+
+<Layout
+	title="Gallery Events"
+	description="Scheduled Events for the Remembrance Gallery"
+	keywords='Remembrance Gallery Upcoming Events'
+	pubDate={new Date('May 15, 2024')}
+>
+  <PastAndUpcomingEvents eventInfos={eventInfos} client:load />
+</Layout>
+

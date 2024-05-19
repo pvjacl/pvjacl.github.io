@@ -22,7 +22,7 @@ const { allowInMemory } = Astro.props;
 </div>
 <h5>Donate by check</h5>
 <ul>
-  <li>Make checks payable to <strong>Puyallup Valley JACL</strong> with the memo "Remembrance"</li>
+  <li>Make checks payable to <strong>Puyallup Valley JACL</strong> {allowInMemory ? ' ' : <span> with the memo "Remembrance"</span>} </li>
   {allowInMemory ? <li>You may add <strong>"In memory of ...."</strong> and/or <strong>"In honor of ..."</strong></li> : null}
 </ul>
 

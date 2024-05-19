@@ -2,7 +2,7 @@
 title: 'Profound Acts of Kindness'
 description: ' There were many people in the community who lent a hand to incarcerated Japanese Americans.'
 pubDate: May 15 2024
-layout: ../../layouts/SinglePage.astro
+layout: '@layouts/SinglePage.astro'
 ---
 Following the signing of Executive Order 9066, while many people took advantage of the soon-to-be incarcerated Japanese and 
 Japanese Americans; however, there were many people in the community who lent a hand. 

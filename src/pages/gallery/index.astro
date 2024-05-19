@@ -1,0 +1,87 @@
+---
+import Layout from "@layouts/SinglePage.astro";
+import BambooChart from "@components/BambooChart";
+import DonateLinks from "@components/DonateLinks.astro";
+---
+
+<Layout
+  title="The Remembrance Gallery"
+  description="The Remembrance Gallery in the Washington State Fair in Puyallup will encourage an inclusive understanding of the wrongful incarceration of 125,000 Japanese and Japanese Americans in the United States during WWII"
+	keywords="Remembrance Gallery Incarceration Puyallup Fair Grandstands Donate Fundraising Venmo Credit card checks"
+  pubDate={new Date("December 2023")}
+>
+  <img
+    src="/Remembrance-Gallery-Render-2.jpg"
+    alt="A rendering of the Remembrance Gallery"
+  />
+
+  <p>
+    The Puyallup Valley Chapter of the Japanese American Citizens League (JACL)
+    is building the "Puyallup Assembly Center" Remembrance Gallery. It will
+    encourage an inclusive understanding of the wrongful incarceration of
+    125,000 Japanese and Japanese Americans in the United States during WWII.
+    The Washington State Fair is providing us with this opportunity to build a
+    permanent historic exhibit inside the grandstand, which is part of the
+    original confinement site (<a href="/history/assembly-history">history of the Pacific Assembly Center</a>). The Gallery will provide comprehensive education
+    using the latest techniques in immersive and interactive media design that
+    will bring to life personal stories and in-depth content. The names of over
+    7,500 who were wrongfully imprisoned on these fairgrounds will be
+    permanently displayed​.
+  </p>
+
+  <img
+    src="/Remembrance-Gallery-Render-1.jpg"
+    alt="Another rendering of The Remembrance Gallery"
+  />
+
+  <p>
+    The Gallery will encompass the effects of incarceration throughout the
+    state, including those Nikkei who were not removed and non-Japanese
+    residents. The "Puyallup Assembly Center” will be used as a reflection of
+    other assembly centers, and the ten permanent camps. The stories shared will
+    reflect the specific but common aspects of incarceration.
+  </p>
+  <p>
+    The Gallery will serve as a visual reminder of what happened in our past and
+    will help highlight the social injustices which resulted from xenophobia,
+    prejudice, and wartime hysteria, and allow comparisons to those being denied
+    justice today.
+  </p>
+
+  <h3>History of the Puyallup Assembly Center</h3>
+  <ul>
+    <li><a href="/history/assembly-history/">A Brief History of the Puyallup Assembly Center</a></li>
+    <li><a href="/history/gallery-acts-of-kindness/">Notable acts of kindess toward incarcerated Japanese Americans</a></li>
+    <li><a href="/history/harmony-sculpture/">Harmony, the memorial sculpture near the Remembrance Gallery</a></li>
+    <li><a href="/history/the-silent-fair/">The Silent Fair is a video told through recollections of individuals who lived through incarceration</a></li>
+  </ul>
+
+	<h3>Help us create the Remembrance Gallery</h3>
+	<div class="side-by-side">
+		<div>
+			The fundraising goal is $2 million with a completion date of August 30, 2024.
+		</div>
+		<div class="contain-bamboo-chart">
+			<BambooChart width={300} height={540} amount={1800000} client:visible />
+		</div>
+	</div>
+	<DonateLinks allowInMemory={false} />
+	
+</Layout>
+
+<style lang="scss">
+  .side-by-side {
+    display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+		.QR-code {
+			max-width: 180px;		
+		}
+		div {
+			width: 330px;
+		}
+		.contain-bamboo-chart {
+			min-height: 610px;
+		}
+  }
+</style>

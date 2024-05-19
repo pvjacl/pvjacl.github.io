@@ -23,42 +23,42 @@ export const menubar: MenuItemData[] = [
       {
         id: 'remGalleryItem',
         isDropdown: false,
-        src: '/remembrance-gallery',
+        src: '/gallery/',
         label: 'The Remembrance Gallery',
         children: []
       },
       {
         id: 'remGalleryNames',
         isDropdown: false,
-        src: '/gallery-names',
+        src: '/gallery/gallery-names',
         label: 'Names in the Gallery',
         children: []
       },
       {
         id: 'remGalleryDonors',
         isDropdown: false,
-        src: '/donors',
+        src: '/gallery/donors',
         label: 'Donors and Endorsements',
         children: []
       },
       {
         id: 'remGalleryEvents',
         isDropdown: false,
-        src: '/gallery-events',
+        src: '/gallery/gallery-events',
         label: 'Gallery Events',
         children: []
       },
       {
         id: 'remGalleryTours',
         isDropdown: false,
-        src: '/gallery-tours',
+        src: '/gallery/gallery-tours',
         label: 'Gallery Tours',
         children: []
       },
       {
         id: 'remGalleryTeam',
         isDropdown: false,
-        src: '/gallery-team',
+        src: '/gallery/gallery-team',
         label: 'Gallery Team',
         children: []
       },

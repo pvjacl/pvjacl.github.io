@@ -2,7 +2,7 @@
 title: 'The Puyallup Assembly Center'
 description: 'Over 7500 Japanese and Japanese Americans were incarcerated behind barbed wire fencing on the Puyallup Fairgrounds, now known as the Washington State Fairgrounds.'
 pubDate: Dec 8 2023
-layout: ../../layouts/SinglePage.astro
+layout: '@layouts/SinglePage.astro'
 ---
 President Franklin D. Roosevelt signed Executive Order 9066 on February 19, 1942. This order allowed the military to create exclusion 
 zones to remove all people it chose, thus all Japanese and Japanese Americans were forced from the West Coast and other designated 
