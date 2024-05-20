@@ -5,7 +5,7 @@ import PastAndUpcomingEvents from '@components/PastAndUpcomingEvents';
 import type { EventInfo } from '@components/PastAndUpcomingEvents';
 
 const posts = (await getCollection('galleryEvents'))
-  .sort(	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  .sort(	(a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf()
 	)
 	.filter((a) => (!a.data.offline));
 

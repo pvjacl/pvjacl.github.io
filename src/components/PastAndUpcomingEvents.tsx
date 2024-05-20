@@ -21,10 +21,7 @@ const PastAndUpcomingEvents = ({eventInfos}: Props) => {
   useEffect(() => {
     // today's date set at midnight
     const today = new Date().setHours(0, 0, 0, 0);
-    eventInfos.forEach(info => {
-      console.log(info.date);
-    })
-    const upcoming = eventInfos.filter((info) => info.date >= today).reverse();
+    const upcoming = eventInfos.filter((info) => info.date >= today);
     setUpcomingEvents(upcoming);
     setPastEvents(eventInfos.filter((info) => info.date < today));
   }, []);
@@ -33,12 +30,13 @@ const PastAndUpcomingEvents = ({eventInfos}: Props) => {
 
     if (eventList.length === 0) return;
     const classList = fUpcoming ? "eventList emphasize-first" : "eventList";
+    const sortedList = fUpcoming ? eventList : eventList.concat().reverse();
 
     return (
       <div className={classList}>
       <h2>{listTitle}</h2>
       <ul>
-        {eventList.map((info) => {
+        {sortedList.map((info) => {
           let dateTime = new Date()
           dateTime.setTime(info.date); 
           return (

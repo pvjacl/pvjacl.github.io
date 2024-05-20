@@ -85,13 +85,6 @@ export const menubar: MenuItemData[] = [
         children: []
       },
       {
-        id: 'aboutMission',
-        isDropdown: false,
-        src: '/about#mission',
-        label: 'Our Mission',
-        children: []
-      },
-      {
         id: 'contactItem',
         isDropdown: false,
         src: '/contact',

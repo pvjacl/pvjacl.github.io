@@ -1,35 +1,41 @@
 ---
 import Layout from '@layouts/SinglePage.astro';
-import Slider from '@components/Slider'
-import type { CarouselItem } from '@components/Slider'
-
-const assetFolder =  (name: string) => {
-  return `/galleryAssets/${name}`;
-} 
-
-const carouselItems: CarouselItem[] = [
-  {
-    imageUrl: assetFolder("Co-Chairs-Leadership-Team.jpg"),
-    caption: "Gallery Honorary Co-Chairs & Leadership Team standing in front of the Tsutakawa Sculpture at the Fair: Left to Right – Bill Weyerhaeuser (Co-Chair), Liz Dunbar (Fundraising Lead), Eileen Yamada Lamphere (Pres PV JACL), Frank & Penny Fukui (Co-Chairs), Sharon Sobie Seymour (Project Manager)"
-  },
-  {
-    imageUrl: assetFolder("Gallery-Team.jpg"),
-    caption: "Barb Mizoguchi Asahara, Jim Yamaguchi, Sharon Sobie Seymour, Penny Fukui, Frank Fukui, Eileen Yamada Lamphere, Liz Dunbar."
-  },
-  {
-    imageUrl: assetFolder("Construction-Team.jpg"),
-    caption: ""
-  },
-];
+import ImgDescription from '@components/ImgDescription.astro';
 ---
 
 <Layout
-	title="The Team and Construction Process"
+	title="Leadership Team and Construction Crew"
 	description=""
 	keywords=""
 	pubDate={new Date('May 11 2024')}
 >
 
-<Slider items={carouselItems} client:load />
+<h3>The Leadership Committee</h3>
+<p>Our Leadership Committee consists of</p> 
+<ul>
+  <li>Eileen Yamada Lamphere (President of Puyallup Valley JACL)</li>
+  <li>Liz Dunbar (Fundraising Lead) Sharon Sobie Seymour (Project Manager)</li>
+  <li>Barb Mizoguchi Asahara (Design Consultant)</li>
+</ul>
+<img src="/Leadership-Committee.jpg" alt="Photo of Leadership Committee" />
+<ImgDescription>One of many planning meetings</ImgDescription>
 
+<img src="/Co-Chairs-Leadership-Team.jpg" alt="Co chairs with the leadership committee" />
+<ImgDescription>
+  Our Honorary Co-Chairs include, Bill Weyerhaeuser and Frank and Penny Fukui
+</ImgDescription>
+
+<h3>The Building Team</h3>
+
+<p>We have 5 imaginative and talented vendors helping to create the Remembrance Gallery</p>
+<ul>
+  <li>Belle & Wissel (B&W)</li>
+  <li>Mountain Construction (MT)</li>
+  <li>Blackmouth Design (BMO)</li>
+  <li>Imagine Visual Service (IVS)</li>
+  <li>Integrity Networks (IN)</li>
+  <li>Jill Randerson Vendor Manager (VM)</li>
+</ul>
+<img src="/galleryAssets/Construction-Team.jpg" alt="The Construction Team" />
+<ImgDescription>Left to Right front row: Jill Randerson (Vendor Mgn), Alley Kloba (IVS), Ryan Gilchrist (IVS), Eileen Yamada Lamphere (JACL Pres), Sharon Sobie Seymour (Project Mgn)</ImgDescription>
 </Layout>
