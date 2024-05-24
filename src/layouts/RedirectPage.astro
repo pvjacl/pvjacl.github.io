@@ -1,0 +1,52 @@
+---
+import Redirect from '@components/Redirect';
+const { redirectUrl, redirectTitle } = Astro.props;
+---
+
+<!DOCTYPE html />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Redirect to { redirectTitle } | Puyallup Valley JACL</title>
+    <!-- Simple redirect to the current actual page -->
+  </head>
+  <body>
+    <Redirect url={redirectUrl} client:only />
+    <!-- This page only shows up when JavaScript is turned off somehow -->
+    <h1>Redirect</h1>
+    <h3>Please press the button below to go to {redirectTitle}</h3>
+    <p>
+      <a href={redirectUrl}>Redirection to {redirectTitle}</a>
+    </p>
+    <noscript>
+      <p>This page only shows up when JavaScript is turned off. You would normally be forwarded to the correct page</p>
+    </noscript>
+  </body>
+</html>
+
+<style is:global>
+  body {
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    max-width: 600px;
+    margin: auto;
+  }
+  a {
+    margin: 2rem;
+    padding: 1rem 1.5rem;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 1rem;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+  }
+  h3 {
+    margin: 1rem 0;
+  }
+  noscript p {
+    margin: 1rem 0;
+    color: red;
+  }
+</style>
