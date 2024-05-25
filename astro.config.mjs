@@ -13,5 +13,10 @@ export default defineConfig({
     }), 
     react()
   ],
+  redirects: {
+    '/redirects/gallery-names': '/gallery/gallery-names',
+    '/redirects/gallery-donate': '/gallery/gallery-donate',
+    '/redirects/gallery-tours': '/gallery/gallery-tours'
+  },
   outDir: './docs'
 });

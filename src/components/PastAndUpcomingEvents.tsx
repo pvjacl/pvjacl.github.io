@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 import './PastAndUpcomingEvents.scss';
 
 export type EventInfo = {
-  date: number;
+  date: number; // event date in milliseconds (Unix)
+  pubDate: number; // event date in milliseconds (Unix)
   slug: string;
   imgSrc: string | undefined;
   title: string;
@@ -21,7 +22,7 @@ const PastAndUpcomingEvents = ({eventInfos}: Props) => {
   useEffect(() => {
     // today's date set at midnight
     const today = new Date().setHours(0, 0, 0, 0);
-    const upcoming = eventInfos.filter((info) => info.date >= today);
+    const upcoming = eventInfos.filter((info) => info.date >= today && info.pubDate < today);
     setUpcomingEvents(upcoming);
     setPastEvents(eventInfos.filter((info) => info.date < today));
   }, []);

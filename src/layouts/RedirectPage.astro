@@ -10,9 +10,9 @@ const { redirectUrl, redirectTitle } = Astro.props;
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Redirect to { redirectTitle } | Puyallup Valley JACL</title>
     <!-- Simple redirect to the current actual page -->
+    <Redirect url={redirectUrl} client:only />
   </head>
   <body>
-    <Redirect url={redirectUrl} client:only />
     <!-- This page only shows up when JavaScript is turned off somehow -->
     <h1>Redirect</h1>
     <h3>Please press the button below to go to {redirectTitle}</h3>
