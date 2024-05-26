@@ -101,11 +101,22 @@ Redirections can be handled by Astro in the ```astro.config.mujs``` file as show
 
 To add a Gallery Event, you simply create a file in the ```src/content/galleryEvents``` folder. The name of the file must not contain spaces, so it makes sense to replace spaces with hyphens. For example, a Gallery Special Fall Tour event might be called **"fall-tour-2025."** To create a [Markdown](https://docs.astro.build/en/guides/markdown-content/) file, this file would be **"fall-tour-2025.md."** If you need to add special code components to the markdown, you would create a [MDX](https://docs.astro.build/en/guides/markdown-content/) file, so **"fall-tour-2025.mdx."** If you're capable of working HTML and CSS and need special control of how a web page displays on screen, then feel free to create an [Astro](https://astro.build) page, **"fall-tour-2025.astro."**
 
-| Data Heading | Description | Example |
-! ---: ! :------- | :---- | 
-| title: ! Title of Page | "Community Grand Opening" |
-| description: | This text will show up on Google Searches | "Community Grand Opening of the Remembrance Gallery" |
-| keywords: | keywords to help search find this page | "Remembrance Gallery Puyallup Fairgrounds World War WWII" |
-| pubDate: | Date to publish on the webapge | "May 20, 2024" |
-| eventDate: | Date of the event | "August 17, 2024" |
+Each page must start with this date in the header, so the start of the page must look like this:
+```
 ---
+title: "Community Grand Opening"
+description: "Community Grand Opening of the Remembrance Gallery"
+keywords: "Remembrance Gallery Puyallup Fairgrounds World War WWII"
+pubDate: "May 20, 2024"
+eventDate: "August 17, 2024"
+---
+```
+
+| Data Heading    | Description           | Example                |
+| --------------: | :-------------------- | ---------------------- |
+| `title:`        | Title of Page         | "Community Grand Opening" |
+| `description:`  | Description of the page - this text will show up on Google Searches  | "Community Grand Opening of the Remembrance Gallery |
+| `keywords: `    | keywords to help search find this page | "Remembrance Gallery Puyallup Fairgrounds World War WWII" |
+| `pubDate:`      | Date to publish event on the website | "May 20, 2024" |
+| `eventDate:`    | Date of the event     | "August 17, 2024" |
+
