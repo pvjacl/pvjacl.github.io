@@ -63,6 +63,13 @@ Once you have everything looking perfectly in the website, you can stop the deve
 
 Now that you've built the static website, all you have to do is to do a GIT commit (using VSCode or via terminal command line) and Git push. Once you push to the origin, your changes will be reflected on the website within minutes.
 
+To Review:
+1. ```npm run dev``` to develop and debug the website.
+2. ```npm run build``` to create the static website.
+3. Commit the website using Git, then Push to Origin
+
+The website will update within a few minutes.
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -74,6 +81,31 @@ All commands are run from the root of the project, from a terminal:
 | `npm run build`           | Build your production site to `./docs/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 
-## Add an event or activity
+## Links that can't change
+QR codes from the Reemembrance Gallery go directly to the following URLs and must never change, or must be handled.
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+* ```/gallery/gallery-names```
+* ```/gallery/gallery-tours```
+* ```/gallery/gallery-donate```
+
+Redirections can be handled by Astro in the ```astro.config.mujs``` file as shown here where a redirects folder has three files that do a client side redirect (it works, but sometimes you can see a flash of a page change). Use of redirects will be saved for the future.
+```
+  redirects: {
+    '/redirects/gallery-names': '/gallery/gallery-names',
+    '/redirects/gallery-donate': '/gallery/gallery-donate',
+    '/redirects/gallery-tours': '/gallery/gallery-tours'
+  },
+```
+
+## Add a gallery event
+
+To add a Gallery Event, you simply create a file in the ```src/content/galleryEvents``` folder. The name of the file must not contain spaces, so it makes sense to replace spaces with hyphens. For example, a Gallery Special Fall Tour event might be called **"fall-tour-2025."** To create a [Markdown](https://docs.astro.build/en/guides/markdown-content/) file, this file would be **"fall-tour-2025.md."** If you need to add special code components to the markdown, you would create a [MDX](https://docs.astro.build/en/guides/markdown-content/) file, so **"fall-tour-2025.mdx."** If you're capable of working HTML and CSS and need special control of how a web page displays on screen, then feel free to create an [Astro](https://astro.build) page, **"fall-tour-2025.astro."**
+
+| Data Heading | Description | Example |
+! ---: ! :------- | :---- | 
+| title: ! Title of Page | "Community Grand Opening" |
+| description: | This text will show up on Google Searches | "Community Grand Opening of the Remembrance Gallery" |
+| keywords: | keywords to help search find this page | "Remembrance Gallery Puyallup Fairgrounds World War WWII" |
+| pubDate: | Date to publish on the webapge | "May 20, 2024" |
+| eventDate: | Date of the event | "August 17, 2024" |
+---
