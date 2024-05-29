@@ -5,13 +5,13 @@ pubDate: Dec 8 2023
 layout: ../layouts/SinglePage.astro
 ---
 
-Members of JACL are people like you who are committed to social justice, cultural and historical preservation, and community empowerment. Members help contribute to and support JACL's efforts so that their collective voices can be heard by more people than just one individual acting alone. It is this collective strength that gives JACL the opportunity to protect civil and human rights for all.
+Members of JACL are people like you who are committed to social justice, cultural and historical preservation, and community empowerment. Members help contribute to and support JACL's efforts so that their collective voices can be heard by more people than just one individual acting alone. It is this collective strength that gives JACL the opportunity to protect civil and human rights for all. [Join the JACL](https://jacl.org/member).
 
 Read on to see exactly what membership looks like.
 
 ### Get Involved! 
 
-JACL has 5 regional offices, and over 100 local chapters, so there are many opportunities to contribute to efforts at both local and national levels.
+JACL has seven regional districts, and over 100 local chapters, so there are many opportunities to contribute to efforts at both local and national levels.
 
 Opportunities such as leadership conferences and National Convention are open to JACL members
 
