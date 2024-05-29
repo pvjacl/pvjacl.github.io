@@ -2,22 +2,25 @@
 import Layout from '@layouts/SinglePage.astro';
 
 
+// Donors will be arrays of strings
+// first item in array will be name of donor
+// second item is optional and would be the honoraria
 const donors = [
-	"The Yotsuuye Family",
-	"Frank and Penny Fukui",
-	"Liz and Mike Dunbar",
-	"Tsuyoshi and Yayoi Inouye Family",
-	"Lyla Tsuji Anderson",
-	"Bill Driscoll and Lisa Hoffman",
-	"Sheldon Arakaki",
-	"Barbara Mizoguchi Asahara and David Asahara",
-	"Melvin Inouye",
-	"Eileen Yamada Lamphere and Mark Lamphere",
-	"John Meister",
-	"The Okamoto Family",
-	"Sharon Sobie Seymour and David Seymour",
-	"Edwin Shigihara",
-	"The Tsutsumoto and Sakai Families"
+	["The Yotsuuye Family"],
+	["Frank and Penny Fukui", "Yoshizo and Mae Fukui - Mom & Dad Beppu"],
+	["Liz and Mike Dunbar"],
+	["Tsuyoshi and Yayoi Inouye Family", "Bessie and Roy Okada -  Ruby, Frances, Lillian, Howard, Lloyd Inouye"],
+	["Lyla Tsuji Anderson"],
+	["Bill Driscoll and Lisa Hoffman"],
+	["Sheldon Arakaki"],
+	["Barbara Mizoguchi-Asahara and David Asahara"],
+	["Melvin Inouye"],
+	["Eileen Yamada Lamphere and Mark Lamphere", "Carl, Tane, Kazuko, George, Henry, Rose, and Mary Osawa"],
+	["John Meister", "Sandy Shizue Meister"],
+	["The Okamoto Family", "Tokio, Sadako, Toshiko, Michiko, and Kazuko Akagi"],
+	["Sharon Sobie Seymour and David Seymour", "Yae Ogino"],
+	["Edwin Shigihara"],
+	["The Tsutsumoto and Sakai Families", "Nobuichi, Harumi, May, Ben, Helene, Tom, Tama, Sally and Katie"]
 ];
 type OrgInfo  = {
 	name: string;
@@ -97,11 +100,24 @@ const endorsements = [
 <h2>
 	Leadership Donors
 </h2>
-<ul>
+<ul class="donor-list">
 	{
-		donors.map(donor => {
+		donors.map(donorNames => {
+			if (donorNames.length < 2) {
+				return (
+					<li>
+						<div>
+							{donorNames[0]}
+						</div>
+					</li>
+				)
+			}
 			return (
-				<li>{donor}</li>
+				<li>
+					<div>
+						{donorNames[0]}<span class="honoraria">In honor of {donorNames[1]}</span> 
+					</div>
+				</li>
 			)
 		})
 	}
@@ -149,12 +165,45 @@ const endorsements = [
 </Layout>
 
 <style lang="scss">
+	.donor-list {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		justify-content: space-between;
+		gap: 12px 8px;
+		padding: 0;
+		margin: 0 0 1rem 0;
+		li {
+			display:flex;
+			flex-direction: column;
+			justify-content: center;
+			width: 49%;
+			height: 7rem;
+			text-align: center;
+			line-height: 1.4rem;
+			min-width: 20rem;
+			background: rgb(226,185,227);
+			background: linear-gradient(120deg, rgb(243, 204, 243) 0%, rgba(251,236,254,1) 50%, rgb(219, 174, 245) 100%);
+			box-shadow: 8px 4px 6px lightgray;
+			div {
+				margin: 0 1rem;
+			}
+			.honoraria {
+				display:block;
+				margin-top: 0.5rem;
+				font-size: 1rem;
+				line-height: 1.1rem;
+				font-style: italic;
+			}
+		}
+	}
 	.flexy-icons {
 		display:flex;
-		justify-content: center;
+		justify-content: space-around;
 		flex-wrap: wrap;
 		list-style: none;
 		gap: 1rem;
+		padding: 0;
 	}
 	.flexy-icons li {
 		display:flex;
@@ -162,6 +211,7 @@ const endorsements = [
 		align-content: center;
 		max-width: 200px;
 		max-height: 200px;
+		min-height: 130px;
 	}
 	.flexy-icons img {
 		object-fit: scale-down;
