@@ -6,8 +6,9 @@ import Layout from '@layouts/SinglePage.astro';
 // first item in array will be name of donor
 // second item is optional and would be the honoraria
 const donors = [
+	["William and Gail Weyerhaeuser"],
 	["The Yotsuuye Family"],
-	["Frank and Penny Fukui", "Yoshizo and Mae Fukui - Mom & Dad Beppu"],
+	["Frank and Penny Fukui", "Yoshizo and Mae Fukui, Taft and Kay Kazue Beppu"],
 	["Liz and Mike Dunbar"],
 	["Tsuyoshi and Yayoi Inouye Family", "Bessie and Roy Okada -  Ruby, Frances, Lillian, Howard, Lloyd Inouye"],
 	["Lyla Tsuji Anderson"],
@@ -26,6 +27,7 @@ type OrgInfo  = {
 	name: string;
 	icon: string;
 	width?: string;
+	honoraria?: string;
 }
 
 const iconDir = '/donor-icons/';
@@ -74,7 +76,8 @@ const organizations:OrgInfo[] = [
 	{
 		name: "Community Health Care",
 		icon: "CommHealth-logo.png",
-		width: "160px"
+		width: "160px",
+		honoraria: "In honor of George and Kimi Tanbara"
 	},
 	{
 		name: "Japanese American Citizens League (National Chapter)",
@@ -134,16 +137,21 @@ const endorsements = [
 <ul class="flexy-icons">
 	{
 		organizations.map(org => {
-			if (org.width) {
+			const iconSrc = `${iconDir}${org.icon}`;
+			const width = org.width ? org.width : '100%';
+			if (org.honoraria) {
 				return (
-				<li title={org.name}>
-					<img src={`${iconDir}${org.icon}`} alt={org.name} width={org.width}/>
-				</li>
+					<li title={org.name}>
+						<div>
+							<img src={iconSrc} alt={org.name} />
+							<span>{org.honoraria}</span>
+						</div>
+					</li>
 				)
 			}
 			return (
 				<li title={org.name}>
-					<img src={`${iconDir}${org.icon}`} alt={org.name} />
+					<img src={iconSrc} alt={org.name} />
 				</li>
 			)
 		})
@@ -204,16 +212,23 @@ const endorsements = [
 		list-style: none;
 		gap: 1rem;
 		padding: 0;
-	}
-	.flexy-icons li {
-		display:flex;
-		justify-content: center;
-		align-content: center;
-		max-width: 200px;
-		max-height: 200px;
-		min-height: 130px;
-	}
-	.flexy-icons img {
-		object-fit: scale-down;
+		li {
+			display:flex;
+			justify-content: center;
+			align-content: center;
+			max-width: 200px;
+			max-height: 200px;
+			min-height: 130px;
+			text-align: center;
+			span {
+				display:block;
+				font-size:1rem;
+				font-style: italic;
+				line-height: 1.2rem;
+			}
+		}
+		img {
+			object-fit: scale-down;
+		}
 	}
 </style>
