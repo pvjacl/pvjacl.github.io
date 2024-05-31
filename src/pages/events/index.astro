@@ -1,0 +1,72 @@
+---
+import Layout from '@layouts/SinglePage.astro';
+
+type Event = {
+  dateStr: string;
+  title: string;
+};
+
+const events = [
+  {
+    dateStr: "July 10 - 14, 2024",
+    title: "National convention in Philadelphia"
+  },
+  {
+    dateStr: "July 20 and 21, 2024",
+    title: "Seattle Bon Odori (Saturday and Sunday)"
+  },
+  {
+    dateStr: "July 27, 2024",
+    title: "White River Bon Odori"
+  },
+  {
+    dateStr: "August 3",
+    title: "Tacoma Bon Odori"
+  }
+];
+
+---
+
+<Layout
+  title="Puyallup Valley Chapter Activities"
+  description="Upcoming events relevant to the JACL community"
+  keywords='Activities Events'
+  pubDate={new Date('May 29, 2024')}
+>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        events.map (event => {
+          return (
+            <tr>
+              <td>{event.title}</td>
+              <td>{event.dateStr}</td>
+            </tr>
+          )
+        })
+      }
+    </tbody>
+  </table>
+</Layout>
+
+
+<style lang="scss">
+
+
+  tbody {
+    tr:nth-of-type(odd) {
+      background-color: rgba(var(--navigation-background), 40%);
+    }
+    td {
+      border: none;
+      padding-left: 0.5rem;
+    }
+  }
+</style>
