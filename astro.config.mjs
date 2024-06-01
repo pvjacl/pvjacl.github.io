@@ -5,7 +5,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://pvjacl.github.io',
+  site: 'https://m.puyallupvalleyjacl.org',
   integrations: [
     mdx(), 
     sitemap({
