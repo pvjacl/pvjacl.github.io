@@ -120,3 +120,11 @@ eventDate: "August 17, 2024"
 | `pubDate:`      | Date to publish event on the website | "May 20, 2024" |
 | `eventDate:`    | Date of the event     | "August 17, 2024" |
 
+### Wix DNS Records
+A(Host)
+* 185.230.63.171
+* 185.230.63.186
+* 185.230.63.107
+
+CNAME
+* cdn1.wixdns.net

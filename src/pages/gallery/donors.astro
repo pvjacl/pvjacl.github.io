@@ -63,7 +63,6 @@ const organizations:OrgInfo[] = [
 	{
 		name: "Japanese American Citizens League (Seattle Chapter)",
 		icon: "seattle-JACL-logo.jpg",
-		width: "160px"
 	},
 	{
 		name: "The Bamford Foundation",
@@ -127,7 +126,7 @@ const endorsements = [
 </ul>
 <h2>Honorary co-chairs</h2>
 <div>Our honorary co-chairs for the Remembrance Gallery project are:
-	<ul>
+	<ul class="donor-list">
 		<li>Bill Weyerhaeser</li>
 		<li>Frank and Penny Fukui</li>
 	</ul>
@@ -143,7 +142,7 @@ const endorsements = [
 				return (
 					<li title={org.name}>
 						<div>
-							<img src={iconSrc} alt={org.name} />
+							<img src={iconSrc} alt={org.name} width={width}/>
 							<span>{org.honoraria}</span>
 						</div>
 					</li>
@@ -151,7 +150,7 @@ const endorsements = [
 			}
 			return (
 				<li title={org.name}>
-					<img src={iconSrc} alt={org.name} />
+					<img src={iconSrc} alt={org.name} width= />
 				</li>
 			)
 		})

@@ -9,7 +9,7 @@ Members of JACL are people like you who are committed to social justice, cultura
 
 Read on to see exactly what membership looks like.
 
-### Get Involved! 
+### Get Involved
 
 JACL has seven regional districts, and over 100 local chapters, so there are many opportunities to contribute to efforts at both local and national levels.
 
@@ -17,7 +17,7 @@ Opportunities such as leadership conferences and National Convention are open to
 
 Help educate the public about Japanese American history and how civil and human rights need to be protected for all
 
-### Benefits for YOU!
+### Benefits for YOU
 
 Membership includes subscription to the Pacific Citizen, a national Asian American newspaper published on a bimonthly basis.
 
