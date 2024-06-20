@@ -23,5 +23,5 @@ pnpm-debug.log*
 # visual studio code
 .vscode
 
-# github pages CNAME record
-CNAME
+# don't delete github pages CNAME record provided by Github Pages
+/docs/CNAME

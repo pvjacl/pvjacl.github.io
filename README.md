@@ -120,7 +120,18 @@ eventDate: "August 17, 2024"
 | `pubDate:`      | Date to publish event on the website | "May 20, 2024" |
 | `eventDate:`    | Date of the event     | "August 17, 2024" |
 
-### Wix DNS Records
+
+### Preserve the CNAME file
+
+After building the project in the ```docs``` folder (default), before you commit, be sure to not delete the ```CNAME``` file in the ```docs``` folder. If you do, the github pages website won't work properly
+* The page won't be able to find the CSS files and it'll look awful
+* the URL will say ```https://pvjacl.github.io``` instead of ```https://puyallupvalleyjacl.org```
+
+I haven't figured out how to automatically generate the CNAME file in the docs folder  after every build.
+
+### Wix DNS Records 
+These values only perserved in case I have to go back to Wix.
+
 A(Host)
 * 185.230.63.171
 * 185.230.63.186
