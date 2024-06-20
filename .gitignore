@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # visual studio code
 .vscode
+
+# github pages CNAME record
+CNAME
