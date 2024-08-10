@@ -71,7 +71,7 @@ h3 {
 	font-size: clamp(1.4em, 2.3vw, 1.8em);
 }
 h4 {
-	font-size: 1.563em;
+	font-size: clamp(1.3em, 2.0vw, 1.6em);
 }
 h5 {
 	font-size: 1.25em;
@@ -138,6 +138,18 @@ hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
 }
+.callout {
+	background-color:rgba(var(--navigation-background), 50%);
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	border-radius: 1.5rem;
+	padding: 2rem 3rem;
+	font-weight: 700;
+	font-size: 1.7rem;
+	a {
+		color: black;
+	}
+}
+
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;

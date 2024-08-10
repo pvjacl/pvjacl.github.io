@@ -1,7 +1,14 @@
 ---
-import Layout from "@layouts/SinglePage.astro";
+import { Image } from "astro:assets";
+import Layout from "@layouts/GalleryLayout.astro";
 import BambooChart from "@components/BambooChart";
 import DonateLinks from "@components/DonateLinks.astro";
+import GalleryPhoto from "@/components/GalleryPhoto.astro";
+
+import imgBarbedWire from './assets/_PAC_barbed-wire.jpg';
+import imgFamilyBarracks from './assets/_PAC_family-barracks.jpg';
+import imgHorseStall from './assets/_San-Bruno_Konda-family_horse-stall.jpg';
+import imgPamphlet from './assets/_pamphlet-cover.jpg';
 ---
 
 <Layout
@@ -10,46 +17,72 @@ import DonateLinks from "@components/DonateLinks.astro";
 	keywords="Remembrance Gallery Incarceration Puyallup Fair Grandstands Donate Fundraising Venmo Credit card checks"
   pubDate={new Date("December 2023")}
 >
-  <img
-    src="/Remembrance-Gallery-touch.jpg"
-    alt="A rendering of the Remembrance Gallery"
-  />
-  <p class="recent-news">
+
+  <GalleryPhoto title="Behind Barbed Wire" description="Courtesy of the Tokuda Family Collection, Densho" imageMeta={imgBarbedWire} />
+  <p class="callout">
     <a href="/gallery/gallery-events/public-grand-opening">The Remembrance Gallery will open to the public on August 30th, 2024 which is the first day 
     of the Washington State Fair.</a>
   </p>
   <p>
     The Puyallup Valley Chapter of the Japanese American Citizens League (JACL)
-    is building the "Puyallup Assembly Center" Remembrance Gallery. It will
-    encourage an inclusive understanding of the wrongful incarceration of
-    125,000 Japanese and Japanese Americans in the United States during WWII.
-    The Washington State Fair is providing an opportunity to build a
+    presents the "Puyallup Assembly Center" Remembrance Gallery. The Gallery 
+    encourages an inclusive understanding of the wrongful incarceration of
+    125,000 Japanese and Japanese Americans in the United States during WWII 
+    (<a href="https://densho.org/learn/introduction/">Learn more history at Densho.org</a>).
+    The Washington State Fair provided a space to build a
     permanent historic exhibit inside the grandstand, which is part of the
-    original confinement site (<a href="/history/assembly-history">history of the Pacific Assembly Center</a>). The Gallery will provide comprehensive education
-    using the latest techniques in immersive and interactive media design that
-    will bring to life personal stories and in-depth content. The names of over
-    7,500 who were wrongfully imprisoned on these fairgrounds will be
-    permanently displayed​.
+    original confinement site (<a href="/history/assembly-history">history of the Puyallup Assembly Center</a>). 
   </p>
 
-  <img
-    src="/Remembrance-Gallery-Render-1.jpg"
-    alt="Another rendering of The Remembrance Gallery"
-  />
+  <h3>Overview of Gallery Sections</h3>
+  <p>
+    The Remembrance Gallery has three distinct sections.
+    Featuring inclusive and comprehensive information,
+    personal stories, and examples of everyday camp life,
+    each section is designed to provide a variety of media
+    to bet er understand this wartime experience.
+  </p>
+  <h4>Monument</h4>
+  <p>
+    The heart of the gallery is a memorial wall that lists
+    the names of over 7,500 people imprisoned on these
+    fairgrounds. Their names are in alphabetical order
+    along with their government-assigned family number.
+  </p>
+  <GalleryPhoto title="Family in the Puyallup Assembly Center Barracks" description="Photo by Howard Clifford. Courtesy of UW Libraries Special Collections" imageMeta={imgFamilyBarracks} />
+  <h4>Confinement</h4>
+  <p>Visitors can step inside a full-size 8 foot by 10 foot historic
+    recreation of the horse stalls used as makeshift housing
+    for many PAC incarcerees. It is an immersive, multisensory experience of the living conditions where up
+    to four men, women, and children lived in a single stall.
+    within the dark, dirty stables under the grandstand.</p>
+  <GalleryPhoto title="An Example Horse Stall for a Family" description="Photo by Dorothea Lange. Courtesy of National Archives" imageMeta={imgHorseStall} />
+  <h4>Throughline</h4>
+  <p>Interactive touch-screen displays illuminate and
+    humanize the stories of survivors. Through interviews
+    and comprehensive content, visitors can learn about
+    a range of topics, including: discrimination and
+    racist laws, Nisei veterans, civil disobedience, acts of
+    kindness, and the influence of camp life on artists and
+    authors. Current events are also covered, highlighting
+    how communities are still denied safety, civil liberties,
+    and human rights today due to prejudice and bigotry.
+    A Map Station traces the paths of Washington Nikkei
+    as they were forcibly removed from their homes to
+    concentration camps, using movement and distance to
+    emphasize the impact on individuals and communities.</p>
 
-  <p>
-    The Gallery will encompass the effects of incarceration throughout the
-    state, including those Nikkei who were not removed and non-Japanese
-    residents. The "Puyallup Assembly Center” will be used as a reflection of
-    other assembly centers, and the ten permanent camps. The stories shared will
-    reflect the specific but common aspects of incarceration.
-  </p>
-  <p>
-    The Gallery will serve as a visual reminder of what happened in our past and
-    will help highlight the social injustices which resulted from xenophobia,
-    prejudice, and wartime hysteria, and allow comparisons to those being denied
-    justice today.
-  </p>
+  <h3>Download our Brochure</h3>
+  <div class="side-by-side">
+    <div>
+      <a href="/galleryAssets/RG-Brochure_FINAL.pdf">
+        <Image class="show-shadow" src={imgPamphlet} alt="Our pamphlet" />
+      </a>
+    </div>
+    <div>
+      <p>Click on the image to download our beautiful pamphlet.</p>
+    </div>
+  </div>
 
   <h3>History of the Puyallup Assembly Center</h3>
   <ul>
@@ -59,13 +92,13 @@ import DonateLinks from "@components/DonateLinks.astro";
     <li><a href="/history/the-silent-fair/">The Silent Fair is a video told through recollections of individuals who lived through incarceration</a></li>
   </ul>
 
-	<h3>Help us create the Remembrance Gallery</h3>
+	<h3>We've met our goal</h3>
 	<div class="side-by-side">
 		<div>
-			The fundraising goal is $2 million with a completion date of August 30, 2024.
+			The fundraising goal was $2 million and with all your help, we've met our goals. The Remembrance Gallery will be open starting August 30th, 2024.
 		</div>
 		<div class="contain-bamboo-chart">
-			<BambooChart width={300} height={540} amount={1800000} client:visible />
+			<BambooChart width={300} height={540} amount={2000000} client:visible />
 		</div>
 	</div>
 	<DonateLinks allowInMemory={false} />
@@ -73,6 +106,12 @@ import DonateLinks from "@components/DonateLinks.astro";
 </Layout>
 
 <style lang="scss">
+  .callout {
+    background-color: white;
+  }
+  h4 {
+    text-align: center;
+  }
   .side-by-side {
     display: flex;
 		flex-wrap: wrap;
@@ -87,11 +126,8 @@ import DonateLinks from "@components/DonateLinks.astro";
 			min-height: 610px;
 		}
   }
-  .recent-news {
-    background-color:rgba(var(--navigation-background), 50%);
-    padding: 0.5rem;
-    a {
-      color: black;
-    }
+  .show-shadow {
+    box-shadow: 0.3rem 0.3rem 1rem;
+    margin: 0.5rem 1rem 1rem 0.2rem;
   }
 </style>

@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+	title: string;
+	description: string;
+	imageMeta: ImageMetadata;
+}
+const { title, description, imageMeta } = Astro.props;
+
+---
+
+<div>
+  <Image src={imageMeta} alt={title} />
+  <p class="title">{title}</p>
+  <p class="description">{description}</p>
+</div>
+
+<style lang="scss">
+  div {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    background-color: white;
+    padding: 0.6rem;
+    box-shadow: 0.3rem 0.3rem 1rem;
+  }
+  p.title {
+    text-align: center;
+    margin: 0;
+    font-weight: 700;
+  }
+  p.description {
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+  }
+</style>

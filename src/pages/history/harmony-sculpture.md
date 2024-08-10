@@ -2,7 +2,7 @@
 title: 'The Harmony Sculpture'
 description: 'Harmony is a sculpture by George Tsutukawa located on the Washington State Fairgrounds near the location of the Remembrance Gallery serving as a memorial for the West Coast Japanese-Americans who were interned during World War II.'
 pubDate: May 15 2024
-layout: '@layouts/SinglePage.astro'
+layout: '@layouts/GalleryLayout.astro'
 ---
 
 “Harmony” is a sculpture by [George Tsutakawa](https://en.wikipedia.org/wiki/George_Tsutakawa) located on the Washington State Fairgrounds near the location of the Remembrance Gallery. It is a memorial for the West Coast Japanese Americans who were interned during World War II. 

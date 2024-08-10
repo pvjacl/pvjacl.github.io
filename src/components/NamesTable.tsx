@@ -175,8 +175,8 @@ const NamesTable = () => {
   const nameToHtml = (name: Name, i:number) => (
     <tr key={`${name.last_name}_${name.first_name}_${name.family_id}`}>
       <td className="table-name-index">{i + startIndex + 1}</td>
-      <td className="sedan-sc-regular">{name.mixed_case_last_name}</td>
-      <td className="sedan-sc-regular">{name.mixed_case_first_name}</td>
+      <td className="palatino">{name.mixed_case_last_name}</td>
+      <td className="palatino">{name.mixed_case_first_name}</td>
       <td className="column-family-id">
         {name.family_id}
         <img
