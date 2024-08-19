@@ -14,7 +14,7 @@ these non-Japanese friends demonstrated.  They were ridiculed, bullied, and call
 Many community members, young and old, visited the fairgrounds out of curiosity.  They were in awe of the soldiers, 
 the barbed wire fence, and the barracks on the fairgrounds. They looked at those confined like they were animals in a zoo.​
 
-People below are examples of friends and neighbors who were recognized at the September 2, event.
+People below are examples of friends and neighbors who were recognized at the September 2 event.
 
 ## Ben Andre and his sons, Roy and Willard
 
