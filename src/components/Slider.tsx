@@ -1,4 +1,10 @@
-import { Carousel } from 'nuka-carousel';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import { Navigation, Pagination } from 'swiper/modules';
 
 import './Slider.scss';
 
@@ -15,16 +21,26 @@ const Slider = ({ items }: Props) => {
 
   const renderItems = (items: CarouselItem[]) => {
     return items.map((item, i) => (
-      <div className="slide" key={i}>
-        <img src={item.imageUrl} alt={item.caption} width={600} />
+      <SwiperSlide key={i}>
+        <img src={item.imageUrl} alt={item.caption} />
         <p>{item.caption}</p>
-      </div>
+      </SwiperSlide>
     ));
   }
   return (
-    <Carousel showDots showArrows wrapMode="wrap">
-      { renderItems(items)}
-    </ Carousel>
+    <Swiper 
+      spaceBetween={30}
+      loop={true}
+      autoHeight={true}
+      pagination={{
+        clickable: true
+      }} 
+      navigation={true} 
+      modules={[Navigation, Pagination]} 
+      className="mySwiper"
+    >
+      {renderItems(items)}
+    </Swiper>
   );
 }
     

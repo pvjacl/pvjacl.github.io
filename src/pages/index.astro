@@ -4,6 +4,7 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { ViewTransitions } from 'astro:transitions';
+import GalleryPhotosSlider from "@/components/GalleryPhotosSlider";
 
 // const posts = (await getCollection("blog"))
 //   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -31,10 +32,10 @@ import { ViewTransitions } from 'astro:transitions';
         JACL also work to promote and preserve the heritage and legacy of the Japanese
         American Community.
       </p>
-      <h3>The Remembrance Gallery</h3>
-      <a href="/gallery/"><img src="/Remembrance-Gallery-index.jpg" alt="Rendering of Remembrance Gallery" /></a>
+      <h3>Join us for the opening of the Remembrance Gallery</h3>
+      <GalleryPhotosSlider client:idle />
       <p><a href="/gallery/">
-        Our current project is the creation of the Remembrance Gallery</a> under the Grandstand at  
+        The Remembrance Gallery opens on August 30th through September 22nd</a> under the Grandstand at  
         <a href="https://www.thefair.com/">The Washington State Fair</a>. 
       </p>
       <p>The Remembrance Gallery brings awareness to the

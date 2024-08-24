@@ -62,6 +62,13 @@ export const menubar: MenuItemData[] = [
         label: 'Gallery Team',
         children: []
       },
+      {
+        id: 'remGalleryDonations',
+        isDropdown: false,
+        src: '/gallery/gallery-donate',
+        label: 'Donate to the Gallery',
+        children: []
+      },
     ]
   },
   // {

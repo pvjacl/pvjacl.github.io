@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import Layout from "@layouts/GalleryLayout.astro";
 import BambooChart from "@components/BambooChart";
-import DonateLinks from "@components/DonateLinks.astro";
 import GalleryPhoto from "@/components/GalleryPhoto.astro";
 
 import imgBarbedWire from './assets/_PAC_barbed-wire.jpg';
@@ -88,22 +87,27 @@ import imgPamphlet from './assets/_pamphlet-cover.jpg';
   <ul>
     <li><a href="/history/assembly-history/">A Brief History of the Puyallup Assembly Center</a></li>
     <li><a href="/history/additional-resources/">Learn more about the Japanese Incarceration during World War II</a></li>
-    <li><a href="/history/gallery-acts-of-kindness/">Notable acts of kindess toward incarcerated Japanese Americans</a></li>
+    <li><a href="/history/gallery-acts-of-kindness/">Notable acts of kindness toward incarcerated Japanese Americans</a></li>
     <li><a href="/history/harmony-sculpture/">Harmony, the memorial sculpture near the Remembrance Gallery</a></li>
     <li><a href="/history/the-silent-fair/">The Silent Fair is a video told through recollections of individuals who lived through incarceration</a></li>
   </ul>
 
-	<h3>We've met our goal</h3>
+	<h3>Thank You for Your Donations</h3>
 	<div class="side-by-side">
 		<div>
-			The fundraising goal was $2 million and with all your help, we've met our goals. The Remembrance Gallery will be open starting August 30th, 2024.
+			The fundraising goal was $2 million and with all your help, we've met our goals.
+       The Remembrance Gallery will be open starting August 30th, 2024.
 		</div>
 		<div class="contain-bamboo-chart">
 			<BambooChart width={300} height={540} amount={2000000} client:visible />
 		</div>
 	</div>
-	<DonateLinks allowInMemory={false} />
-	
+  <p>
+    We continue to accept donations to fund the maintenance and operation of the Gallery, including future stories, curriculum development, 
+    teacher workshops, school tours, Day of Remembrance events and more.
+  </p>
+  <p class="callout"><a href="/gallery/gallery-donate">Donate now to ensure these educational programs can happen.</a></p>
+
 </Layout>
 
 <style lang="scss">

@@ -1,0 +1,53 @@
+---
+import Layout from '@layouts/SinglePage.astro';
+import Slider from "@/components/Slider";
+import type { CarouselItem } from '@/components/Slider';
+const items: CarouselItem[] = [
+  {
+    imageUrl: '/galleryAssets/slider1/gallery1.jpg',
+    caption: 'Gallery Entrance'
+  },
+  {
+    imageUrl: '/galleryAssets/slider1/gallery2.jpg',
+    caption: 'The wall of names'
+  },
+  {
+    imageUrl: '/galleryAssets/slider1/gallery3.jpg',
+    caption: 'Model of a horse stall converted to family accomodations'
+  },
+  {
+    imageUrl: '/galleryAssets/slider1/gallery4.jpg',
+    caption: 'A sample view of the information on touchscreens'
+  },
+  {
+    imageUrl: '/galleryAssets/slider1/gallery5.jpg',
+    caption: 'Another view of the touchscreens'
+  },
+  {
+    imageUrl: '/galleryAssets/slider1/gallery6.jpg',
+    caption: 'Another view of the touchscreens'
+  },
+  {
+    imageUrl: '/galleryAssets/slider1/gallery7.jpg',
+    caption: 'Wider view of the gallery'
+  },
+  {
+    imageUrl: '/galleryAssets/slider1/nametags.jpg',
+    caption: 'Create your own name tags resembling the orignal name tags'
+  },
+  {
+    imageUrl: '/galleryAssets/slider1/gallery_ribbon_cutting.jpg',
+    caption: 'Ribbon cutting at the opening of the Gallery done by original incarceees'
+  },
+
+];
+---
+
+<Layout
+	title="Test Page"
+	description="Test Page Only"
+	keywords="JACL National Japanese American Citizens League Injustice Heritage"
+	pubDate={new Date('August 20 2024')}
+>
+  <Slider items={items} client:load></Slider>
+</Layout>
