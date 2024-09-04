@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '@layouts/SinglePage.astro';
+import king5Image from './assets/_king5_2024_08_29.png';
+import classicCoasterChronicles from './assets/_classic_coaster_chronicles.webp';
+---
+
+<Layout
+	title="Recent Media"
+	description="Recent appearances of The Puyallup Valley chapter of the Japanese American Citizens League in media."
+	keywords="Puyallup Valley JACL Media"
+	pubDate={new Date('September 04 2024')}
+>
+
+<h2>Remembrance Gallery Media</h2>
+<h4>KING Television News Report</h4>
+<a href="https://www.king5.com/article/news/local/washington-state-fair-remembrance-gallery/281-10bf1062-ba00-455d-9328-485bc91a0de9">
+  <Image src={king5Image} alt="King 5 preview" />
+</a>
+<p class="callout">”When we were here, we were in stalls, not in rooms,”</p>
+<p><a href="https://www.king5.com/">KING</a> is the local NBC television affiliate in Western Washington. This is <a href="https://www.king5.com/article/news/local/washington-state-fair-remembrance-gallery/281-10bf1062-ba00-455d-9328-485bc91a0de9">KING's coverage of the Remembrance Gallery</a> on August 29, 2024. </p>
+
+<h4>A History Lesson on the Classic Coaster Chronicles podcast</h4>
+<p class="callout">“This happened here. Right here where they are buying their cotton candy. Where they are getting their corndog. This happened here.”</p>
+<p>The Classic Coaster Chronicles podcast gives an audio history lesson about how the Washington State Fairgrounds became the Puyallup Assembly Center to house citizens and residents of Japanese descent. 
+  Listen to this interview with Eileen Yamada Lamphere and Sharon Sobie-Seymour at the <a href="https://podcasts.apple.com/us/podcast/s2e4-the-remembrance-gallery-paying-tribute-to/id1628825486?i=1000668093281">Classic Coaster Chronicles</a> website, published on September 2, 2024.
+</p>
+<a href="https://podcasts.apple.com/us/podcast/s2e4-the-remembrance-gallery-paying-tribute-to/id1628825486?i=1000668093281">
+  <Image src={classicCoasterChronicles} alt="logo" />
+</a>
+</Layout>

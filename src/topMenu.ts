@@ -92,6 +92,13 @@ export const menubar: MenuItemData[] = [
         children: []
       },
       {
+        id: 'mediaItem',
+        isDropdown: false,
+        src: '/media',
+        label: 'Media',
+        children: []
+      },
+      {
         id: 'contactItem',
         isDropdown: false,
         src: '/contact',
