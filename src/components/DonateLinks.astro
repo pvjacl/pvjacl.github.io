@@ -21,11 +21,9 @@ const { allowInMemory } = Astro.props;
   </div>
 </div>
 <h5>Donate by check</h5>
-<ul>
-  <li>Make checks payable to <strong>Puyallup Valley JACL</strong> {allowInMemory ? ' ' : <span> with the memo "Remembrance"</span>} </li>
-</ul>
+<p>Make checks payable to <strong>Puyallup Valley JACL</strong> {allowInMemory ? ' ' : <span> with the memo "Gallery"</span>} </p>
 
-<h5>Send your check to</h5>
+<h5>Please send your checks to:</h5>
 <p>
   Puyallup Valley JACL<br />
   P.O. Box 5323<br />
@@ -40,6 +38,7 @@ const { allowInMemory } = Astro.props;
     display: flex;
 		flex-wrap: wrap;
 		gap: 2rem;
+    margin-bottom: 2rem;
 		.QR-code {
 			max-width: 180px;		
 		}

@@ -4,7 +4,7 @@ description: ' There were many people in the community who lent a hand to incarc
 pubDate: May 15 2024
 layout: '@layouts/GalleryLayout.astro'
 ---
-Following the signing of Executive Order 9066, while many people took advantage of the soon-to-be incarcerated Japanese and 
+Following the signing of [Executive Order 9066](https://www.archives.gov/milestone-documents/executive-order-9066), while many people took advantage of the soon-to-be incarcerated Japanese and 
 Japanese Americans; however, there were many people in the community who lent a hand. 
 They stored personal items and business inventory, watched over properties, made arrangements to pay taxes, and found 
 renters to take over the farms and dairies. While these were very honorable acts, please recognize the courage 
@@ -18,8 +18,8 @@ People below are examples of friends and neighbors who were recognized at the Se
 
 ## Ben Andre and his sons, Roy and Willard
 
-The Andres ran Andres Market in Fife, WA.  During the war, they paid property taxes and stored the personal belongings of their Japanese customers and friends through the sale of produce and/or equipment.  When the war was over, Andres Market provided farm tools, seeds, and fertilizer so the Japanese farms could be revitalized again.  The Andres did not ask for any payment upfront but allowed bills to be paid after the harvest.
+The Andres ran Andres Market in [Fife, Washington](https://en.wikipedia.org/wiki/Fife,_Washington). During the war, they paid property taxes and stored the personal belongings of their Japanese customers and friends through the sale of produce and/or equipment. When the war was over, Andres Market provided farm tools, seeds, and fertilizer so that Japanese farms could be revitalized again. The Andres did not ask for any payment upfront but allowed bills to be paid after the harvest.
 
 ## Ed and Grace Orton and son, Stanley
 
-The Ortons were Sumner daffodil farmers and founders of the Daffodil Festival. The Orton helped several Japanese American friends and employees.  The Hayashibara family was one such family.  They farmed all the land and made all their mortgage payments until the end of the war, to avoid bank foreclosure.  When the Hayashibara family returned, they found sugar, rice, and flour in the cupboards and all the receipts for the paid bills on the table.  The Ortons refused to accept any recognition.
+The Ortons were [Sumner](https://en.wikipedia.org/wiki/Sumner,_Washington) daffodil farmers and founders of the Daffodil Festival. They helped the Hayashibaras and other Japanese American friends and employees in many ways during the war. This included farming their lands and making mortgage payments for these families to avoid bank foreclosure – selling off some of their own land to make this possible. When the Hayashibara family and others returned home after the war, they found sugar, rice, and flour in their cupboards and receipts on the table for all of their bills paid. Also, their son, Stanley, helped arrange work releases in Colorado so that these families could avoid the incarceration camps. The Ortons refused to accept any recognition for their generous support.

@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { ViewTransitions } from 'astro:transitions';
+import { SHOW_PAGE_DESCRIPTION } from '@/consts';
 
 const { title, description } = Astro.props.frontmatter || Astro.props;
 
@@ -73,6 +74,7 @@ const { title, description } = Astro.props.frontmatter || Astro.props;
 	<body class="gallery-layout">
 		<Header />
 		<main>
+			{SHOW_PAGE_DESCRIPTION ? <div class="page-desc"><strong>Page Description for Search Engines only:<br /></strong> {description}</div> : <span/> }
 			<article>
 				<div class="prose">
 					<div class="title">

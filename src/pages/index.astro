@@ -2,7 +2,7 @@
 import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE, SITE_DESCRIPTION, SHOW_PAGE_DESCRIPTION } from "../consts";
 import { ViewTransitions } from 'astro:transitions';
 import GalleryPhotosSlider from "@/components/GalleryPhotosSlider";
 
@@ -10,6 +10,7 @@ import GalleryPhotosSlider from "@/components/GalleryPhotosSlider";
 //   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 //   .filter((a) => (!a.data.offline))
 //   .slice(0, 3);
+
 ---
 
 <!DOCTYPE html>
@@ -20,6 +21,7 @@ import GalleryPhotosSlider from "@/components/GalleryPhotosSlider";
   </head>
   <body>
     <Header title={SITE_TITLE} />
+    {SHOW_PAGE_DESCRIPTION ? <div class="page-desc"><strong>Page Description for Search Engines only:<br /></strong> <p>{SITE_DESCRIPTION}</p></div> : <span/> }
     <main>
       <h1 id="long-title">We are the Puyallup Valley JACL</h1>
       <p>
@@ -28,24 +30,30 @@ import GalleryPhotosSlider from "@/components/GalleryPhotosSlider";
           >Japanese American Citizens League</a
         > is a national organization whose mission is to advocate and safeguard the
         civil and human rights of Asian and Pacific Islander Americans and all communities
-        who are affected by injustice and bigotry. The leaders and members of the
+        who are affected by injustice and bigotry. 
+      </p>
+      <p>
+        The leaders and members of the
         JACL also work to promote and preserve the heritage and legacy of the Japanese
         American Community.
       </p>
-      <h3>Join us for the opening of the Remembrance Gallery</h3>
-      <GalleryPhotosSlider client:idle />
-      <p><a href="/gallery/">
-        The Remembrance Gallery opens on August 30th through September 22nd</a> under the Grandstand at  
-        <a href="/gallery/gallery-events/public-grand-opening/">The Washington State Fair</a>. Visiting the 
-        Gallery will require entrance fees to the Fair itself.
+      <h3>The Remembrance Gallery is now Open</h3>
+      <p>
+        <a href="/gallery">The Remembrance Gallery</a> opened to the public on August 30, 2024. 
+        The Gallery brings awareness to the history of the “Puyallup Assembly Center” (PAC) as the largest 
+        temporary American concentration camp in Washington State.
       </p>
-      <p>The Remembrance Gallery brings awareness to the
-        history of the “Puyallup Assembly Center” (PAC), as
-        the largest temporary American concentration camp in
-        Washington State.
+      <GalleryPhotosSlider />
+      <p>
+        Located under the Grandstand at the <a href="http://thefair.com" target="_blank">Washington State Fairgrounds</a>, the Gallery is accessible during 
+        the Washington State Fair, the Spring Fair, or by scheduled tour. Contact us to schedule a visit or 
+        learn how you can support our work to raise awareness of civil rights violations and emphasize how 
+        this chapter in American history is still relevant today.
       </p>
       <h3>Media Coverage</h3>
-      <p>See some of the news coverage and stories about the opening of the Remembrance Gallery at our new <a href="/media">Media page</a>.</p>
+      <p>
+        See our <a href="/media">Media</a> page for news coverage about the Remembrance Gallery.
+      </p>
       <!-- <ButtonTriggerModal client:idle btnText="Click to see an interstitial">
         <div>
           <h3>Interstitial dialog box</h3>

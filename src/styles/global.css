@@ -149,6 +149,16 @@ hr {
 		color: black;
 	}
 }
+.page-desc {
+	background-color: darkslategray;
+	color: white;
+	font-size: 0.9rem;
+	text-align: center;
+	p {
+		margin:auto;
+		max-width:70rem;
+	}
+}
 
 @media (max-width: 720px) {
 	body {

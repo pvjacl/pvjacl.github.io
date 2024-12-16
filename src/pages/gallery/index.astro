@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "@layouts/GalleryLayout.astro";
-import BambooChart from "@components/BambooChart";
+// import BambooChart from "@components/BambooChart";
 import GalleryPhoto from "@/components/GalleryPhoto.astro";
 
 import imgBarbedWire from './assets/_PAC_barbed-wire.jpg';
@@ -18,52 +18,48 @@ import imgPamphlet from './assets/_pamphlet-cover.jpg';
 >
 
   <GalleryPhoto title="Behind Barbed Wire" description="Courtesy of the Tokuda Family Collection, Densho" imageMeta={imgBarbedWire} />
-  <p class="callout">
-    <a href="/gallery/gallery-events/public-grand-opening">The Remembrance Gallery will open to the public on August 30th, 2024 which is the first day 
-    of the Washington State Fair.</a>
-  </p>
   <p>
     The Puyallup Valley Chapter of the Japanese American Citizens League (JACL)
     presents the "Puyallup Assembly Center" Remembrance Gallery. The Gallery 
     encourages an inclusive understanding of the wrongful incarceration of
     125,000 Japanese and Japanese Americans in the United States during WWII 
-    (<a href="/history/additional-resources/">Learn more about the nationwide incarceration during World War II</a>).
-    The Washington State Fair provided a space to build a
+    (<a href="/history/additional-resources/">Learn more about mass incarceration during World War II</a>).
+    The Washington State Fair has provided a space to build a
     permanent historic exhibit inside the grandstand, which is part of the
     original confinement site (<a href="/history/assembly-history">Learn more about the history of the Puyallup Assembly Center</a>). 
   </p>
 
   <h3>Overview of Gallery Sections</h3>
   <p>
-    The Remembrance Gallery has three distinct sections.
-    Featuring inclusive and comprehensive information,
-    personal stories, and examples of everyday camp life,
-    each section is designed to provide a variety of media
-    to bet er understand this wartime experience.
+    The Remembrance Gallery has three distinct sections providing 
+    inclusive and comprehensive information,
+    personal stories, and examples of everyday camp life.
+    Each section is designed to provide a variety of media
+    to better understand this wartime experience.
   </p>
   <h4>Monument</h4>
   <p>
     The heart of the gallery is a memorial wall that lists
     the names of over 7,500 people imprisoned on these
-    fairgrounds. Their names are in alphabetical order
+    fairgrounds. Their names are in alphabetical order according to family last names
     along with their government-assigned family number.
   </p>
   <GalleryPhoto title="Family in the Puyallup Assembly Center Barracks" description="Photo by Howard Clifford. Courtesy of UW Libraries Special Collections" imageMeta={imgFamilyBarracks} />
   <h4>Confinement</h4>
-  <p>Visitors can step inside a full-size 8 foot by 10 foot historic
-    recreation of the horse stalls used as makeshift housing
+  <p>Visitors can step inside a full-size 8 feet by 10 feet historic
+    replica of the horse stalls, used as makeshift housing
     for many PAC incarcerees. It is an immersive, multisensory experience of the living conditions where up
     to four men, women, and children lived in a single stall.
-    within the dark, dirty stables under the grandstand.</p>
+    within the dark, dirty stables under the grandstands.</p>
   <GalleryPhoto title="An Example Horse Stall for a Family" description="Photo by Dorothea Lange. Courtesy of National Archives" imageMeta={imgHorseStall} />
   <h4>Throughline</h4>
-  <p>Interactive touch-screen displays illuminate and
+  <p>Interactive touchscreen displays illuminate and
     humanize the stories of survivors. Through interviews
     and comprehensive content, visitors can learn about
     a range of topics, including: discrimination and
     racist laws, Nisei veterans, civil disobedience, acts of
     kindness, and the influence of camp life on artists and
-    authors. Current events are also covered, highlighting
+    authors. Current events are also presented, highlighting
     how communities are still denied safety, civil liberties,
     and human rights today due to prejudice and bigotry.
     A Map Station traces the paths of Washington Nikkei
@@ -91,22 +87,6 @@ import imgPamphlet from './assets/_pamphlet-cover.jpg';
     <li><a href="/history/harmony-sculpture/">Harmony, the memorial sculpture near the Remembrance Gallery</a></li>
     <li><a href="/history/the-silent-fair/">The Silent Fair is a video told through recollections of individuals who lived through incarceration</a></li>
   </ul>
-
-	<h3>Thank You for Your Donations</h3>
-	<div class="side-by-side">
-		<div>
-			The fundraising goal was $2 million and with all your help, we've met our goals.
-       The Remembrance Gallery will be open starting August 30th, 2024.
-		</div>
-		<div class="contain-bamboo-chart">
-			<BambooChart width={300} height={540} amount={2000000} client:visible />
-		</div>
-	</div>
-  <p>
-    We continue to accept donations to fund the maintenance and operation of the Gallery, including future stories, curriculum development, 
-    teacher workshops, school tours, Day of Remembrance events and more.
-  </p>
-  <p class="callout"><a href="/gallery/gallery-donate">Donate now to ensure these educational programs can happen.</a></p>
 
 </Layout>
 

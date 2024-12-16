@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import { Image } from 'astro:assets';
 import { ViewTransitions } from 'astro:transitions';
+import { SHOW_PAGE_DESCRIPTION } from '@/consts';
 
 type Props = CollectionEntry<'galleryEvents'>['data'];
 
@@ -60,6 +61,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<body>
 		<Header />
 		<main>
+			{SHOW_PAGE_DESCRIPTION ? <div class="page-desc"><strong>Page Description for Search Engines only:<br /></strong> {description}</div> : <span/> }
 			<article>
 				<div class="hero-image">
 					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
