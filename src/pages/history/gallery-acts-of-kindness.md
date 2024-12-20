@@ -1,6 +1,6 @@
 ---
 title: 'Profound Acts of Kindness'
-description: ' There were many people in the community who lent a hand to incarcerated Japanese Americans.'
+description: 'Learn more about the everyday people whose acts of kindness helped incarcerated Japanese Americans to return to their homes and communities after the war.'
 pubDate: May 15 2024
 layout: '@layouts/GalleryLayout.astro'
 ---
