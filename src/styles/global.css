@@ -149,6 +149,25 @@ hr {
 		color: black;
 	}
 }
+.quote {
+	background-color:rgba(var(--navigation-background), 50%);
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	border-radius: 1.5rem;
+	padding: 2rem 3rem;
+	font-weight: 700;
+	font-size: 1.7rem;
+	a {
+		color: black;
+	}
+  p {
+    margin: 0.5rem 0;
+  }
+  .quote-source {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: 100;
+  }
+}
 .page-desc {
 	background-color: darkslategray;
 	color: white;

@@ -8,7 +8,6 @@ const posts = (await getCollection('galleryEvents'))
   .sort(	(a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf()
 	)
 	.filter((a) => (!a.data.offline));
-
 const eventInfos = posts.map(post => (
   {
     date: post.data.eventDate.getTime(),
