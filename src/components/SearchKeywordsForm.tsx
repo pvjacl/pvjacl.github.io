@@ -32,7 +32,7 @@ const SearchKeywordsForm = ({postDetails}: Props) => {
   const onChangeText = (event: React.FormEvent<HTMLInputElement>) => {
     const val = event.currentTarget.value;
     setSearchText(val);
-    let foundPosts = [];
+    let foundPosts:PostDetail[] = [];
     if (val.length >= 3) {
       foundPosts = postDetails.filter(postD => {
         const foundWords = searchPostKeywords(postD);
