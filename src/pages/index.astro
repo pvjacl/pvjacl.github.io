@@ -3,7 +3,7 @@ import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION, SHOW_PAGE_DESCRIPTION } from "../consts";
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import GalleryPhotosSlider from "@/components/GalleryPhotosSlider";
 
 // const posts = (await getCollection("blog"))
@@ -17,7 +17,7 @@ import GalleryPhotosSlider from "@/components/GalleryPhotosSlider";
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body>
     <Header title={SITE_TITLE} />
