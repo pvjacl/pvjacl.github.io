@@ -46,7 +46,10 @@ const bottomLinks:Link[] = [
 		text-align: center;
 	}
 	:global(.gallery-layout) footer {
-		background: white;
+		color: white;
+		padding:1rem 0;
+		background: rgb(119, 160,118);
+		font-size: 1rem;
 	}
 	ul {
 		padding-left: 0;
@@ -64,6 +67,12 @@ const bottomLinks:Link[] = [
 		font-weight: 700;
 		color: var(--navigation);
 		margin: 0 1rem;
+	}
+	:global(.gallery-layout) .bottom-nav a {
+		color: white;
+		&:hover {
+			color: darkolivegreen;
+		}
 	}
 	.social-links {
 		display: flex;

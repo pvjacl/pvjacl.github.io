@@ -72,7 +72,7 @@ const { title, description } = Astro.props.frontmatter || Astro.props;
 	</head>
 
 	<body class="gallery-layout">
-		<Header />
+		<Header isGalleryPage={true} />
 		<main>
 			{SHOW_PAGE_DESCRIPTION ? <div class="page-desc"><strong>Page Description for Search Engines only:<br /></strong> {description}</div> : <span/> }
 			<article>
