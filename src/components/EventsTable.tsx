@@ -22,15 +22,19 @@ const EventsTable = ({events}:Props) => {
   const futureEvents = events.filter(event => futureEventFilter(event));
   const pastEvents = events.filter(event => pastEventFilter(event));
 
-  const renderTable = (events:Event[], title:string) => {
+  const renderTable = (events:Event[], fUpcoming: boolean) => {
     if (events.length < 1) {
-      return (
-        <h4>No {title} Available</h4>
-      )
+      if (fUpcoming) {
+        return (
+          <h4>No Announced Upcoming Events</h4>
+        )
+      } else {
+        return;
+      }
     };
     return (  
       <>
-        <h4>{title}</h4>
+        <h4>{fUpcoming ? 'Upcoming Events' : 'Past Events'}</h4>
         <table>
           <thead>
             <tr>
@@ -59,8 +63,8 @@ const EventsTable = ({events}:Props) => {
 
   return (
     <>
-      {renderTable(futureEvents, 'Upcoming Events')}
-      {renderTable(pastEvents, 'Past Events')}
+      {renderTable(futureEvents, true)}
+      {renderTable(pastEvents, false)}
     </>
   )
 }
