@@ -1,10 +1,11 @@
 ---
 title: "The Spring Fair 2025"
-description: "The Remembrance Gallery will be open for the Spring Fair"
+description: "The Remembrance Gallery will be open during the Spring Fair"
 keywords: "Remembrance Gallery Puyallup Fairgrounds Spring Fair"
 pubDate: "February 13, 2025"
 eventDate: "April 10, 2025"
 heroImage: './assets/spring-fair-2025.png'
+landingEventPullDate: "April 21, 2025"
 ---
 
 The Remembrance Gallery will be open during the Spring Fair at [The Washington State Fair](https://thefair.com) (April 10-13 & 17-20)

@@ -2,21 +2,18 @@
 import Layout from '@layouts/SinglePage.astro';
 import TacomaPremierePhoto from './assets/_RemovedbyForce–FullPage_UPS-Tacoma.jpg';
 import SeattlePremierePhoto from './assets/_RemovedbyForce–FullPage_SEATTLE-R1.jpg';
-import GalleryPhoto from '@/components/GalleryPhoto.astro';
+import EventsTable from "@components/EventsTable";
+import type { Event } from "@components/EventsTable";
 
-type Event = {
-  dateStr: string;
-  title: string;
-};
-
-const events = [
+const events:Event[] = [
   {
     dateStr: "February 18, 2025",
     title: 'Tacoma Premiere of "Removed By Force"',
     description: `Film screening and panel discussion for the Japanese American Day of Remembrance is at the 
     Rasmussen Rotunda at the University of Puget Sound (1500 N Warner Street, Tacoma, Washington). 
     Event is co-sponsored by the University of Puget Sound, the Puyallup Valley JACL and the Olympia JACL.`,
-    photo: TacomaPremierePhoto
+    photo: TacomaPremierePhoto,
+    landingEventPullDate: "February 18, 2025"
   },
   {
     dateStr: "February 19, 2025",
@@ -24,7 +21,8 @@ const events = [
     description: `Film screening and panel discussion for the Japanese American Day of Remembrance is at the 
     Blaine Memorial United Methodist Church (3001 24th Ave S, Seattle, Washington). 
     Event is co-sponsored by the Blaine Memorial United Methodist Church, the Puyallup Valley JACL, and Seattle JACL.`,
-    photo: SeattlePremierePhoto
+    photo: SeattlePremierePhoto,
+    landingEventPullDate: "Februaryd 19, 2025"
   }
 ];
 
@@ -34,50 +32,10 @@ const events = [
   title="Puyallup Valley Chapter Activities"
   description="Upcoming events relevant to the JACL community"
   keywords='Activities Events'
-  pubDate={new Date('May 29, 2024')}
+  pubDate={new Date('Feb 20, 2025')}
 >
-
-  <table>
-    <thead>
-      <tr>
-        <th>Event</th>
-        <th>Description</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      {
-        events.map (event => {
-          return (
-            <tr>
-              <td>{event.photo ? <a href={event.photo.src}><img src={event.photo.src} /></a>: ' '}</td>
-              <td><strong>{event.title}</strong> &ndash; {event.description}</td>
-              <td>{event.dateStr}</td>
-            </tr>
-          )
-        })
-      }
-    </tbody>
-  </table>
+  <EventsTable events={events} client:load />
 </Layout>
 
 
-<style lang="scss">
-
-  thead th {
-    font-size: 1.4rem;
-    text-align: center;
-  }
-
-  tbody {
-    tr:nth-of-type(odd) {
-      background-color: rgba(var(--navigation-background), 40%);
-    }
-    td {
-      border: none;
-      padding-left: 0.5rem;
-      vertical-align: top;
-      max-height: 8rem;
-    }
-  }
 </style>
