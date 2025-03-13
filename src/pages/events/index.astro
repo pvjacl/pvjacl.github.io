@@ -1,15 +1,17 @@
 ---
 import Layout from '@layouts/SinglePage.astro';
+import EventTables from '@components/EventTables';
+import type { Event } from '@components/EventTables';
 import TacomaPremierePhoto from './assets/_RemovedbyForce–FullPage_UPS-Tacoma.jpg';
 import SeattlePremierePhoto from './assets/_RemovedbyForce–FullPage_SEATTLE-R1.jpg';
-const events = [
+export const events:Event[] = [
   {
     dateStr: "February 18, 2025",
     title: 'Tacoma Premiere of "Removed By Force"',
     description: `Film screening and panel discussion for the Japanese American Day of Remembrance is at the 
     Rasmussen Rotunda at the University of Puget Sound (1500 N Warner Street, Tacoma, Washington). 
     Event is co-sponsored by the University of Puget Sound, the Puyallup Valley JACL and the Olympia JACL.`,
-    photo: TacomaPremierePhoto
+    photoSrc: TacomaPremierePhoto.src
   },
   {
     dateStr: "February 19, 2025",
@@ -17,7 +19,7 @@ const events = [
     description: `Film screening and panel discussion for the Japanese American Day of Remembrance is at the 
     Blaine Memorial United Methodist Church (3001 24th Ave S, Seattle, Washington). 
     Event is co-sponsored by the Blaine Memorial United Methodist Church, the Puyallup Valley JACL, and Seattle JACL.`,
-    photo: SeattlePremierePhoto
+    photoSrc: SeattlePremierePhoto.src
   }
 ];
 
@@ -29,29 +31,7 @@ const events = [
   keywords='Activities Events'
   pubDate={new Date('May 29, 2024')}
 >
-
-  <table>
-    <thead>
-      <tr>
-        <th>Event</th>
-        <th>Description</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      {
-        events.map (event => {
-          return (
-            <tr>
-              <td>{event.photo ? <a href={event.photo.src}><img src={event.photo.src} /></a>: ' '}</td>
-              <td><strong>{event.title}</strong> &ndash; {event.description}</td>
-              <td>{event.dateStr}</td>
-            </tr>
-          )
-        })
-      }
-    </tbody>
-  </table>
+<EventTables events={events} client:idle />
 </Layout>
 
 

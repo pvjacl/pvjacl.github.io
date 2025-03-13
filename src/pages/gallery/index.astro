@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import Layout from "@layouts/GallerySplash.astro";
 
-import imgBarbedWire from './assets/_PAC_barbed-wire.jpg';
+import imgBarbedWire from './assets/_PAC_cropped-barbed-wire.jpg';
 ---
 
 <Layout
@@ -43,26 +43,5 @@ import imgBarbedWire from './assets/_PAC_barbed-wire.jpg';
       right:auto;
       font-size: 1rem;
     }
-  }
-  #imgBarbedWire {
-    opacity: 0.6;
-  }
-  .side-by-side {
-    display: flex;
-		flex-wrap: wrap;
-		gap: 2rem;
-		.QR-code {
-			max-width: 180px;		
-		}
-		div {
-			width: 330px;
-		}
-		.contain-bamboo-chart {
-			min-height: 610px;
-		}
-  }
-  .show-shadow {
-    box-shadow: 0.3rem 0.3rem 1rem;
-    margin: 0.5rem 1rem 1rem 0.2rem;
   }
 </style>

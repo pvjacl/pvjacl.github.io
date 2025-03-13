@@ -10,8 +10,45 @@ import Layout from '@layouts/GalleryLayout.astro';
 	keywords='Remembrance Gallery Location Hours'
 	pubDate={new Date('Feb 11, 2025')}
 >
-<h2>
-	Gallery Location and Hours
-</h2>
+<h3>
+	Location
+</h3>
+<p>
+	The Remembranmce Gallery is located under the Grandstand at <a href="https://thefair.com">the Washington State Fair</a>. The closest entrances are the Gold Gate and the Red Gate.
+</p>
+
+<address>
+	Washington State Fair<br/>
+	110 9th Ave SW<br/>
+	Puyallup, WA 98371
+</address>
+
+<iframe 
+	src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.9315796972883!2d-122.29867368794572!3d47.18472832186227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490fc035e7af37d%3A0x5fb822881e1b0c46!2sWashington%20State%20Fair!5e0!3m2!1sen!2sca!4v1739921827327!5m2!1sen!2sca" 
+	width="100%" 
+	height="450" 
+	style="border:0;" 
+	allowfullscreen="" 
+	loading="lazy" 
+	referrerpolicy="no-referrer-when-downgrade"
+>
+</iframe>
+<h3>Parking</h3>
+<p>
+	Multiple parking options are available. 
+	Refer to <a href="https://www.datocms-assets.com/118003/1619527798-wsf-grounds-parking-map-042721.pdf">this map of the Fairgrounds</a> for the Red and Gold Parking areas for the closest options.
+</p>
+
+<h3>Hours</h3>
+<p>
+	The Remembrance Gallery is open to the public during the Spring Fair, the Washington State Fair, and by scheduled tour.  Refer to <a href="https://thefair.com">the Washington State Fair website</a> for Fair hours.
+	Guided tours and school visits of the Gallery can be scheduled by visiting <a href="/gallery/gallery-tours">our Gallery Tours page</a>.
+</p>
 </Layout>
 
+<style lang="scss">
+	address {
+		font-weight: bold;
+		margin-bottom:1.5rem;
+	}
+</style>

@@ -1,17 +1,51 @@
 ---
 import Layout from '@layouts/GalleryLayout.astro';
+import { Image } from "astro:assets";
 
-
+import imgVolunteers from "./assets/_DOR_PV_2025_017.jpg";
 ---
 
 <Layout
-	title="Volunteer"
-	description="Volunteer"
-	keywords='Volunteer'
+	title="Volunteer with the Remembrance Gallery"
+	description="The Remembrance Gallery is run entirely by volunteers dedicated to helping educate the public about Japanese American history and how civil and human rights need to be protected for all. "
+	keywords='Volunteer Remembrance Gallery Puyallup'
 	pubDate={new Date('Feb 11, 2025')}
 >
-<h2>
-	Volunteer
-</h2>
+	<p>
+		The Puyallup Valley JACL Remembrance Gallery honors those who were imprisoned at the Washington State Fairgrounds, 
+		raising awareness about this chapter in history and its continued relevance today. 
+	</p>
+	<p>
+		The Remembrance Gallery is run entirely by volunteers dedicated to helping educate the public about <a href="/history/assembly-history/">Japanese American 
+		history</a> and how civil and human rights need to be protected for all. We continue to welcome new volunteers to join us in support of this work. 
+	</p>
+	<p>
+		In addition to opportunities during the Spring Fair and <a href="https://thefair.com/">Washington State Fair</a>, we host special events and scheduled 
+		tours and school visits throughout the year. Regular opportunities are listed below, but we also welcome those with other interests and skills to reach out. 
+	</p>
+	<p>
+		<strong>Interested in volunteering?</strong> Please reach out to Eileen Yamada Lamphere, (PV JACL President), at 
+		<a href="mailto:puyallupvalleyjacl@gmail.com">PuyallupValleyJACL@gmail.com</a>.
+	</p>
+
+	<Image src={imgVolunteers} alt="Volunteers at the 2025 Day of Remembrance" />
+	<h3 class="text-center">Ways to Volunteer</h3>
+	<h5>Gallery Assistants</h5>
+	<p>
+		Gallery assistants can provide support in a variety of ways, depending on abilities and interest. This can include welcoming visitors, assisting in wayfinding, 
+		and answering general questions. Outside of the Gallery, assistants can also support us at community and public outreach events throughout the region.
+	</p>
+	<h5>Gallery Docents</h5>
+	<p>
+		Docents play an important role in visitor engagement at the Remembrance Gallery, helping people to understand the goal and relevance of 
+		the Gallery and to orient themselves within the space. You don’t need to be an expert in the history of wartime incarceration but will be 
+		provided with training, talking points, and other resources to familiarize yourself with the general topics and themes so that you can direct 
+		visitors to relevant content and information.
+	</p>
 </Layout>
 
+<style lang="scss">
+	.text-center {
+		text-align:center;
+	}
+</style>

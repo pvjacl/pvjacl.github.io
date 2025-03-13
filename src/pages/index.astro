@@ -1,10 +1,17 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION, SHOW_PAGE_DESCRIPTION } from "../consts";
 import { ClientRouter } from 'astro:transitions';
 import GalleryPhotosSlider from "@/components/GalleryPhotosSlider";
+import Events from "./events/index.astro";
+
+const posts = (await getCollection('galleryEvents'))
+  .sort(	(a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf()
+	)
+	.filter((a) => (!a.data.offline));
 
 // const posts = (await getCollection("blog"))
 //   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -43,7 +50,7 @@ import GalleryPhotosSlider from "@/components/GalleryPhotosSlider";
         The Gallery brings awareness to the history of the “Puyallup Assembly Center” (PAC) as the largest 
         temporary American concentration camp in Washington State.
       </p>
-      <GalleryPhotosSlider />
+      <GalleryPhotosSlider client:idle />
       <p>
         Located under the Grandstand at the <a href="http://thefair.com" target="_blank">Washington State Fairgrounds</a>, the Gallery is accessible during 
         the Washington State Fair, the Spring Fair, or by scheduled tour. Contact us to schedule a visit or 
