@@ -14,13 +14,14 @@ import GalleryPhoto from "@/components/GalleryPhoto.astro";
  keywords="History Puyallup Assembly Center"
  pubDate={new Date("December 8, 2023")}
 >
-<p>
-  President Franklin D. Roosevelt signed [Executive Order 9066 on February 19, 1942](https://www.archives.gov/milestone-documents/executive-order-9066). 
-  This order allowed the military to create exclusion zones that led to the forced removal of all Japanese and Japanese Americans 
-  from the West Coast and other designated areas.  
-</p>    
 <div class="side-by-side">
-    <p class="side-text">
+  <div class="side-text">
+    <p>
+      President Franklin D. Roosevelt signed [Executive Order 9066 on February 19, 1942](https://www.archives.gov/milestone-documents/executive-order-9066). 
+      This order allowed the military to create exclusion zones that led to the forced removal of all Japanese and Japanese Americans 
+      from the West Coast and other designated areas.  
+    </p>    
+    <p>
       Between April and September 1942, the Washington
       State Fairgrounds (at the time called the Puyallup
       Fairgrounds) served as one of seventeen makeshift
@@ -32,54 +33,36 @@ import GalleryPhoto from "@/components/GalleryPhoto.astro";
       before being moved inland to one of ten permanent
       concentration camps.  
     </p>
+    <p>
+      In total, over 125,000 people of Japanese ancestry
+      living along the West Coast were imprisoned. More
+      than two-thirds were American-born citizens. The rest
+      were Issei, first generation immigrants, unable by law
+      to become citizens. [Learn more about the lives of Japanese immigrants and their families](/history/additional-resources/).   
+    </p>
+    <p>
+      The Remembrance Gallery brings awareness to the history 
+      of the “Puyallup Assembly Center” (PAC), as the largest 
+      temporary American concentration camp in Washington State.   
+    </p>
+    <p>
+      The Puyallup Assembly Center was nicknamed “Camp Harmony” 
+      by an editor of the Seattle Post-Intelligencer, a local newspaper. 
+      The photographer mentioned in his report that the people from the 
+      Japanese community were quiet and harmonious. Neither the government 
+      nor military were opposed to the concentration camp being known as 
+      a “camp”. Thus, the general public was allowed to think the prisoners 
+      were camping and a nickname that obscures the reality of PAC conditions persists to this day.
+    </p>
+        
+  </div>
   <div class="side-image">
     <GalleryPhoto title="Aerial View of the Puyallup Assembly Center" description="Courtesy of Library of Congress" imageMeta={imgPACAerial} />
-  </div>
-</div>
-
-
-<div class="side-by-side">
-  <p class="side-text">
-    In total, over 125,000 people of Japanese ancestry
-    living along the West Coast were imprisoned. More
-    than two-thirds were American-born citizens. The rest
-    were Issei, first generation immigrants, unable by law
-    to become citizens. [Learn more about the lives of Japanese immigrants and their families](/history/additional-resources/).   
-  </p>
-  <div class="side-image">
     <GalleryPhoto title="Family in the Puyallup Assembly Center Barracks" description="Photo by Howard Clifford. Courtesy of UW Libraries Special Collections" imageMeta={imgPACBarracks} />
-  </div>  
-  
-</div>
-
-
-<div class="side-by-side">
-  <p class="side-text">
-  The Remembrance Gallery brings awareness to the history 
-  of the “Puyallup Assembly Center” (PAC), as the largest 
-  temporary American concentration camp in Washington State.   
-  </p>
-  <div class="side-image">
     <GalleryPhoto title="An Example Horse Stall for a Family" description="Photo by Dorothea Lange. Courtesy of National Archives" imageMeta={imgPACStall} />
-
-  </div>
-</div>
-
-<div class="side-by-side">
-  <p class="side-text">
-    The Puyallup Assembly Center was nicknamed “Camp Harmony” 
-    by an editor of the Seattle Post-Intelligencer, a local newspaper. 
-    The photographer mentioned in his report that the people from the 
-    Japanese community were quiet and harmonious. Neither the government 
-    nor military were opposed to the concentration camp being known as 
-    a “camp”. Thus, the general public was allowed to think the prisoners 
-    were camping and a nickname that obscures the reality of PAC conditions persists to this day.
-  </p>
-  <div class="side-image">
     <GalleryPhoto title="Muddy conditions at Puyallup Assembly Center" description="Courtesy of the Seattle Post-Intelligencer Collection (number 1986.5.6680.1, Puyallup-Japanese Colony), Museum of History & Industry" imageMeta={imgPACMuddy} />
   </div>
 </div>
-
 
 </Layout>
 
@@ -91,8 +74,9 @@ import GalleryPhoto from "@/components/GalleryPhoto.astro";
     display: flex;
 		flex-wrap: wrap;
     justify-content: space-between;
-    align-items:flex-start;
+    align-items:stretch;
 		gap: 1rem;
+    
     .side-text {
       flex:2;
       min-width: 10rem;
@@ -101,7 +85,17 @@ import GalleryPhoto from "@/components/GalleryPhoto.astro";
       margin-top:1.4rem;
       min-width: 20rem;
       flex: 3;
-      object-fit: contain;
+      img {
+        object-fit: contain;
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  @media (max-width:51rem) {
+    .side-by-side {
+      display:block;
     }
   }
 
