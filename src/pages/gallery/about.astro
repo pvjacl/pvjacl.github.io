@@ -6,6 +6,7 @@ import imgWallOfNames from './assets/_wall-of-names.jpg';
 import imgHorseStallMockup from './assets/_horse-stall-mockup.jpg';
 import imgTouchscreens from './assets/_touchscreens.jpg';
 import imgPamphlet from './assets/_pamphlet-cover.jpg';
+import GalleryPhoto from "@/components/GalleryPhoto.astro";
 ---
 
 <Layout
@@ -66,21 +67,9 @@ import imgPamphlet from './assets/_pamphlet-cover.jpg';
       </p>
     </div>
     <div class="side-image">
-      <Image 
-      title="Names of those confined in the Puyallup Assembly Center Barracks" 
-      alt="Photo by Howard Clifford. Courtesy of UW Libraries Special Collections" 
-      src={imgWallOfNames} 
-    />
-    <Image 
-      title="A mockup of the horse stalls" 
-      alt="This is the example of a horse stall used to house a single family" 
-      src={imgHorseStallMockup} 
-    />
-    <Image 
-      title="Interactive touchscreens" 
-      alt="Interact with touchscreens to learn about the history" 
-      src={imgTouchscreens} 
-    />
+      <GalleryPhoto title="Names of those confined in the Puyallup Assembly Center Barracks" description="" imageMeta={imgWallOfNames} />
+      <GalleryPhoto title="A mockup of the horse stalls used to house a family" description="" imageMeta={imgHorseStallMockup} />
+      <GalleryPhoto title="Interactive touchscreens to learn about the history" description="" imageMeta={imgTouchscreens} />
     </div>
   </div>
 
