@@ -56,6 +56,13 @@ export const menubar: MenuItemData[] = [
         children: []
       },
       {
+        id: 'remGalleryTalks',
+        isDropdown: false,
+        src: '/gallery/gallery-talks',
+        label: 'Gallery Talks & Presentations',
+        children: []
+      },
+      {
         id: 'remGalleryTeam',
         isDropdown: false,
         src: '/gallery/gallery-team',

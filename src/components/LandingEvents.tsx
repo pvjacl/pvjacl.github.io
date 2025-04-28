@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import './LandingEvents.scss';
 
 export type EventInfo = {

@@ -8,7 +8,6 @@ import { ClientRouter } from 'astro:transitions';
 import GalleryPhotosSlider from "@/components/GalleryPhotosSlider";
 import LandingEvents from "@/components/LandingEvents";
 import type { EventInfo } from '@components/LandingEvents';
-import { getPositionOfLineAndCharacter } from "typescript";
 
 const posts = (await getCollection('galleryEvents'))
   .sort(	(a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf()
