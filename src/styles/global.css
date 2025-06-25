@@ -152,6 +152,13 @@ hr {
 		color: black;
 	}
 }
+.gallery-callout {
+    background-color: white;
+    border-radius: 2rem;
+    padding: 2rem;
+    font-size: 1.5rem;
+    margin-bottom:2rem;
+}
 .quote {
 	background-color:rgba(var(--navigation-background), 50%);
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;

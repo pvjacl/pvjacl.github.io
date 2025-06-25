@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/SinglePage.astro";
+import SearchComponent from "astro-pagefind/components/Search";
+---
+
+<Layout
+  title="Your Page wasn't Found"
+  description="This page allows searching for various words or keywords inside the website"
+  keywords="404 Page Not Found search"
+  pubDate={new Date("June 25 2025")}
+>
+  <p>
+    We couldn't find the page you specified or linked to. Ues the navigation at the top and bottom of the pages or simply type a few words into the search box below and that should help you find the page you want.
+  </p>
+  <p>
+    If you are searching for specific names of someone incarcerated in the Pacific Assembly Center, <a href="/gallery/gallery-names">go to our Name Search page</a>.
+  </p>
+	<SearchComponent id="search" className="pagefind-ui" uiOptions={{ showImages: false}} />
+</Layout>

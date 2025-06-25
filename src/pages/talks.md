@@ -1,0 +1,37 @@
+---
+title: 'Talks and Presentations'
+description: 'Contact us to arrange tours of the Remembrance Gallery, classroom presentations, and educator workshops about wartime incarceration in the United States.'
+pubDate: May 11, 2024
+layout: '@layouts/SinglePage.astro'
+---
+
+The Puyallup Valley JACL organizes presentations and talks for a variety of audiences about the wartime incarceration 
+of Americans of Japanese descent. To learn more, and to schedule a time for your school, group, or organization, 
+contact us at [PuyallupValleyJACL@gmail.com](mailto:PuyallupValleyJACL@gmail.com).
+
+### Classroom Talks
+Topics for classroom visits may vary. **Introductory presentations** can provide a broad overview of wartime incarceration 
+and the experiences of Japanese and Japanese Americans in the United States before, during, and after the war. 
+Presentations may also be tailored to specific themes. 
+
+**Culminating talks and presentations** may also be arranged, including those where a survivor of an American concentration 
+camp is brought to your class to speak on their personal experience, as availability allows. 
+
+**NOTE:** If requesting a culminating presentation with a survivor, it is expected that your class has already learned about 
+the history of wartime incarceration in the United States.
+
+See our [Gallery Tour](/gallery/gallery-tours) page for information about teacher resources, recommended classroom preparation, 
+and suggested readings. Contact us at [PuyallupValleyJACL@gmail.com](mailto:PuyallupValleyJACL@gmail.com) for more information 
+and grade-appropriate materials and activities.
+
+### Presentations for Groups or Organizations
+The Puyallup Valley JACL also offers presentations for community groups and others interested in learning more about the 
+history of wartime incarceration in the United States. Potential presentations may include, but are not limited, to the following:
+
+* History of anti-Asian sentiment
+* Contributions of Japanese and Japanese Americans before World War II
+*	Treatment of incarcerees and conditions in American concentration camps
+*	Rebuilding and returning to everyday life after World War II
+*	Legacy of wartime incarceration: what it means today and for the future
+*	Empowerment and advocacy
+*	Giving meaning to **&lsquo;Never Again&rsquo;**

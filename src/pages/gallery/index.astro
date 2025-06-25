@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "@layouts/GallerySplash.astro";
+import GalleryOpenBanner from '@components/GalleryOpenBanner';
 
 import imgBarbedWire from './assets/_PAC_cropped-barbed-wire.jpg';
 ---
@@ -11,6 +12,7 @@ import imgBarbedWire from './assets/_PAC_cropped-barbed-wire.jpg';
 	keywords="Remembrance Gallery Incarceration Puyallup Fair Grandstands Donate Fundraising Venmo Credit card checks"
   pubDate={new Date("December 2023")}
 >
+  <GalleryOpenBanner client:load />
   <Image id="imgBarbedWire" class="heroImage" src={imgBarbedWire} alt="Behind Barbed Wire, Courtesy of the Tokuda Family Collection, Densho.org" />
   <div id="aboutText" >
     <h4>Our Goal</h4>

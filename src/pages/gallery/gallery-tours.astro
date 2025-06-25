@@ -1,5 +1,5 @@
 ---
-import Layout from '@layouts/SinglePage.astro';
+import Layout from '@layouts/GalleryLayout.astro';
 import GalleryPhotosSlider from '@components/GalleryPhotosSlider';
 
 ---
@@ -30,7 +30,7 @@ import GalleryPhotosSlider from '@components/GalleryPhotosSlider';
   More details are available on our <a href="/gallery">Gallery Overview page</a> or in our <a href="/galleryAssets/RG-Brochure_FINAL.pdf">Gallery brochure</a>. 
 </p>
 <p>
-Interested in a presentation at your school or organization? Refer to our <a href="/gallery/gallery-talks">Talks and Presentations page</a> for 
+Interested in a presentation at your school or organization? Refer to our <a href="/talks">Talks and Presentations page</a> for 
 details and contact information.
 </p>
 <h3>Scheduling a Visit</h3>
@@ -181,8 +181,9 @@ details and contact information.
     margin-bottom: 0;
   }
   table {
+    margin-top: 1rem;
     thead {
-      background-color: rgba(var(--navigation-background), 50%);
+      background-color: rgba(var(--gray-light), 90%);
       th {
         text-align: center;
       }
