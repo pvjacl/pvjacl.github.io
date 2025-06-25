@@ -1,22 +1,27 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION, SHOW_PAGE_DESCRIPTION } from "../consts";
 import { ClientRouter } from 'astro:transitions';
 import GalleryPhotosSlider from "@/components/GalleryPhotosSlider";
-import Events from "./events/index.astro";
+import LandingEvents from "@/components/LandingEvents";
+import type { EventInfo } from '@components/LandingEvents';
 
 const posts = (await getCollection('galleryEvents'))
   .sort(	(a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf()
 	)
 	.filter((a) => (!a.data.offline));
-
-// const posts = (await getCollection("blog"))
-//   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-//   .filter((a) => (!a.data.offline))
-//   .slice(0, 3);
+const eventInfos = posts.map(post => (
+  {
+    landingEventPulldate: post.data.eventDate.getTime(),
+    slug: `/gallery/gallery-events/${post.slug}`,
+    imgSrc: post.data.heroImage ? post.data.heroImage.src : null,
+    title: post.data.title,
+    description: post.data.description
+  } as EventInfo
+));
 
 ---
 
@@ -57,6 +62,7 @@ const posts = (await getCollection('galleryEvents'))
         learn how you can support our work to raise awareness of civil rights violations and emphasize how 
         this chapter in American history is still relevant today.
       </p>
+      <LandingEvents eventInfos={eventInfos} client:idle />
       <h3>Media Coverage</h3>
       <p>
         See our <a href="/media">Media</a> page for news coverage about the Remembrance Gallery.

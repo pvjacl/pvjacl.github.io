@@ -4,14 +4,18 @@ import EventTables from '@components/EventTables';
 import type { Event } from '@components/EventTables';
 import TacomaPremierePhoto from './assets/_RemovedbyForce–FullPage_UPS-Tacoma.jpg';
 import SeattlePremierePhoto from './assets/_RemovedbyForce–FullPage_SEATTLE-R1.jpg';
-export const events:Event[] = [
+import EventsTable from "@components/EventsTable";
+import type { Event } from "@components/EventsTable";
+
+const events:Event[] = [
   {
     dateStr: "February 18, 2025",
     title: 'Tacoma Premiere of "Removed By Force"',
     description: `Film screening and panel discussion for the Japanese American Day of Remembrance is at the 
     Rasmussen Rotunda at the University of Puget Sound (1500 N Warner Street, Tacoma, Washington). 
     Event is co-sponsored by the University of Puget Sound, the Puyallup Valley JACL and the Olympia JACL.`,
-    photoSrc: TacomaPremierePhoto.src
+    photoSrc: TacomaPremierePhoto.src,
+    landingEventPullDate: "February 18, 2025"
   },
   {
     dateStr: "February 19, 2025",
@@ -19,7 +23,8 @@ export const events:Event[] = [
     description: `Film screening and panel discussion for the Japanese American Day of Remembrance is at the 
     Blaine Memorial United Methodist Church (3001 24th Ave S, Seattle, Washington). 
     Event is co-sponsored by the Blaine Memorial United Methodist Church, the Puyallup Valley JACL, and Seattle JACL.`,
-    photoSrc: SeattlePremierePhoto.src
+    photoSrc: SeattlePremierePhoto.src,
+    landingEventPullDate: "Februaryd 19, 2025"
   }
 ];
 
@@ -29,28 +34,10 @@ export const events:Event[] = [
   title="Puyallup Valley Chapter Activities"
   description="Upcoming events relevant to the JACL community"
   keywords='Activities Events'
-  pubDate={new Date('May 29, 2024')}
+  pubDate={new Date('Feb 20, 2025')}
 >
-<EventTables events={events} client:idle />
+  <EventsTable events={events} client:load />
 </Layout>
 
 
-<style lang="scss">
-
-  thead th {
-    font-size: 1.4rem;
-    text-align: center;
-  }
-
-  tbody {
-    tr:nth-of-type(odd) {
-      background-color: rgba(var(--navigation-background), 40%);
-    }
-    td {
-      border: none;
-      padding-left: 0.5rem;
-      vertical-align: top;
-      max-height: 8rem;
-    }
-  }
 </style>

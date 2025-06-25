@@ -1,0 +1,17 @@
+.event-list {
+  border: 1px solid var(--accent-dark);
+  margin-bottom: 1rem;
+  h3 {
+    background-color: var(--accent-dark);
+    color: white;
+    padding: 0.3rem;
+    text-align: center;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 1rem;
+    li {
+      margin-bottom:1rem;
+    }
+  }
+}

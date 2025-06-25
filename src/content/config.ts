@@ -32,6 +32,7 @@ const galleryEvents = defineCollection({
 		updatedDate: z.coerce.date().optional(),
 		heroImage: image().optional(),
 		offline: z.boolean().optional(),
+		landingEventPullDate: z.coerce.date().optional(),
 		frontmatter: z.object({
 			title: z.string(),
 			description: z.string()

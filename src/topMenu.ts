@@ -15,6 +15,77 @@ export const menubar: MenuItemData[] = [
     children: []
   },
   {
+    id: 'remGalleryMenu',
+    isDropdown: true,
+    src: '',
+    label: 'Remembrance Gallery',
+    children: [
+      {
+        id: 'remGalleryItem',
+        isDropdown: false,
+        src: '/gallery/',
+        label: 'The Remembrance Gallery',
+        children: []
+      },
+      {
+        id: 'remGalleryNames',
+        isDropdown: false,
+        src: '/gallery/gallery-names',
+        label: 'Names in the Gallery',
+        children: []
+      },
+      {
+        id: 'remGalleryDonors',
+        isDropdown: false,
+        src: '/gallery/donors',
+        label: 'Donors and Endorsements',
+        children: []
+      },
+      {
+        id: 'remGalleryEvents',
+        isDropdown: false,
+        src: '/gallery/gallery-events',
+        label: 'Gallery Events',
+        children: []
+      },
+      {
+        id: 'remGalleryTours',
+        isDropdown: false,
+        src: '/gallery/gallery-tours',
+        label: 'Gallery Tours',
+        children: []
+      },
+      {
+        id: 'remGalleryTalks',
+        isDropdown: false,
+        src: '/gallery/gallery-talks',
+        label: 'Gallery Talks & Presentations',
+        children: []
+      },
+      {
+        id: 'remGalleryTeam',
+        isDropdown: false,
+        src: '/gallery/gallery-team',
+        label: 'Gallery Team',
+        children: []
+      },
+      {
+        id: 'remGalleryDonations',
+        isDropdown: false,
+        src: '/gallery/gallery-donate',
+        label: 'Donate to the Gallery',
+        children: []
+      },
+    ]
+  },
+  // {
+  //   id: 'activities',
+  //   isDropdown: false,
+  //   src: '/blog',
+  //   label: 'Events',
+  //   children: []
+  // },
+  {
     id: 'aboutMenu',
     isDropdown: true,
     src: '',
