@@ -14,37 +14,44 @@ import imgJrem from './assets/_Jrem-70.png';
 type CrewItem = {
   logo: ImageMetadata;
   name: string;
+  inits: string;
   url: string;
 }
 const galleryCrew:CrewItem[] = [
   {
     logo: imgBelleWissel,
     name: "Belle & Wissel",
+    inits: "(B&W)",
     url: "bwco.info"
   },
   {
     logo: imgMountainConst,
     name: "Mountain Construction",
+    inits: "(MC)",
     url: "www.mountainconst.com"
   },
   {
     logo: imgBlackmouth,
     name: "Blackmouth Design",
+    inits: "(BMD)",
     url: "www.imaginevs.com"
   },
   {
     logo: imgImaginevs,
     name: "Imagine Visual Service",
+    inits: "(IVS)",
     url: "www.imaginevs.com"
   },
   {
     logo: imgIntegrity,
     name: "Integrity Networks",
+    inits: "(IN)",
     url: "integritynetworksinc.com"
   },
   {
     logo: imgJrem,
-    name: "Jill Randerson, Vendor Manager",
+    name: "Jill Randerson, JREM",
+    inits:"(Vendor Mgr)",
     url: "jrem.co"
   }
 ];
@@ -60,22 +67,22 @@ const galleryCrew:CrewItem[] = [
 <h3>The Leadership Committee and Staff</h3>
 <ul>
   <li>Eileen Yamada Lamphere (President of Puyallup Valley JACL)</li>
-  <li>Liz Dunbar (Secretary of Puyallup Valley JACL & Fundraising Lead)</li>
+  <li>Liz Dunbar (Secretary of Puyallup Valley JACL and Fundraising Lead)</li>
   <li>Sharon Sobie Seymour (Gallery Manager)</li>
   <li>Barb Mizoguchi Asahara (Design Consultant)</li>
   <li>Paul Sherfey (Education Resource Manager)</li>
   <li>Brian Yamasaki (Webmaster)</li>
-  <li>Amy Sawyer (Memorial Researcher)</li>
+  <li>Amy Oshiro (Memorial Researcher)</li>
 </ul>
 <img src="/Leadership-Committee.jpg" alt="Photo of Leadership Committee" />
 <ImgDescription>One of many planning meetings</ImgDescription>
 
 <img src="/Co-Chairs-Leadership-Team.jpg" alt="Co chairs with the leadership committee" />
 <ImgDescription>
-  Our Honorary Co-Chairs include, Bill Weyerhaeuser and Frank and Penny Fukui
+  Our Honorary Co-Chairs include Bill Weyerhaeuser and Frank and Penny Fukui
 </ImgDescription>
 
-<h3>Gallery Design & Construction</h3>
+<h3>Gallery Design and Construction</h3>
 
 <p>The design and construction of the Remembrance Gallery was realized with the help of six imaginative and talented vendors</p>
 <table>
@@ -87,7 +94,7 @@ const galleryCrew:CrewItem[] = [
             <a href={`https://${item.url}/`}><Image src={item.logo} alt={`${item.name} logo`} /></a>
           </td>
           <td>
-            <a href={`https://${item.url}/`}>{item.name}</a>
+            <a href={`https://${item.url}/`}>{item.name}</a>&nbsp;{item.inits}
           </td>
         </tr>
       )
@@ -95,9 +102,9 @@ const galleryCrew:CrewItem[] = [
   }
 </table>
 <img src="/galleryAssets/Construction-Team.jpg" alt="The Construction Team" />
-<ImgDescription>Left to Right front row: Jill Randerson (Vendor Mgn), Alley Kloba (IVS), Ryan Gilchrist (IVS), 
-  Eileen Yamada Lamphere (JACL Pres), Sharon Sobie Seymour (Project Mgn). <br />
-  Back row, left to right: Jes Noparat (B&W), Sarah Sherwood (MC), Rich Batcheller (BMD), Dean Roberts (IN), Fred McDermott (IN), Yousman Okano (B&W).
+<ImgDescription>left to right: Jes Noparat (B&W), Sarah Sherwood (MC), Rich Batcheller, Jill Randerson (Vendor Mgr), Alley Kloba (IVS), 
+  Ryan Gilchrist (IVS), Dean Roberts (IN), Eileen Yamada Lamphere (JACL Pres), Sharon Sobie Seymour (Project Mgn), Fred McDermott (IN), Yousman Okano (B&W).
+
 </ImgDescription>
 </Layout>
 

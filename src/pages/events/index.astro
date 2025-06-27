@@ -2,10 +2,18 @@
 import Layout from '@layouts/SinglePage.astro';
 import TacomaPremierePhoto from './assets/_RemovedbyForce–FullPage_UPS-Tacoma.jpg';
 import SeattlePremierePhoto from './assets/_RemovedbyForce–FullPage_SEATTLE-R1.jpg';
+import FallFairPhoto from './assets/_fall-fair-2025.jpg';
 import EventsTable from "@components/EventsTable";
 import type { Event } from "@components/EventsTable";
 
 const events:Event[] = [
+  {
+    dateStr: "August 29 - September 21",
+    title: "The Remembrance Gallery is Open During the Fair",
+    description: `The Remembrance Gallery is open during the Washington State Fair`,
+    photo: FallFairPhoto,
+    landingEventPullDate: "September 22, 2025"
+  },
   {
     dateStr: "February 18, 2025",
     title: 'Tacoma Premiere of "Removed By Force"',
