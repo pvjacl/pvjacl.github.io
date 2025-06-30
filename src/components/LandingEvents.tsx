@@ -24,7 +24,7 @@ const LandingEvents = ({eventInfos}:Props) => {
         <ul>
           {
             upcoming.map(info => (
-              <li>
+              <li key={info.description}>
                 <a href={info.slug}>{info.title}</a> - {info.description}
               </li>
             ))

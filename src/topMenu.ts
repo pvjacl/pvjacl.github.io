@@ -67,7 +67,7 @@ export const menubar: MenuItemData[] = [
         id: 'remTalks',
         isDropdown: false,
         src: '/talks',
-        label: 'Talks',
+        label: 'Talks and Presentations',
         children: []
       }
     ]
