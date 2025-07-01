@@ -47,7 +47,7 @@ const EventsTable = ({events}:Props) => {
             {
               events.map (event => {
                 return (
-                  <tr>
+                  <tr key={event.dateStr+event.title}>
                     <td>{event.photo ? <a href={event.photo.src}><img src={event.photo.src} alt="featured image"/></a>: ' '}</td>
                     <td><strong>{event.title}</strong> &ndash; {event.description}</td>
                     <td>{event.dateStr}</td>

@@ -32,7 +32,7 @@ const eventInfos = posts.map(post => (
     <ClientRouter />
   </head>
   <body>
-    <Header title={SITE_TITLE} />
+    <Header isGalleryPage={false} />
     {SHOW_PAGE_DESCRIPTION ? <div class="page-desc"><strong>Page Description for Search Engines only:<br /></strong> <p>{SITE_DESCRIPTION}</p></div> : <span/> }
     <main>
       <h1 id="long-title">We are the Puyallup Valley JACL</h1>

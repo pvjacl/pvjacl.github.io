@@ -1,0 +1,83 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
+import { SHOW_PAGE_DESCRIPTION } from '@/consts';
+
+const { title, description } = Astro.props.frontmatter || Astro.props;
+
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+		<style lang="scss">
+			body {
+				font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+				line-height: 1.4;
+			}
+			main {
+				width: 100%;
+				max-width: 100%;
+				margin: 0;
+				// background-color: #dad7c5;
+				position:relative;
+				padding: 0;
+			}
+			h1, :global(h2), :global(h3), :global(h4), :global(h5), :global(h6) {
+				font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+			}
+			:global(h4) {
+				color: #555333;
+			}
+			:global(a) {
+				color: #535144;
+				&:hover {
+					color: #737144;
+				}
+			}
+			.hero-image {
+				width: 100%;
+			}
+			.hero-image img {
+				display: block;
+				margin: 0 auto;
+				border-radius: 12px;
+				box-shadow: var(--box-shadow);
+			}
+			.prose {
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 1em;
+				color: rgb(var(--gray-dark));
+			}
+			.title {
+				margin-bottom: 1em;
+				text-align: center;
+				line-height: 1;
+			}
+			.title h1 {
+				margin: 0 0 0.5em 0;
+			}
+			.date {
+				margin-bottom: 0.5em;
+				color: rgb(var(--gray));
+			}
+			.last-updated-on {
+				font-style: italic;
+			}
+		</style>
+		<ClientRouter />
+	</head>
+
+	<body class="gallery-layout">
+		<Header isGalleryPage={true} />
+		<main>
+			{SHOW_PAGE_DESCRIPTION ? <div class="page-desc"><strong>Page Description for Search Engines only:<br /></strong> {description}</div> : <span/> }
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

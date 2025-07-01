@@ -59,7 +59,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	</head>
 
 	<body>
-		<Header />
+		<Header isGalleryPage={true} />
 		<main>
 			{SHOW_PAGE_DESCRIPTION ? <div class="page-desc"><strong>Page Description for Search Engines only:<br /></strong> {description}</div> : <span/> }
 			<article>

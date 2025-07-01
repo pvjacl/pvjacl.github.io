@@ -1,0 +1,134 @@
+---
+import { Image } from "astro:assets";
+import Layout from "@layouts/GalleryLayout.astro";
+
+import imgWallOfNames from './assets/_wall-of-names.jpg';
+import imgHorseStallMockup from './assets/_horse-stall-mockup.jpg';
+import imgTouchscreens from './assets/_touchscreens.jpg';
+import imgPamphlet from './assets/_pamphlet-cover.jpg';
+import GalleryPhoto from "@/components/GalleryPhoto.astro";
+---
+
+<Layout
+  title="The Remembrance Gallery"
+  description="The Remembrance Gallery brings awareness to the history of the “Puyallup Assembly Center”, where over 7,500 Japanese Americans were incarcerated during WWII."
+	keywords="Remembrance Gallery Incarceration Puyallup Fair Grandstands Donate Fundraising Venmo Credit card checks"
+  pubDate={new Date("December 2023")}
+>
+
+  <p>
+    The Puyallup Valley Chapter of the Japanese American Citizens League (JACL)
+    presents the "Puyallup Assembly Center" Remembrance Gallery. The Gallery 
+    encourages an inclusive understanding of the wrongful incarceration of
+    125,000 Japanese and Japanese Americans in the United States during WWII 
+    (<a href="/history/additional-resources/">Learn more about mass incarceration during World War II</a>).
+    The Washington State Fair has provided a space to build a
+    permanent historic exhibit inside the grandstand, which is part of the
+    original confinement site (<a href="/history/assembly-history">Learn more about the history of the Puyallup Assembly Center</a>). 
+  </p>
+
+  <h3>Overview of Gallery Sections</h3>
+  <p>
+    The Remembrance Gallery has three distinct sections providing 
+    inclusive and comprehensive information,
+    personal stories, and examples of everyday camp life.
+    Each section is designed to provide a variety of media
+    to better understand this wartime experience.
+  </p>
+  <div class="side-by-side">
+    <div>
+      <h4>Monument</h4>
+      <p>
+        The heart of the gallery is a memorial wall that lists
+        the names of over 7,500 people imprisoned on these
+        fairgrounds. Their names are in alphabetical order according to family last names
+        along with their government-assigned family number.
+      </p>
+      <h4>Confinement</h4>
+      <p>Visitors can step inside a full-size 8 feet by 10 feet historic
+        replica of the horse stalls, used as makeshift housing
+        for many PAC incarcerees. It is an immersive, multisensory experience of the living conditions where up
+        to four men, women, and children lived in a single stall.
+        within the dark, dirty stables under the grandstands.</p>
+      <h4>Throughline</h4>
+      <p>Interactive touchscreen displays illuminate and
+        humanize the stories of survivors. Through interviews
+        and comprehensive content, visitors can learn about
+        a range of topics, including: discrimination and
+        racist laws, Nisei veterans, civil disobedience, acts of
+        kindness, and the influence of camp life on artists and
+        authors. Current events are also presented, highlighting
+        how communities are still denied safety, civil liberties,
+        and human rights today due to prejudice and bigotry.
+        A Map Station traces the paths of Washington Nikkei
+        as they were forcibly removed from their homes to
+        concentration camps, using movement and distance to
+        emphasize the impact on individuals and communities.
+      </p>
+    </div>
+    <div class="side-image">
+      <GalleryPhoto title="A mockup of the horse stalls used to house a family" description="" imageMeta={imgHorseStallMockup} />
+      <GalleryPhoto title="Names of those confined in the Puyallup Assembly Center Barracks" description="" imageMeta={imgWallOfNames} />
+      <GalleryPhoto title="Interactive touchscreens to learn about the history" description="" imageMeta={imgTouchscreens} />
+    </div>
+  </div>
+
+  <h3>Download our Brochure</h3>
+  <div class="side-by-side">
+    <div>
+      <a href="/galleryAssets/RG-Brochure_FINAL.pdf">
+        <Image class="show-shadow" src={imgPamphlet} alt="Our pamphlet" />
+      </a>
+    </div>
+    <div>
+      <p>Click on the image to download our brochure.</p>
+    </div>
+  </div>
+
+</Layout>
+
+<style lang="scss">
+  .callout {
+    background-color: white;
+  }
+  h4 {
+    text-align: center;
+  }
+  .side-by-side {
+    display: flex;
+		flex-wrap: wrap;
+    justify-content: space-between;
+    align-items:center;
+		gap: 1rem;
+    margin: 1rem 0;
+    align-items: stretch;
+		div {
+			max-width: 46%;
+		}
+    .side-image {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding:1rem 0;
+      gap: 1rem;
+    }
+  }
+  @media (max-width:50rem) {
+    .side-by-side {
+      display: block;
+      div {
+        max-width: 100%;
+      }
+      .side-image {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  }
+  .show-shadow {
+    box-shadow: 0.3rem 0.3rem 1rem;
+    margin: 0.5rem 1rem 1rem 0.2rem;
+  }
+</style>

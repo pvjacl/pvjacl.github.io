@@ -1,0 +1,81 @@
+---
+import Layout from '@layouts/GalleryLayout.astro';
+import GalleryPhoto from '@/components/GalleryPhoto.astro';
+
+import imgHarmonySign from './_sculpture-sign.webp';
+import imgHarmonySculpture from './_harmony-sculpture.webp'
+---
+
+<Layout 
+  title="The Harmony Sculpture"
+  description=`Located at the Washington State Fair, "Harmony" is a memorial sculpture by George Tsutakawa that honors Japanese Americans incarcerated during World War II.`
+  keywords="Harmony Sculpture"
+  pubDate={new Date('May 15, 2024')}
+>
+<div class="gallery-callout">
+  &ldquo;I wanted to depict people of all races and creeds living in harmony. Then these sad things won't be happening over and over again&rdquo;
+ 
+  <div id="author">
+    George Tsutakawa
+  </div>
+
+  <div id="date">
+    August 21, 1983
+  </div>
+</div>
+<div class="side-by-side">
+  <div class="left">
+    <p>
+      &ldquo;Harmony&rdquo; is a sculpture by <a href="https://en.wikipedia.org/wiki/George_Tsutakawa">George Tsutakawa</a> located on the 
+      Washington State Fairgrounds near the Expo Hall entrance. It commemorates the over 125,000 
+      Japanese Americans and Japanese immigrants living on the West Coast who were incarcerated 
+      during World War II. 
+    </p>
+    <p>
+      Unveiled at the Fairgrounds in 1983, the sculpture is a column made of dark bronze containing 
+      figures of men, women and children are cut in silhouette into the sides of the column. 
+      The negative, open spaces form interesting patterns that shift as one examines the column from 
+      various angles.
+    </p>
+    <p>
+      An accompanying sign was added in 2017, funded by a <a href="https://jacl.org">National JACL</a> Legacy Grant.
+    </p>
+
+  </div>
+  <div class="right">
+    <GalleryPhoto imageMeta={imgHarmonySculpture} description="The Harmony Sculpture" title="" />
+
+    <GalleryPhoto imageMeta={imgHarmonySign} title="" description="The sign accompanying the sculpture" />
+
+  </div>
+</div>
+
+</Layout>
+
+<style lang="scss">
+  .side-by-side {
+    display:flex;
+    flex-wrap: no-wrap;
+    .left {
+      max-width: 45%;
+      margin-right: 1rem;
+    }
+  }
+  @media (max-width:45rem) {
+    .side-by-side {
+      flex-wrap: wrap;  
+      .left {
+        max-width: 100%;
+      }
+    }
+  }
+  #author {
+    margin-top:2rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+  #date {
+    text-align: center;
+    font-size: 1rem;
+  }
+</style>

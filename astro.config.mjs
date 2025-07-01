@@ -18,7 +18,8 @@ export default defineConfig({
   redirects: {
     '/redirects/gallery-names': '/gallery/gallery-names',
     '/redirects/gallery-donate': '/gallery/gallery-donate',
-    '/redirects/gallery-tours': '/gallery/gallery-tours'
+    '/redirects/gallery-tours': '/gallery/gallery-tours',
+    '/about-4': '/about'
   },
   outDir: './docs'
 });

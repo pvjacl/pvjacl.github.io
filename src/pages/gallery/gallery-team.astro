@@ -1,45 +1,127 @@
 ---
-import Layout from '@layouts/SinglePage.astro';
+import { Image } from 'astro:assets';
+import Layout from '@layouts/GalleryLayout.astro';
 import ImgDescription from '@components/ImgDescription.astro';
+import type { ImageMetadata } from 'astro';
+
+import imgBelleWissel from './assets/_Belle&Wissel.jpg';
+import imgBlackmouth from './assets/_BlackMouthDesign.png';
+import imgMountainConst from './assets/_MountainConstr.png';
+import imgImaginevs from './assets/_Imaginevs.jpg';
+import imgIntegrity from './assets/_IntegrityNetworks.png';
+import imgJrem from './assets/_Jrem-70.png';
+
+type CrewItem = {
+  logo: ImageMetadata;
+  name: string;
+  inits: string;
+  url: string;
+}
+const galleryCrew:CrewItem[] = [
+  {
+    logo: imgBelleWissel,
+    name: "Belle & Wissel",
+    inits: "(B&W)",
+    url: "bwco.info"
+  },
+  {
+    logo: imgMountainConst,
+    name: "Mountain Construction",
+    inits: "(MC)",
+    url: "www.mountainconst.com"
+  },
+  {
+    logo: imgBlackmouth,
+    name: "Blackmouth Design",
+    inits: "(BMD)",
+    url: "www.imaginevs.com"
+  },
+  {
+    logo: imgImaginevs,
+    name: "Imagine Visual Service",
+    inits: "(IVS)",
+    url: "www.imaginevs.com"
+  },
+  {
+    logo: imgIntegrity,
+    name: "Integrity Networks",
+    inits: "(IN)",
+    url: "integritynetworksinc.com"
+  },
+  {
+    logo: imgJrem,
+    name: "Jill Randerson, JREM",
+    inits:"(Vendor Mgr)",
+    url: "jrem.co"
+  }
+];
 ---
 
 <Layout
-	title="Leadership Team and Construction Crew"
+	title="Our Team"
 	description="Some of the people who made the Remembrance Gallery possible."
 	keywords="Remembrance Gallery, Leadership"
 	pubDate={new Date('May 11 2024')}
 >
 
-<h3>The Leadership Committee</h3>
-<p>Our Leadership Committee consists of</p> 
+<h3>Gallery Team</h3>
 <ul>
-  <li>Eileen Yamada Lamphere (President of Puyallup Valley JACL)</li>
+  <li>Sharon Sobie Seymour (Gallery Manager)</li>
+  <li>Eileen Yamada Lamphere (Education Director)</li>
+  <li>Liz Dunbar (Development Director)</li>
+  <li>Paul Sherfey (Education Resource Manager)</li>
+  <li>Brian Yamasaki (Webmaster)</li>
+</ul>
+
+<h3>Planning Committee</h3>
+<div>The Remembrance Gallery Planning Committee guided the development, design, and content of the Gallery:</div>
+<ul>
+  <li>Eileen Yamada Lamphere (Project Director)</li>
   <li>Liz Dunbar (Fundraising Lead)</li>
-  <li>Sharon Sobie Seymour (Project Manager)</li>
+  <li>Sharon Sobie-Seymour (Project Manager)</li>
   <li>Barb Mizoguchi Asahara (Design Consultant)</li>
+  <li>Amy Oshiro (Memorial Researcher)</li>
 </ul>
 <img src="/Leadership-Committee.jpg" alt="Photo of Leadership Committee" />
 <ImgDescription>One of many planning meetings</ImgDescription>
 
 <img src="/Co-Chairs-Leadership-Team.jpg" alt="Co chairs with the leadership committee" />
 <ImgDescription>
-  Our Honorary Co-Chairs include, Bill Weyerhaeuser and Frank and Penny Fukui
+  Our Honorary Co-Chairs include Bill Weyerhaeuser and Frank and Penny Fukui
 </ImgDescription>
 
-<h3>The Building Team</h3>
+<h3>Gallery Design and Construction</h3>
 
-<p>We have 5 imaginative and talented vendors helping to create the Remembrance Gallery</p>
-<ul>
-  <li>Belle & Wissel (B&W)</li>
-  <li>Mountain Construction (MT)</li>
-  <li>Blackmouth Design (BMO)</li>
-  <li>Imagine Visual Service (IVS)</li>
-  <li>Integrity Networks (IN)</li>
-  <li>Jill Randerson, Vendor Manager (VM)</li>
-</ul>
+<p>The design and construction of the Remembrance Gallery was realized with the help of six imaginative and talented vendors</p>
+<table>
+  {
+    galleryCrew.map(item => {
+      return (
+        <tr>
+          <td class="logos">
+            <a href={`https://${item.url}/`}><Image src={item.logo} alt={`${item.name} logo`} /></a>
+          </td>
+          <td>
+            <a href={`https://${item.url}/`}>{item.name}</a>&nbsp;{item.inits}
+          </td>
+        </tr>
+      )
+    })
+  }
+</table>
 <img src="/galleryAssets/Construction-Team.jpg" alt="The Construction Team" />
-<ImgDescription>Left to Right front row: Jill Randerson (Vendor Mgn), Alley Kloba (IVS), Ryan Gilchrist (IVS), 
-  Eileen Yamada Lamphere (JACL Pres), Sharon Sobie Seymour (Project Mgn). <br />
-  Back row, left to right: Jes Noparat (B&W), Sarah Sherwood (MC), Rich Batcheller (BMD), Dean Roberts (IN), Fred McDermott (IN), Yousman Okano (B&W).
+<ImgDescription><strong>left to right:</strong> Jes Noparat (B&W), Sarah Sherwood (MC), Rich Batcheller, Jill Randerson (Vendor Mgr), Alley Kloba (IVS), 
+  Ryan Gilchrist (IVS), Dean Roberts (IN), Eileen Yamada Lamphere (JACL Pres), Sharon Sobie Seymour (Project Mgn), Fred McDermott (IN), Yousman Okano (B&W).
+
 </ImgDescription>
 </Layout>
+
+<style lang="scss">
+  td {
+    padding:0.5rem 0;
+  }
+  td.logos {
+    text-align: right;
+    padding-right: 2rem;
+  }
+</style>
