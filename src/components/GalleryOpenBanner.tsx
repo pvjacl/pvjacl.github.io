@@ -16,7 +16,7 @@ const events:Event[] = [
     eventEnd: 'September 21, 2025',
     addenda: '(Closed Tuesdays & Sept 3)',
     name: 'The Washington State Fair',
-    url: 'https://www.thefair.com'
+    url: '/gallery/gallery-events/fall-fair-2025'
   }
 ];
 
@@ -34,7 +34,7 @@ const GalleryOpenBanner = () => {
           <p>
             {`${event.eventStart} - ${event.eventEnd} ${event.addenda}`}
             <br />
-            See <a href={events[i].url}>their website</a> for details
+            See <a href={events[i].url}>our event page</a> for details
           </p>
         </div>
       );

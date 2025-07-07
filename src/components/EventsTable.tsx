@@ -5,7 +5,7 @@ import './EventsTable.scss';
 export type Event = {
     dateStr: string;
     title: string;
-    description: string;
+    description: string | TrustedHTML;
     photo: ImageMetadata;
     landingEventPullDate: string;
 };
@@ -49,7 +49,7 @@ const EventsTable = ({events}:Props) => {
                 return (
                   <tr key={event.dateStr+event.title}>
                     <td>{event.photo ? <a href={event.photo.src}><img src={event.photo.src} alt="featured image"/></a>: ' '}</td>
-                    <td><strong>{event.title}</strong> &ndash; {event.description}</td>
+                    <td><strong>{event.title}</strong> &ndash; <span dangerouslySetInnerHTML={{__html: event.description}}></span></td>
                     <td>{event.dateStr}</td>
                   </tr>
                 )

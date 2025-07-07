@@ -8,8 +8,9 @@ heroImage: './assets/fall-fair-2025.jpg'
 landingEventPullDate: "September 22, 2025"
 ---
 
-The Remembrance Gallery will be open during the Fall Fair at [The Washington State Fair](https://thefair.com) (August 29 to September 21)
- 
+The Remembrance Gallery will be open during the Fall Fair at [The Washington State Fair](https://thefair.com) (August 29 to September 21, closed Tuesdays and September 3rd).
+
+Directions and maps are available at our [Gallery Location page](/gallery/gallery-location).
 
 #### Admission Fees
 There is no fee to visit the gallery, but a visit requires entry to the Fair itself. Tickets may be discounted when purchased online.
