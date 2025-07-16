@@ -49,6 +49,7 @@ const eventInfos = posts.map(post => (
         JACL also work to promote and preserve the heritage and legacy of the Japanese
         American Community.
       </p>
+      <LandingEvents eventInfos={eventInfos} client:idle />
       <h3>The Remembrance Gallery is now Open</h3>
       <p>
         <a href="/gallery">The Remembrance Gallery</a> opened to the public on August 30, 2024. 
@@ -62,7 +63,6 @@ const eventInfos = posts.map(post => (
         learn how you can support our work to raise awareness of civil rights violations and emphasize how 
         this chapter in American history is still relevant today.
       </p>
-      <LandingEvents eventInfos={eventInfos} client:idle />
       <h3>Media Coverage</h3>
       <p>
         See our <a href="/media">Media</a> page for news coverage about the Remembrance Gallery.
