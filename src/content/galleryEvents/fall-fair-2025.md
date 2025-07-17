@@ -1,6 +1,6 @@
 ---
-title: "The Washington State Fair 2025"
-description: "The Remembrance Gallery will be open during the Fair"
+title: "The Remembrance Gallery will be open During the Washington State Fair"
+description: "The Remembrance Gallery will be open during the Washington State Fair - August 29 to September 21 (closed Tuesdays and September 3rd)"
 keywords: "Remembrance Gallery Puyallup Fairgrounds State Fair"
 pubDate: "June 21, 2025"
 eventDate: "August 29, 2025"
