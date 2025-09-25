@@ -5,7 +5,7 @@ keywords: "Remembrance Gallery Puyallup Fairgrounds World War WWII"
 pubDate: "May 20, 2024"
 eventDate: "August 30, 2024"
 heroImage: './assets/Gallery_Logo_JACL.jpg'
-
+offline: true
 ---
 
 The Remembrance Gallery will open to the public at the [Washington State Fair](https://thefair.com) on August 30th, 2024.

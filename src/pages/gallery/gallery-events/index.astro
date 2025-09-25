@@ -13,6 +13,7 @@ const eventInfos = posts.map(post => (
     date: post.data.eventDate.getTime(),
     pubDate: post.data.pubDate.getTime(),
     slug: post.slug,
+    isGalleryEvent: true,
     imgSrc: post.data.heroImage ? post.data.heroImage.src : null,
     title: post.data.title
   } as EventInfo

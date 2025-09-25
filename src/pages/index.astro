@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
@@ -9,17 +10,32 @@ import GalleryPhotosSlider from "@/components/GalleryPhotosSlider";
 import LandingEvents from "@/components/LandingEvents";
 import type { EventInfo } from '@components/LandingEvents';
 
-const posts = (await getCollection('galleryEvents'))
+// creates a combination type for both galleryEvents and chapter events
+type AnyEvent = CollectionEntry<'galleryEvents'> | CollectionEntry<'events'>;
+
+// list of all gallery events
+let events:AnyEvent[] = (await getCollection('galleryEvents'))
   .sort(	(a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf()
 	)
 	.filter((a) => (!a.data.offline));
-const eventInfos = posts.map(post => (
+
+// list of all chapter events
+const chapterEvents = ((await getCollection('events'))
+  .sort(	(a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf()
+	)
+	.filter((a) => (!a.data.offline)));
+
+// list of both chapter and gallery elvents
+events = events.concat(chapterEvents);
+
+const eventInfos = events.map(event => (
   {
-    landingEventPulldate: post.data.eventDate.getTime(),
-    slug: `/gallery/gallery-events/${post.slug}`,
-    imgSrc: post.data.heroImage ? post.data.heroImage.src : null,
-    title: post.data.title,
-    description: post.data.description
+    landingEventPulldate: event.data.eventDate.getTime(),
+    slug: event.collection === 'galleryEvents' ? `/gallery/gallery-events/${event.slug}` : `/events/${event.slug}`,
+    imgSrc: event.data.heroImage ? event.data.heroImage.src : null,
+    isGalleryEvent: event.collection === 'galleryEvents',
+    title: event.data.title,
+    description: event.data.description
   } as EventInfo
 ));
 

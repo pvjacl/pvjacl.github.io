@@ -120,6 +120,9 @@ eventDate: "August 17, 2024"
 | `pubDate:`      | Date to publish event on the website | "May 20, 2024" |
 | `eventDate:`    | Date of the event     | "August 17, 2024" |
 
+## Add a chapter event
+
+Adding a chapter event is identical to adding a gallery event *except* that the event descriptions must be in the ```src/content/events``` folder.
 
 ### Preserve the CNAME file
 

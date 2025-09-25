@@ -6,6 +6,7 @@ export type EventInfo = {
   date: number; // event date in milliseconds (Unix)
   pubDate: number; // event date in milliseconds (Unix)
   slug: string;
+  isGalleryEvent: boolean;
   imgSrc: string | undefined;
   title: string;
 }
@@ -42,7 +43,7 @@ const PastAndUpcomingEvents = ({eventInfos}: Props) => {
           dateTime.setTime(info.date); 
           return (
           <li key={info.date}>
-            <a href={`/gallery/gallery-events/${info.slug}/`}>
+            <a href={info.isGalleryEvent ? `/gallery/gallery-events/${info.slug}/` : `/events/${info.slug}`}>
               {info.imgSrc ? <img width={720} height={360} src={info.imgSrc} alt="" /> : null}
               <h4 className="title">{info.title}</h4>
               <p className="date">

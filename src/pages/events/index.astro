@@ -1,49 +1,32 @@
 ---
 import Layout from '@layouts/SinglePage.astro';
-import TacomaPremierePhoto from './assets/_RemovedbyForce–FullPage_UPS-Tacoma.jpg';
-import SeattlePremierePhoto from './assets/_RemovedbyForce–FullPage_SEATTLE-R1.jpg';
-import FallFairPhoto from './assets/_fall-fair-2025.jpg';
-import EventsTable from "@components/EventsTable";
-import type { Event } from "@components/EventsTable";
+import { getCollection } from 'astro:content';
+import PastAndUpcomingEvents from '@components/PastAndUpcomingEvents';
+import type { EventInfo } from '@components/PastAndUpcomingEvents';
 
-const events:Event[] = [
+const posts = (await getCollection('events'))
+  .sort(	(a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf()
+	)
+	.filter((a) => (!a.data.offline));
+const eventInfos = posts.map(post => (
   {
-    dateStr: "August 29 - September 21",
-    title: "The Remembrance Gallery is Open During the Fair",
-    description: `Please visit the <a href="/gallery/gallery-events/fall-fair-2025">Remembrance Gallery events page for details</a>`,
-    photo: FallFairPhoto,
-    landingEventPullDate: "September 22, 2025"
-  },
-  {
-    dateStr: "February 18, 2025",
-    title: 'Tacoma Premiere of "Removed By Force"',
-    description: `Film screening and panel discussion for the Japanese American Day of Remembrance is at the 
-    Rasmussen Rotunda at the University of Puget Sound (1500 N Warner Street, Tacoma, Washington). 
-    Event is co-sponsored by the University of Puget Sound, the Puyallup Valley JACL and the Olympia JACL.`,
-    photo: TacomaPremierePhoto,
-    landingEventPullDate: "February 18, 2025"
-  },
-  {
-    dateStr: "February 19, 2025",
-    title: 'Seattle Premiere of "Removed By Force"',
-    description: `Film screening and panel discussion for the Japanese American Day of Remembrance is at the 
-    Blaine Memorial United Methodist Church (3001 24th Ave S, Seattle, Washington). 
-    Event is co-sponsored by the Blaine Memorial United Methodist Church, the Puyallup Valley JACL, and Seattle JACL.`,
-    photo: SeattlePremierePhoto,
-    landingEventPullDate: "Februaryd 19, 2025"
-  }
-];
+    date: post.data.eventDate.getTime(),
+    pubDate: post.data.pubDate.getTime(),
+    slug: post.slug,
+    isGalleryEvent: false,
+    imgSrc: post.data.heroImage ? post.data.heroImage.src : null,
+    title: post.data.title
+  } as EventInfo
+));
 
 ---
 
 <Layout
-  title="Puyallup Valley Chapter Activities"
-  description="Upcoming events relevant to the JACL community"
-  keywords='Activities Events'
-  pubDate={new Date('Feb 20, 2025')}
+	title="Gallery Events"
+	description="Find out about upcoming public events at the Remembrance Gallery."
+	keywords='Remembrance Gallery Upcoming Events'
+	pubDate={new Date('May 15, 2024')}
 >
-  <EventsTable events={events} client:load />
+  <PastAndUpcomingEvents eventInfos={eventInfos} client:load />
 </Layout>
 
-
-</style>

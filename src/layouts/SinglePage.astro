@@ -3,9 +3,10 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { ClientRouter } from 'astro:transitions';
+import { Image } from 'astro:assets';
 import { SHOW_PAGE_DESCRIPTION } from '@/consts';
 
-const { title, description } = Astro.props.frontmatter || Astro.props;
+const { title, description, heroImage } = Astro.props.frontmatter || Astro.props;
 
 ---
 
@@ -58,6 +59,10 @@ const { title, description } = Astro.props.frontmatter || Astro.props;
 		<main>
 			<article>
 				{SHOW_PAGE_DESCRIPTION ? <div class="page-desc"><strong>Page Description for Search Engines only:<br /></strong> {description}</div> : <span/> }
+				<div class="hero-image">
+					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
+				</div>
+
 				<div class="prose">
 					<div class="title">
 						<h1>{title}</h1>

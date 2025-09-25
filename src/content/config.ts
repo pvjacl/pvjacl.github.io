@@ -39,5 +39,25 @@ const galleryEvents = defineCollection({
 		}).optional()
 	}),
 });
+const events = defineCollection({
+	// Type-check frontmatter using a schema
+	schema: ({image}) =>z.object({
+		title: z.string(),
+		description: z.string(),
+		keywords: z.string(),
+		// Transform string to Date object
+		pubDate: z.coerce.date(),
+		// Transform string to Date object
+		eventDate: z.coerce.date(),
+		updatedDate: z.coerce.date().optional(),
+		heroImage: image().optional(),
+		offline: z.boolean().optional(),
+		landingEventPullDate: z.coerce.date().optional(),
+		frontmatter: z.object({
+			title: z.string(),
+			description: z.string()
+		}).optional()
+	}),
+});
 
-export const collections = { blog, galleryEvents };
+export const collections = { blog, galleryEvents, events };
