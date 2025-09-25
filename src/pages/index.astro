@@ -15,18 +15,17 @@ type AnyEvent = CollectionEntry<'galleryEvents'> | CollectionEntry<'events'>;
 
 // list of all gallery events
 let events:AnyEvent[] = (await getCollection('galleryEvents'))
-  .sort(	(a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf()
-	)
 	.filter((a) => (!a.data.offline));
 
 // list of all chapter events
 const chapterEvents = ((await getCollection('events'))
-  .sort(	(a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf()
-	)
 	.filter((a) => (!a.data.offline)));
 
 // list of both chapter and gallery elvents
-events = events.concat(chapterEvents);
+events = events.concat(chapterEvents)
+  .sort(	(a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf()
+	)
+
 
 const eventInfos = events.map(event => (
   {
