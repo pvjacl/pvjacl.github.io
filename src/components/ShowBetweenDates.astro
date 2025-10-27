@@ -1,0 +1,43 @@
+---
+interface Props {
+	startDate: string;
+  endDate: string;
+}
+
+const { startDate, endDate } = Astro.props;
+---
+<div id="period-div-wrapper" data-startdate={startDate} data-enddate={endDate}>
+  <slot />
+</div>
+<script is:inline type="module">
+
+  const now = new Date().getTime();
+  const element = document.getElementById('period-div-wrapper');
+  const startDate = new Date(element.dataset.startdate).getTime();
+  const endDate = new Date(element.dataset.enddate).getTime();
+
+  if (now >= startDate && now <= endDate) {
+    element.classList.remove('hide-slot');
+  } else {
+    element.classList.add('hide-slot');
+  }
+</script>
+
+<style lang="scss">
+  .hide-slot {
+    display:none;
+  }
+  #period-div-wrapper {
+    border: 2px solid darkgreen;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  :global(#period-div-wrapper p) {
+    text-align: center;
+    padding:0;
+    margin: 0 ;
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 110%;
+  }
+</style>
