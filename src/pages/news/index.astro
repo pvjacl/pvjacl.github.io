@@ -1,0 +1,52 @@
+---
+import Layout from '@layouts/SinglePage.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort(	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+	)
+	.filter((a) => (!a.data.offline));
+const blogPosts = posts.map(post => (
+  {
+    date: post.data.pubDate.getTime(),
+    pubDate: post.data.pubDate.getTime(),
+    slug: post.slug,
+    isGalleryEvent: false,
+    imgSrc: post.data.heroImage ? post.data.heroImage.src : null,
+    title: post.data.title
+  }
+));
+
+---
+
+<Layout
+	title="Chapter News"
+	description="Announcements from the Puyallup Valley chapter of the Japanese American Citizens League"
+	keywords='Announcements Newsletter'
+	pubDate={new Date('Dec 3, 2025')}
+>
+  <ul>
+  {blogPosts.map(post => {
+    return (
+      <li>
+        <a href={`/news/${post.slug}`}>{post.title}</a>
+      </li>
+    );
+  })}
+  </ul>
+</Layout>
+
+<style lang="scss">
+  ul {
+    list-style: none;
+    a {
+      color: black;
+      font-size:1.5rem;
+      font-weight: 700;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: purple;
+    }
+  }
+</style>

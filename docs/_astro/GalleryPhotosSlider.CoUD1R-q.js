@@ -1,1 +1,0 @@
-import{default as f}from"./GalleryPhotosSlider.DOZGcBZf.js";import"./jsx-runtime.TfmNsVeH.js";import"./index.C9rmetsa.js";import"./Slider.BQTht2de.js";import"./index.D4t93_v0.js";/* empty css                               */export{f as default};

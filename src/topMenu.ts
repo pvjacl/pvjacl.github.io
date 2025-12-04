@@ -57,6 +57,13 @@ export const menubar: MenuItemData[] = [
         children: []
       },
       {
+        id: 'remBlog',
+        isDropdown: false,
+        src: '/news',
+        label: 'News',
+        children: []
+      },
+      {
         id: 'remMedia',
         isDropdown: false,
         src: '/media',
