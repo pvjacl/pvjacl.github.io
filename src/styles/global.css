@@ -188,6 +188,21 @@ hr {
 		max-width:70rem;
 	}
 }
+.card {
+	padding: 0.5rem 2rem;
+	border: 2pt solid blueviolet;
+	border-radius: 1rem;
+	margin-bottom: 1.5rem;
+}
+.card p {
+	margin-bottom: 0.5rem;
+}
+.card .bio-photo {
+	max-width:200px;
+	float:left;
+	margin-right:1rem;
+	margin-top: 1rem;
+}
 
 @media (max-width: 720px) {
 	body {
