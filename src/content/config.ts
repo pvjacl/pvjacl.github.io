@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 
+// Chapter News
 const blog = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: ({image}) =>z.object({
@@ -18,6 +19,7 @@ const blog = defineCollection({
 	}),
 });
 
+// Gallery Events
 const galleryEvents = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: ({image}) =>z.object({
@@ -38,6 +40,8 @@ const galleryEvents = defineCollection({
 		}).optional()
 	}),
 });
+
+// Chapter events
 const events = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: ({image}) =>z.object({
