@@ -5,6 +5,8 @@ pubDate: Dec 8 2023
 layout: ../layouts/SinglePage.astro
 ---
 
+[![Membership brochure](/_Join-Us-front-page.webp)](/Join-Us.pdf)
+
 Members of JACL are people like you who are committed to social justice, cultural and historical preservation, and community empowerment. Members help contribute to and support JACL's efforts so that their collective voices can be heard by more people than just one individual acting alone. It is this collective strength that gives JACL the opportunity to protect civil and human rights for all. [Join the JACL](https://jacl.org/member).
 
 Read on to see exactly what membership looks like.
