@@ -8,7 +8,7 @@ heroImage: './assets/The-Fair.svg'
 landingEventPullDate: "September 27, 2026"
 ---
 
-The Remembrance Gallery will be open during the Fall Fair at [The Washington State Fair](https://www.thefair.com/washington-state-fair/fair-event-details/) 
+The Remembrance Gallery will be open during the Fall Fair at [The Washington State Fair](https://www.thefair.com/washington-state-fair/fair-event-details/) (Sept. 4-27, closed Tuesdays & Sept. 9)
 
 Directions and maps are available at our [Gallery Location page](/gallery/gallery-location).
 
