@@ -6,6 +6,7 @@ pubDate: "December 3, 2025"
 eventDate: "April 10, 2026"
 heroImage: './assets/spring-fair-2026.jpg'
 landingEventPullDate: "April 21, 2026"
+offline: true
 ---
 The Remembrance Gallery will be open during the Spring Fair at [The Washington State Fair](https://thefair.com) (April 16-20 & 23-26).
 
