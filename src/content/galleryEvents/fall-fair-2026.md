@@ -4,11 +4,18 @@ description: "The Remembrance Gallery will be open during the Washington State F
 keywords: "Remembrance Gallery Puyallup Fairgrounds State Fair"
 pubDate: "May 1, 2026"
 eventDate: "September 27, 2026"
-heroImage: './assets/The-Fair.svg'
+heroImage: './assets/fall-fair-2026.jpg'
 landingEventPullDate: "September 27, 2026"
 ---
 
-The Remembrance Gallery will be open during the Fall Fair at [The Washington State Fair](https://www.thefair.com/washington-state-fair/fair-event-details/) (Sept. 4-27, closed Tuesdays & Sept. 9)
+Visit the Gallery during the Fall Fair at [The Washington State Fair](https://www.thefair.com/washington-state-fair/fair-event-details/) (Sept. 4-27, closed Tuesdays & Sept. 9).
+
+##### The Remembrance Gallery hours during the Fair
+
+* Mondays, Weds, Thursdays – 10:30am – 9pm
+* Fridays – 10:30am – 9:30pm
+* Saturday – 9:30am – 9:30pm
+* Sunday – 9:30am – 9pm
 
 Directions and maps are available at our [Gallery Location page](/gallery/gallery-location).
 
