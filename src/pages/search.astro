@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/SinglePage.astro";
-import SearchComponent from "astro-pagefind/components/Search";
+import PagefindConfig from "astro-pagefind/components/PagefindConfig.astro";
 ---
 
 <Layout
@@ -9,5 +9,6 @@ import SearchComponent from "astro-pagefind/components/Search";
   keywords="search"
   pubDate={new Date("January 10 2024")}
 >
-	<SearchComponent id="search" className="pagefind-ui" uiOptions={{ showImages: false}} />
+	<PagefindConfig />
+  <pagefind-searchbox></pagefind-searchbox>
 </Layout>

@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/SinglePage.astro";
-import SearchComponent from "astro-pagefind/components/Search";
+import PagefindConfig from "astro-pagefind/components/PagefindConfig.astro";
 ---
 
 <Layout
@@ -15,5 +15,6 @@ import SearchComponent from "astro-pagefind/components/Search";
   <p>
     If you are searching for specific names of someone incarcerated in the Pacific Assembly Center, <a href="/gallery/gallery-names">go to our Name Search page</a>.
   </p>
-	<SearchComponent id="search" className="pagefind-ui" uiOptions={{ showImages: false}} />
+	<PagefindConfig />
+  <pagefind-searchbox></pagefind-searchbox>
 </Layout>
