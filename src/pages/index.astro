@@ -31,7 +31,7 @@ events = events.concat(chapterEvents)
 const eventInfos = events.map(event => (
   {
     landingEventPulldate: event.data.eventDate.getTime(),
-    slug: event.collection === 'galleryEvents' ? `/gallery/gallery-events/${event.slug}` : `/events/${event.slug}`,
+    slug: event.collection === 'galleryEvents' ? `/gallery/gallery-events/${event.id}` : `/events/${event.id}`,
     imgSrc: event.data.heroImage ? event.data.heroImage.src : null,
     isGalleryEvent: event.collection === 'galleryEvents',
     title: event.data.title,
