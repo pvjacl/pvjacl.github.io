@@ -15,17 +15,17 @@
     "@astrojs/react": "^6.0.4",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
     "astro": "^7.2.4",
     "astro-pagefind": "^2.0.1",
     "dayjs": "^1.11.23",
     "markdown-to-jsx": "^9.10.2",
     "pagefind": "^1.5.2",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1",
-    "sass": "^1.94.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "sass": "^1.102.0",
     "swiper": "^14.1.0",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   }
 }
