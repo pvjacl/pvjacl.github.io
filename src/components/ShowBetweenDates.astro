@@ -2,11 +2,12 @@
 interface Props {
 	startDate: string;
   endDate: string;
+  wrapper: boolean;
 }
 
-const { startDate, endDate } = Astro.props;
+const { startDate, endDate, wrapper } = Astro.props;
 ---
-<div id="period-div-wrapper" data-startdate={startDate} data-enddate={endDate}>
+<div id="period-div-wrapper" data-startdate={startDate} data-enddate={endDate} class:list={[{ wrapper: wrapper }]}>
   <slot />
 </div>
 <script is:inline type="module">
@@ -28,9 +29,11 @@ const { startDate, endDate } = Astro.props;
     display:none;
   }
   #period-div-wrapper {
+    margin-bottom: 1.5rem;
+  }
+  #period-div-wrapper.wrapper {
     border: 2px solid darkgreen;
     padding: 1rem;
-    margin-bottom: 1.5rem;
   }
   :global(#period-div-wrapper p) {
     text-align: center;

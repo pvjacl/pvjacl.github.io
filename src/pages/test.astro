@@ -1,27 +1,5 @@
 ---
 import Layout from '@layouts/SinglePage.astro';
-// import Slider from "@/components/Slider";
-import { Image } from 'astro:assets';
-/**
- * Dynamically import all images from a directory in Astro using TypeScript
- * Assumes images are stored in `src/assets/images/`
- */
-
-interface ImageModule {
-  default: string; // The resolved URL path for the image
-}
-
-// Import all images eagerly at build time
-const images: Record<string, ImageModule> = import.meta.glob<ImageModule>(
-  '../content/galleryEvents/assets/DOR-2026/*.{png,jpg,jpeg,gif,svg}',
-  { eager: true }
-);
-
-// Extract the image URLs
-var imagePaths: string[] = [];
-for (var key in images) {
-  imagePaths.push(key);
-}
 ---
 
 <Layout
@@ -31,9 +9,5 @@ for (var key in images) {
 	pubDate={new Date('August 20 2024')}
 >
 
-<h1>All Images from Directory</h1>
-    {
-      // imagePaths.map(path => (<p>{path}</p>))
-      imagePaths.map(path => (<img src={path} />))
-    }
+<h1>Test Page</h1>
 </Layout>

@@ -11,12 +11,12 @@ type Event = {
 
 const events:Event[] = [
   {
-    adStart: 'July 1, 2025',
-    eventStart: 'August 29, 2025',
-    eventEnd: 'September 21, 2025',
-    addenda: '(Closed Tuesdays & Sept 3)',
-    name: 'The Washington State Fair',
-    url: '/gallery/gallery-events/fall-fair-2025'
+    adStart: 'January 1, 2027',
+    eventStart: 'January 30, 2027',
+    eventEnd: 'January 30, 2027',
+    addenda: '',
+    name: 'our Day of Remembrance',
+    url: '/gallery/gallery-events/day-of-remembrance-2027'
   }
 ];
 

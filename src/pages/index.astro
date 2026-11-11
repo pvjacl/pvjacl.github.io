@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-// import { Image } from "astro:assets";
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
@@ -10,6 +10,8 @@ import { ClientRouter } from 'astro:transitions';
 import GalleryPhotosSlider from "@/components/GalleryPhotosSlider";
 import LandingEvents from "@/components/LandingEvents";
 import type { EventInfo } from '@components/LandingEvents';
+import ShowBetweenDates from "@/components/ShowBetweenDates.astro";
+import holidayCard from "../assets/2026-holiday.jpg";
 
 // creates a combination type for both galleryEvents and chapter events
 type AnyEvent = CollectionEntry<'galleryEvents'> | CollectionEntry<'events'>;
@@ -51,6 +53,9 @@ const eventInfos = events.map(event => (
     <Header isGalleryPage={false} />
     {SHOW_PAGE_DESCRIPTION ? <div class="page-desc"><strong>Page Description for Search Engines only:<br /></strong> <p>{SITE_DESCRIPTION}</p></div> : <span/> }
     <main>
+      <ShowBetweenDates startDate="December 1, 2026" endDate="December 31, 2026" wrapper={false} >
+        <Image src={holidayCard} alt="Happy Holidays to all" />
+      </ShowBetweenDates>
       <h1 id="long-title">We are the Puyallup Valley JACL</h1>
       <p>
         Welcome to the official website for the Puyallup Valley Chapter of the
