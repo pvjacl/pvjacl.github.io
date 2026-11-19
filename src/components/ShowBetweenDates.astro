@@ -16,7 +16,7 @@ const { startDate, endDate, wrapper } = Astro.props;
   const element = document.getElementById('period-div-wrapper');
   const startDate = new Date(element.dataset.startdate).getTime();
   const endDate = new Date(element.dataset.enddate).getTime();
-
+  
   if (now >= startDate && now <= endDate) {
     element.classList.remove('hide-slot');
   } else {
