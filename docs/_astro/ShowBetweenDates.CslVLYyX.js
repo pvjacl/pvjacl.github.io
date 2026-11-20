@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime.C2aMnSBe.js";var t=e(),n=({startDate:e,endDate:n,wrapper:r,children:i})=>{let a=new Date(e),o=new Date(n),s=new Date;if(!(s<a||s>o))return(0,t.jsx)(`div`,{id:`period-div-wrapper`,className:r?`wrapper`:``,children:i})};export{n as default};

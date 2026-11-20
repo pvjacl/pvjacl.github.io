@@ -10,7 +10,7 @@ import { ClientRouter } from 'astro:transitions';
 import GalleryPhotosSlider from "@/components/GalleryPhotosSlider";
 import LandingEvents from "@/components/LandingEvents";
 import type { EventInfo } from '@components/LandingEvents';
-import ShowBetweenDates from "@/components/ShowBetweenDates.astro";
+import ShowBetweenDates from "@/components/ShowBetweenDates";
 import holidayCard from "../assets/2026-holiday.jpg";
 import newYearsCard from "../assets/2026-New-Years.webp";
 
@@ -54,14 +54,14 @@ const eventInfos = events.map(event => (
     <Header isGalleryPage={false} />
     {SHOW_PAGE_DESCRIPTION ? <div class="page-desc"><strong>Page Description for Search Engines only:<br /></strong> <p>{SITE_DESCRIPTION}</p></div> : <span/> }
     <main>
-      <ShowBetweenDates startDate="December 1, 2026" endDate="December 31, 2026" wrapper={false} >
+      <ShowBetweenDates startDate="December 1, 2026" endDate="December 31, 2026" wrapper={false} client:load>
         <Image src={holidayCard} alt="Happy Holidays to all" />
       </ShowBetweenDates>
-      <!-- <ShowBetweenDates startDate="January 1, 2027" endDate="January 31, 2027" wrapper={false} >
+      <ShowBetweenDates startDate="January 1, 2027" endDate="January 31, 2027" wrapper={false} client:load>
         <a href="gallery/gallery-events/day-of-remembrance-2027">
           <Image src={newYearsCard} alt="Happy New Years" />
         </a>
-      </ShowBetweenDates> -->
+      </ShowBetweenDates>
       <h1 id="long-title">We are the Puyallup Valley JACL</h1>
       <p>
         Welcome to the official website for the Puyallup Valley Chapter of the
